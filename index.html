@@ -16,49 +16,127 @@
     <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
 
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
-    <!--Nav bar-->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
-                    Guodong Zhao
-                </h1>
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </h1>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
 
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-white">
-                            Home
-                        </a>
-                        <a class="button is-white">
-                            Work Projects
-                        </a>
-                        <a class="button is-white">
-                            Other Projects
-                        </a>
-                        <a class="button is-white">
-                            Resume
-                        </a>
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white">
+                                Home
+                            </a>
+                            <a class="button is-white">
+                                Work Projects
+                            </a>
+                            <a class="button is-white">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
+        <!--Entry-->
+        <section class="hero is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <p class="title is-2 raleway" style="font-weight: normal">Hi! My name is <span
+                            style="font-weight: bold; white-space: nowrap;">Guodong Zhao<img
+                                src='images\waving hand.gif' style="height: 1em" /></span></p>
+                    <p class="subtitle is-4 raleway" style="font-weight: normal">
+                        I design and develop for better learning and living.
+                    </p>
+                    <br />
+                    <br />
+                    <p class="raleway">
+                        Pursuing a Master's Degree in <a href="https://metals.hcii.cmu.edu/" target="_blank">Educational
+                            Technology and Applied Learning Science</a> in <a href="https://hcii.cmu.edu/"
+                            target="_blank">HCI Institute</a> @ CMU.
+                    </p>
+                    <p class="raleway">
+                        B.S. in <a href="https://www.cheme.engineering.cmu.edu/" target="_blank">Chemical
+                            Engineering</a>
+                        and <a href="https://www.cmu.edu/dietrich/modlang/undergraduate/german.html"
+                            target="_blank">German
+                            Studies</a> @ CMU.
+                    </p>
+                    <br />
+                    <br />
+                    <a class="button is-rounded is-link"
+                        href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                        target="_blank">
+                        View Resume Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Selected Projects-->
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <p class="title is-4 raleway" style="text-decoration: underline" id="#projects">
+                        Selected Projects ↓
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isBurgerActive: false
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>
