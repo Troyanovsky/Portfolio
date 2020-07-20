@@ -17,6 +17,8 @@
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         .raleway {
             font-family: 'Raleway';
@@ -28,6 +30,15 @@
 
         html {
             scroll-behavior: smooth;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
         }
     </style>
 </head>
@@ -115,14 +126,72 @@
         <section class="hero is-small">
             <div class="hero-body">
                 <div class="container">
-                    <p class="title is-4 raleway" style="text-decoration: underline" id="#projects">
-                        Selected Projects ↓
+                    <p class="title is-4 raleway" style="text-decoration: underline" id="projects">
+                        <span onclick="scrollToView('projects')" style="cursor: pointer">Selected Projects ↓</span>
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            <div class="box" data-aos="fade-up">
+                                <div class="columns">
+                                    <div class="column is-8">
+                                        <figure class="image is-5by4">
+                                            <img src="https://via.placeholder.com/600x480?text=ProjectImage">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4">
+                                        <h3 class="title is-4">
+                                            Project Title
+                                        </h3>
+                                        <p class="subtitle is-6">
+                                            Project Description
+                                        </p>
+                                        <div class="tags">
+                                            <span class="tag">Project Tag</span>
+                                            <span class="tag">Project Tag</span>
+                                        </div>
+                                        <hr />
+                                        <div class="columns">
+                                            <div class="column is-one-third">
+                                                <strong>My Role</strong>
+                                            </div>
+                                            <div class="column is-two-thirds has-text-centered">
+                                                Research<br />Design<br />Prototype
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <button class="button is-outlined is-primary">
+                                            See Prototype
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
 
     <script>
         var app = new Vue({
