@@ -40,6 +40,11 @@
             margin: 1em 0;
             padding: 0;
         }
+
+        .is-vertical-center {
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -129,13 +134,6 @@
                     <p class="title is-4 raleway" style="text-decoration: underline" id="projects">
                         <span onclick="scrollToView('projects')" style="cursor: pointer">Selected Projects ↓</span>
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="hero is-small">
-            <div class="hero-body">
-                <div class="container">
                     <div class="columns">
                         <div class="column is-8 is-offset-2">
                             <div class="box" data-aos="fade-up">
@@ -145,67 +143,79 @@
                                             <img src="https://via.placeholder.com/600x480?text=ProjectImage">
                                         </figure>
                                     </div>
-                                    <div class="column is-4">
-                                        <h3 class="title is-4">
-                                            Project Title
-                                        </h3>
-                                        <p class="subtitle is-6">
-                                            Project Description
-                                        </p>
-                                        <div class="tags">
-                                            <span class="tag">Project Tag</span>
-                                            <span class="tag">Project Tag</span>
-                                        </div>
-                                        <hr />
-                                        <div class="columns">
-                                            <div class="column is-one-third">
-                                                <strong>My Role</strong>
+                                    <div class="column is-4 is-vertical-center">
+                                        <div style="width: 100%">
+                                            <h3 class="title is-4 raleway">
+                                                Project Title
+                                            </h3>
+                                            <p class="subtitle is-6 raleway">
+                                                Project Description
+                                            </p>
+                                            <div class="tags">
+                                                <span class="tag">Project Tag</span>
+                                                <span class="tag">Project Tag</span>
                                             </div>
-                                            <div class="column is-two-thirds has-text-centered">
-                                                Research<br />Design<br />Prototype
+                                            <hr />
+                                            <div class="columns">
+                                                <div class="column is-one-third">
+                                                    <p class='raleway'><strong>My Role</strong></p>
+                                                </div>
+                                                <div class="column is-two-thirds">
+                                                    <p class='raleway'>Research<br/>Design<br/>Prototype</p>
+                                                </div>
                                             </div>
+                                            <hr />
+                                            <button class="button is-outlined is-primary">
+                                                See Prototype
+                                            </button>
                                         </div>
-                                        <hr />
-                                        <button class="button is-outlined is-primary">
-                                            See Prototype
-                                        </button>
+
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!--AOS-->
-    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p class='raleway'>Interested in working with me? <br/>Contact me at: <a href="mailto:gzhao@andrew.cmu.edu">gzhao@andrew.cmu.edu</a></p>
+                <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+                <p class="raleway">&copy; 2020 Guodong Zhao</p>
+            </div>
+        </footer>
 
-    <!--Scroll to View-->
-    <script>
-        function scrollToView(viewId) {
-            var elmnt = document.getElementById(viewId);
-            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
-        }
-    </script>
+        <!--AOS-->
+        <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                isBurgerActive: false
-            },
-            methods: {
-                toggleBurger: function () {
-                    this.isBurgerActive = !this.isBurgerActive;
-                }
+        <!--Scroll to View-->
+        <script>
+            function scrollToView(viewId) {
+                var elmnt = document.getElementById(viewId);
+                elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
             }
-        })
-    </script>
+        </script>
+
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    isBurgerActive: false
+                },
+                methods: {
+                    toggleBurger: function () {
+                        this.isBurgerActive = !this.isBurgerActive;
+                    }
+                }
+            })
+        </script>
 </body>
+
 
 </html>
