@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LAUNCH | Guodong Zhao</title>
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
+
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .is-vertical-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .prpl {
+            color: #5e34a0;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        .has-highlight {
+            background-color: #e9ebf7;
+        }
+    </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </h1>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Home
+                            </a>
+                            <a class="button is-white">
+                                Work Projects
+                            </a>
+                            <a class="button is-white">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Project Entry-->
+        <div class="hero is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="title is-3 raleway prpl">
+                        LAUNCH
+                    </h2>
+                    <p class="subtitle is-5 raleway">
+                        An Interactive Learning Workspace for documentation and project management in Project-Based
+                        Learning Classes.
+                    </p>
+                    <figure class="image is-11by5">
+                        <img src="LAUNCH\Project Images, with Background_ 1760 x 800.png" alt="LAUNCH Project Image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!--Overview-->
+        <div class="heor is-small has-background-light" id="overview">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway prpl has-text-weight-bold has-text-centered">
+                            Overview
+                        </h3>
+                        <div class="columns">
+                            <div class="column is-half">
+                                <p class="content">
+                                    <b>Time</b><br />
+                                    September 2019 - December 2019<br />
+                                    <b>Client</b><br />
+                                    A local high school<br />
+                                    <b>My Role</b><br />
+                                    Research, Ideation, Product Design, Video Prototype<br />
+                                    <b>Keywords</b><br />
+                                    Learning Experience Design, PBL, Documentation<br />
+                                    <b>Teammates</b><br />
+                                    Chelsea Hua, Estelle Jiang, Hannah Xue<br />
+                                </p>
+                            </div>
+                            <div class="column is-half">
+                                <p>
+                                    <b>My Contribution</b>
+                                </p>
+                                <p class="content">
+                                    For the research part, I was responsible for creating protocols, conducting
+                                    interviews, synthesizing insights, and creating models.
+                                </p>
+                                <p class="content">
+                                    For designing and prototyping, I was responsible for designing the experience and
+                                    main features of the system and directing and creating the video prototype for
+                                    testing with users.
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="title is-4 raleway prpl has-text-weight-bold">
+                            <u>Problem</u>
+                        </h4>
+                        <p class="content">
+                            One of the biggest problems for project-based learning (PBL) is that <b>it’s difficult for
+                                students to document their work artifacts and their work process</b> during the course
+                            of the projects.
+                        </p>
+                        <p class="content is-size-4 has-highlight">
+                            How might we create a non-distracting and easy-to-use tool for students to better manage
+                            their projects and document their work for reference, reflection, and showcase?
+                        </p>
+                        <p class="content is-size-6">
+                            <b>Client Background: </b>We are working with Mr. M, the instructor of a PBL course at a
+                            local high
+                            school. His course is a maker space course teaching 3D modeling with self-defined group
+                            projects.
+                        </p>
+                        <h4 class="title is-4 raleway prpl has-text-weight-bold">
+                            <u>Solution</u>
+                        </h4>
+                        <p class="content">
+                            We designed the LAUNCH. It’s an <b>integrated workspace</b> with interactive whiteboards/tables and
+                            <b>an online collaboration platform.</b>
+                        </p>
+                        <div class="columns is-vcentered">
+                            <div class="column is-half">
+                                <figure class="image">
+                                    <img src="LAUNCH\table_empty.png" alt="Interactive Table">
+                                </figure>
+                            </div>
+                            <div class="column is-half">
+                                <figure class="image">
+                                    <img src="LAUNCH\online_browser.png" alt="Online Platform">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content is-size-5">
+                            <p>It can:</p>
+                            <ul>
+                                <li>Save students’ creative work like sketches and notes</li>
+                                <li>Provide enriched information to help them create prototypes</li>
+                                <li>Document students’ work process with pictures, audio, and video</li>
+                                <li>Organize their work artifacts and share them with the instructor for assessment and feedback</li>
+                            </ul>
+                        </div>
+                        <a href="#finalDesign" class="button is-rounded is-outlined is-primary">
+                            Jump to Solution Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p class='raleway'>Interested in working with me? <br />Contact me at: <a
+                    href="mailto:gzhao@andrew.cmu.edu">gzhao@andrew.cmu.edu</a></p>
+            <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+            <p class="raleway">&copy; 2020 Guodong Zhao</p>
+        </div>
+    </footer>
+
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isBurgerActive: false
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
