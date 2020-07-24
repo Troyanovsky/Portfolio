@@ -123,7 +123,7 @@
         </div>
 
         <!--Overview-->
-        <div class="heor is-small has-background-light" id="overview">
+        <div class="hero is-small has-background-light" id="overview">
             <div class="hero-body">
                 <div class="columns">
                     <div class="column is-8 is-offset-2">
@@ -158,6 +158,10 @@
                                     main features of the system and directing and creating the video prototype for
                                     testing with users.
                                 </p>
+                                <a href="https://medium.com/learning-media-design"
+                                    class="button is-rounded is-outlined is-primary" target="_blank">
+                                    Our Medium
+                                </a>
                             </div>
                         </div>
                         <h4 class="title is-4 raleway prpl has-text-weight-bold">
@@ -182,38 +186,137 @@
                             <u>Solution</u>
                         </h4>
                         <p class="content">
-                            We designed the LAUNCH. It’s an <b>integrated workspace</b> with interactive whiteboards/tables and
+                            We designed the LAUNCH. It’s an <b>integrated workspace</b> with interactive
+                            whiteboards/tables and
                             <b>an online collaboration platform.</b>
                         </p>
-                        <div class="columns is-vcentered">
-                            <div class="column is-half">
-                                <figure class="image">
-                                    <img src="LAUNCH\table_empty.png" alt="Interactive Table">
-                                </figure>
-                            </div>
-                            <div class="column is-half">
-                                <figure class="image">
-                                    <img src="LAUNCH\online_browser.png" alt="Online Platform">
-                                </figure>
-                            </div>
-                        </div>
                         <div class="content is-size-5">
                             <p>It can:</p>
                             <ul>
                                 <li>Save students’ creative work like sketches and notes</li>
                                 <li>Provide enriched information to help them create prototypes</li>
                                 <li>Document students’ work process with pictures, audio, and video</li>
-                                <li>Organize their work artifacts and share them with the instructor for assessment and feedback</li>
+                                <li>Organize their work artifacts and share them with the instructor for assessment and
+                                    feedback</li>
                             </ul>
                         </div>
                         <a href="#finalDesign" class="button is-rounded is-outlined is-primary">
                             Jump to Solution Details
                         </a>
+                        <figure class="image my-5">
+                            <img src="LAUNCH\Final Design.png" alt="Final Design">
+                        </figure>
+                        <h4 class="title is-4 raleway prpl has-text-weight-bold">
+                            <u>Concept Video</u>
+                        </h4>
+                        <figure class="image is-16by9 my-5">
+                            <iframe src="https://www.youtube.com/embed/FcUZnygFyQc" class="has-ratio" width="640"
+                                height="360" allowfullscreen frameborder="0"></iframe>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Design Process-->
+        <div class="hero is-small" id="designProcess">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway prpl has-text-weight-bold has-text-centered">
+                            Design Process
+                        </h3>
+                        <figure class="image">
+                            <img src="LAUNCH\Design Process.png" alt="Design Process">
+                        </figure>
+                        <h4 class="title is-4 raleway prpl has-text-weight-bold">
+                            <u>Research Phase</u>
+                        </h4>
+                        <h5 class="title is-5 raleway">
+                            <span class='prpl'>&#9632</span> Literature Review
+                        </h5>
+                        <p class="content">
+                            Before we dive into the process of on-site explorations, we conducted
+                            <span class='has-highlight'>literature reviews</span> of project-based learning, makerspaces,
+                            and the role of documentation and portfolios.
+                        </p>
+                        <p class="content">
+                            We specifically looked at the examples of PBLWorks, Maker Movement, and Open Portfolios project
+                            to understand current pratices and learning goals in PBL.
+                        </p>
+                        <p class="content">
+                            From the literature review, we found the following elements to be important for PBL courses:
+                        </p>
+                        <figure class="image">
+                            <img src="LAUNCH\literature review insights.png" alt="Literature review insights">
+                        </figure>
+                        <h5 class="title is-5 raleway">
+                            <span class='prpl'>&#9632</span> Understanding Educators
+                        </h5>
+                        <p class="content">
+                            To understand the current challenges that are specific to our client, we first conducted
+                            <a href="https://medium.com/learning-media-design/user-study-2-understanding-educators-interviews-profile-boards-1c01239d541f"
+                                target="_blank"><span class="has-highlight">semi-structured interviews</span> with two
+                                educators</a> - the instructor of the PBL course and the school director.
+                        </p>
+                        <p class="content">
+                            <b>Interview with Mr.M</b> - Class Instructor
+                        </p>
+                        <div class="columns">
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="LAUNCH\Interview1.png" alt="Interview with Mr.M">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="LAUNCH\Mr.M.png" alt="Mr.M Profile Board">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="content">
+                            <b>Interview with Dr.F</b> - School Director
+                        </p>
+                        <div class="columns">
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="LAUNCH\Interview2.png" alt="Interview with Dr.F">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="LAUNCH\Dr.F.png" alt="Dr.F Profile Board">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="content">
+                            <b>Synthesis and Analysis</b>
+                        </p>
+                        <p class="content">
+                            To better understand the relationships among the challenges of these stakeholders and their
+                            concerns, we used <span>diagnostic maps</span> to analyze the causes, consequences, and possible
+                            solutions of
+                            the problems, including <b>
+                                <u v-on:click="diagnosticMap = 'Documentation'" style="cursor: pointer">documentation</u>,
+                                <u v-on:click="diagnosticMap = 'Assessment'" style="cursor: pointer">assessment</u>,
+                                <u v-on:click="diagnosticMap = 'Feedback'" style="cursor: pointer">feedback</u>, and 
+                                <u v-on:click="diagnosticMap = 'Showcase'" style="cursor: pointer">showcase</u></b>.
+                        </p>
+                        <div class="columns">
+                            <div class="column is-8 is-offset-2">
+                                <figure class="image">
+                                    <img v-bind:src="diagnosticMapSource" alt="Diagnostic Map">
+                                </figure>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -242,7 +345,28 @@
         var app = new Vue({
             el: "#app",
             data: {
-                isBurgerActive: false
+                isBurgerActive: false,
+                diagnosticMap: "Documentation"
+            },
+            computed: {
+                diagnosticMapSource: function () {
+                    switch (this.diagnosticMap) {
+                        case "Documentation":
+                            return "LAUNCH/Diagnostic Map 1.png"
+                            break;
+                        case "Assessment":
+                            return "LAUNCH/Diagnostic Map 2.png"
+                            break;
+                        case "Feedback":
+                            return "LAUNCH/Diagnostic Map 3.png"
+                            break;
+                        case "Showcase":
+                            return "LAUNCH/Diagnostic Map 4.png"
+                            break;
+                        default:
+                            return "LAUNCH/Diagnostic Map 1.png"
+                    }
+                }
             },
             methods: {
                 toggleBurger: function () {
