@@ -237,17 +237,20 @@
                         </h5>
                         <p class="content">
                             Before we dive into the process of on-site explorations, we conducted
-                            <span class='has-highlight'>literature reviews</span> of project-based learning, makerspaces,
+                            <span class='prpl has-text-weight-semibold'>literature reviews</span> of project-based
+                            learning,
+                            makerspaces,
                             and the role of documentation and portfolios.
                         </p>
                         <p class="content">
-                            We specifically looked at the examples of PBLWorks, Maker Movement, and Open Portfolios project
+                            We specifically looked at the examples of PBLWorks, Maker Movement, and Open Portfolios
+                            project
                             to understand current pratices and learning goals in PBL.
                         </p>
                         <p class="content">
                             From the literature review, we found the following elements to be important for PBL courses:
                         </p>
-                        <figure class="image">
+                        <figure class="image my-5">
                             <img src="LAUNCH\literature review insights.png" alt="Literature review insights">
                         </figure>
                         <h5 class="title is-5 raleway">
@@ -256,7 +259,8 @@
                         <p class="content">
                             To understand the current challenges that are specific to our client, we first conducted
                             <a href="https://medium.com/learning-media-design/user-study-2-understanding-educators-interviews-profile-boards-1c01239d541f"
-                                target="_blank"><span class="has-highlight">semi-structured interviews</span> with two
+                                target="_blank"><span class="prpl has-text-weight-semibold">semi-structured
+                                    interviews</span> with two
                                 educators</a> - the instructor of the PBL course and the school director.
                         </p>
                         <p class="content">
@@ -294,12 +298,14 @@
                         </p>
                         <p class="content">
                             To better understand the relationships among the challenges of these stakeholders and their
-                            concerns, we used <span>diagnostic maps</span> to analyze the causes, consequences, and possible
+                            concerns, we used <span>diagnostic maps</span> to analyze the causes, consequences, and
+                            possible
                             solutions of
                             the problems, including <b>
-                                <u v-on:click="diagnosticMap = 'Documentation'" style="cursor: pointer">documentation</u>,
+                                <u v-on:click="diagnosticMap = 'Documentation'"
+                                    style="cursor: pointer">documentation</u>,
                                 <u v-on:click="diagnosticMap = 'Assessment'" style="cursor: pointer">assessment</u>,
-                                <u v-on:click="diagnosticMap = 'Feedback'" style="cursor: pointer">feedback</u>, and 
+                                <u v-on:click="diagnosticMap = 'Feedback'" style="cursor: pointer">feedback</u>, and
                                 <u v-on:click="diagnosticMap = 'Showcase'" style="cursor: pointer">showcase</u></b>.
                         </p>
                         <div class="columns">
@@ -308,6 +314,85 @@
                                     <img v-bind:src="diagnosticMapSource" alt="Diagnostic Map">
                                 </figure>
                             </div>
+                        </div>
+                        <p class="content">
+                            From the diagnostic maps, we identified that <span class='has-highlight'>poor documentation
+                                is actually the root
+                                problem for other problems in assessments, feedback, and showcase.</span>
+                        </p>
+                        <p class="content prpl is-size-6" v-on:click="toggleDiagnosticDetails">
+                            <u>{{ diagnosticButton }}</u>
+                        </p>
+                        <p class="content" v-if="diagnosticButton == 'Show Less'">
+                            Without good documentation of both the work artifacts and the work process, it will be hard
+                            for students to showcase their design process and iterations to the instructor and to the
+                            community. Thus, it was hard for the instructor to track and assess their improvements and
+                            for the community to recognize the achievements of the students.
+                        </p>
+                        <h5 class="title is-5 raleway">
+                            <span class='prpl'>&#9632</span> Understanding Students in Context
+                        </h5>
+                        <p class="content">
+                            As we pinpointed documentation as the main and root problem in the class, we proceeded to
+                            investigate the students’ current practices of documentation in their projects through
+                            <span class='prpl has-text-weight-semibold'>on-site observations</span> and understand their
+                            opinions on
+                            documentation through <span class='prpl has-text-weight-semibold'>online surveys</span>.
+                        </p>
+                        <div class="columns is-vcentered">
+                            <div class="column is-one-third is-offset-1">
+                                <b-carousel>
+                                    <b-carousel-item v-for="(carousel, i) in observations" :key="i">
+                                        <figure class="image is-square">
+                                            <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
+                                        </figure>
+                                    </b-carousel-item>
+                                </b-carousel>
+                            </div>
+                            <div class="column is-one-third is-offset-1">
+                                <b-carousel>
+                                    <b-carousel-item v-for="(carousel, i) in surveys" :key="i">
+                                        <figure class="image is-16by9">
+                                            <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
+                                        </figure>
+                                    </b-carousel-item>
+                                </b-carousel>
+                            </div>
+                        </div>
+                        <p class="content">
+                            <b>Synthesis and Analysis</b>
+                        </p>
+                        <p class="content">
+                            We used an <span class='prpl has-text-weight-semibold'>affinity diagram</span> to summarize
+                            the findings that we collected from both the
+                            observation and the online survey.
+                        </p>
+                        <div class="columns">
+                            <div class="column is-6 is-offset-3">
+                                <figure class="image">
+                                    <img src="LAUNCH\Affinity Diagram.png" alt="Affinity Diagram">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>We found that</p>
+                            <ul style="font-size: 1.25rem">
+                                <li>
+                                    Students <span class="has-highlight">only document their ideas</span> but not their
+                                    work process.
+                                </li>
+                                <li>
+                                    They <span class="has-highlight">lack permanent, organized documentation</span> for
+                                    project management and
+                                    for future
+                                    reference and reflections.
+                                </li>
+                                <li>
+                                    They <span class="has-highlight">need motivation</span> for documentation and they
+                                    need to <span class="has-highlight">learn
+                                        better documentation approaches</span>.
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -346,7 +431,17 @@
             el: "#app",
             data: {
                 isBurgerActive: false,
-                diagnosticMap: "Documentation"
+                diagnosticMap: "Documentation",
+                diagnosticButton: "Show More",
+                surveys: [
+                    { link: 'LAUNCH/Survey.png', text: 'Survey' },
+                    { link: 'LAUNCH/Survey Response.png', text: 'Survey Response' }
+                ],
+                observations: [
+                    { link: 'LAUNCH/Observation 1.png', text: 'Observation: Notebook' },
+                    { link: 'LAUNCH/Observation 2.png', text: 'Observation: Prototype' },
+                    { link: 'LAUNCH/Observation 3.png', text: 'Observation: Whiteboard' }
+                ]
             },
             computed: {
                 diagnosticMapSource: function () {
@@ -371,6 +466,13 @@
             methods: {
                 toggleBurger: function () {
                     this.isBurgerActive = !this.isBurgerActive;
+                },
+                toggleDiagnosticDetails: function () {
+                    if (this.diagnosticButton == "Show More") {
+                        this.diagnosticButton = "Show Less"
+                    } else {
+                        this.diagnosticButton = "Show More"
+                    }
                 }
             }
         })
