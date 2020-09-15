@@ -894,7 +894,7 @@
             </div>
         </div>
         <div class="level">
-            <div class="level-item">
+            <div class="level-item" data-aos="slide-up">
                 <a class="button is-outlined is-primary" href='index.html'>
                     Other Projects
                 </a>
@@ -904,9 +904,6 @@
 
     <!--AOS-->
     <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 
     <!--Scroll to View-->
     <script>
@@ -919,6 +916,9 @@
     <script>
         var app = new Vue({
             el: "#app",
+            created() {
+                AOS.init();
+            },
             data: {
                 isBurgerActive: false,
                 diagnosticMap: "Documentation",

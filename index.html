@@ -154,6 +154,7 @@
                                             </p>
                                             <div class="tags">
                                                 <span class="tag">Learning Experience Design</span>
+                                                <span class="tag">EdTech Tool Design</span>
                                                 <span class='tag'>Rapid Prototyping</span>
                                             </div>
                                             <hr />
@@ -255,9 +256,6 @@
     </div>
     <!--AOS-->
     <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 
     <!--Scroll to View-->
     <script>
@@ -270,6 +268,9 @@
     <script>
         var app = new Vue({
             el: "#app",
+            created() {
+                AOS.init();
+            },
             data: {
                 isBurgerActive: false
             },
