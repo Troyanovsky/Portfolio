@@ -1,0 +1,55 @@
+.raleway {
+    font-family: 'Raleway';
+}
+
+.poppins {
+    font-family: 'poppins'
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.grn {
+    color: #8ABC8B;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+.has-highlight {
+    background-color: #b0e8b1;
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  
+  /* Then style the iframe to fit in the container div with full height and width */
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
