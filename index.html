@@ -329,7 +329,7 @@
                                             </div>
                                             <hr />
                                             <b-tooltip label="Links to External Pages">
-                                            <div class="buttons">
+                                                <div class="buttons">
                                                     <a class="button is-outlined is-primary"
                                                         href="https://drive.google.com/file/d/1X6fOExnsEfQQR-a0y_ypDLWZAYOWyLyy/view?usp=sharing"
                                                         target="_blank">
@@ -341,12 +341,59 @@
                                                         target="_blank">
                                                         See Report
                                                     </a>
-                                            </div>
+                                                </div>
                                             </b-tooltip>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!--VR Scenarios-->
+                            <div class="box" data-aos="fade-up">
+                                <div class="columns">
+                                    <div class="column is-8">
+                                        <figure class="image is-5by4">
+                                            <img src="VRScenarios\Project Images, with Background_ 600 x 488.png">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4 is-vertical-center">
+                                        <div style="width: 100%">
+                                            <h3 class="title is-4 raleway">
+                                                VR Conversation Scenarios
+                                            </h3>
+                                            <p class="subtitle is-6 raleway">
+                                                Immersive VR scenarios for language assessments
+                                            </p>
+                                            <div class="tags">
+                                                <span class="tag">Virtual Reality</span>
+                                                <span class="tag">Second Language Acquisition</span>
+                                            </div>
+                                            <hr />
+                                            <div class="columns">
+                                                <div class="column is-one-third">
+                                                    <p class='raleway'><strong>My Role</strong></p>
+                                                </div>
+                                                <div class="column is-two-thirds">
+                                                    <p class='raleway'>Assessment Design<br />Video Production</p>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <b-tooltip label="Best viewed with a VR headset">
+                                                <a class="button is-outlined is-primary"
+                                                    @click="isScenarioModalActive = true">
+                                                    See Sample Scenario
+                                                </a>
+                                            </b-tooltip>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <b-modal v-model="isScenarioModalActive">
+                                <figure class="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360"
+                                        src="https://www.youtube.com/embed/b7PPdsB5_i8?showinfo=0" frameborder="0"
+                                        allowfullscreen></iframe>
+                                </figure>
+                            </b-modal>
                         </div>
                     </div>
                 </div>
@@ -371,7 +418,8 @@
                 AOS.init();
             },
             data: {
-                isBurgerActive: false
+                isBurgerActive: false,
+                isScenarioModalActive: false
             },
             methods: {
                 toggleBurger: function () {
