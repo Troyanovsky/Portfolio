@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Invisible Threats | Guodong Zhao</title>
+    <link rel="icon" href="images\Icon.png">
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="AirInPgh\invisibleThreats.css">
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </h1>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Home
+                            </a>
+                            <!--
+                            <a class="button is-white">
+                                Case Studies
+                            </a>
+                            <a class="button is-white">
+                                Work Samples
+                            </a>
+                            -->
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Project Entry-->
+        <div class="hero is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="title is-3 raleway blu">
+                        Air In Pittsburgh
+                    </h2>
+                    <p class="subtitle is-5 raleway">
+                        An online museum exhibit about air quality in Pittsburgh
+                    </p>
+                    <figure class="image is-11by5">
+                        <img src="AirInPgh\Project Images, with Background_ 1760 x 800.png"
+                            alt="The Invisible Threats Project Image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!--Overview-->
+        <div class="hero is-small has-background-light" id="overview">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway blu has-text-weight-bold has-text-centered my-6">
+                            Overview
+                        </h3>
+                        <div class="columns my-6">
+                            <div class="column is-half">
+                                <p class="content">
+                                    <b>Time</b><br />
+                                    February 2020 - May 2020<br />
+                                    <b>Client</b><br />
+                                    Carnegie Museum of Natural History<br />
+                                    <b>My Role</b><br />
+                                    Research, Learning Experience Design, Website Development<br />
+                                    <b>Keywords</b><br />
+                                    Informal Learning, Interactive Learning<br />
+                                    <b>Teammates</b><br />
+                                    Estelle Jiang, Elizabeth Wang<br />
+                                </p>
+                            </div>
+                            <div class="column is-half">
+                                <p>
+                                    <b>My Contribution</b>
+                                </p>
+                                <p class="content">
+                                    To understand the issues of air quality in Pittsburgh, I conducted interviews with
+                                    local museum visitors and subject matter experts on the history of Pittsburgh air
+                                    quality and environmental policies.
+                                </p>
+                                <p class="content">
+                                    Based on the research, I fleshed out the specific learning goals for our online
+                                    exhibit. I then designed and developed the online learning experience with
+                                    multimedia assets based on our research findings and learning goals.
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Problem</u>
+                        </h4>
+                        <p class="content my-6">
+                            Pittsburgh had a grim history of poor air quality in the last century because of the mining
+                            and steel industries. It’s still one of the cities with the worst air quality in the US now.
+                            However, many local residents are <span class="has-highlight">not aware of the air quality
+                                issues</span> and <span class="has-highlight">don’t know what
+                                they can do</span> to help improve air quality in their own communities.
+                        </p>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Solution</u>
+                        </h4>
+                        <div class="content is-size-5 my-6">
+                            <p>Our final deliverable is <b>an online web exhibit</b> with three main sections:
+                            </p>
+                            <ul>
+                                <li>Pittsburgh’s air quality throughout history (scrollable gallery)</li>
+                                <li>Types of pollutants in the air (an exploratory activity)</li>
+                                <li>Actions to improve air quality in the future (an interactive game and discussion
+                                    board)</li>
+                            </ul>
+                        </div>
+                        <p class="content my-6">
+                            Visitors will follow the webpage to walk through the exhibit while learning about air
+                            quality, reflecting on their actions by the end.
+                        </p>
+                        <a href="#finalDesign" class="button is-rounded is-outlined is-info my-6">
+                            Jump to Solution Details
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Design Process-->
+        <div class="hero is-small" id="designProcess">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway blu has-text-weight-bold has-text-centered my-6">
+                            Design Process
+                        </h3>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Research Phase</u>
+                        </h4>
+                        <h5 class="title is-4 raleway my-6">
+                            <span class='blu'>&#9632</span> Understanding visitors’ current knowledge
+                        </h5>
+                        <p class="content my-6">
+                            To understand museum visitors’ current understanding and awareness of the air quality issue
+                            in Pittsburgh, we conducted <span class="blue has-text-weight-semibold">personal meaning map
+                                (PMM) studies</span> with the visitors at the
+                            Carnegie Museum of Natural History.
+                        </p>
+                        <div class="content is-size-5 my-6">
+                            <p>
+                                In the PMM study, we asked visitors to:
+                            </p>
+                            <ul>
+                                <li>Create a concept map based on “Pittsburgh Air Quality”</li>
+                                <li>Answer interview questions about their knowledge</li>
+                                <li>Complete a short survey</li>
+                            </ul>
+                        </div>
+                        <div class="columns my-6">
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="AirInPgh\PMM1.JPG" alt="Personal Meaning Map 1">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="AirInPgh\PMM2.JPG" alt="Personal Meaning Map 2">
+                                </figure>
+                            </div>
+                            <div class="column">
+                                <figure class="image">
+                                    <img src="AirInPgh\PMM3.JPG" alt="Personal Meaning Map 3">
+                                </figure>
+                            </div>
+                        </div>
+                        <p class="content my-6">
+                            From the PMM study, we found that:
+                        </p>
+                        <div class="columns my-6">
+                            <div class="column is-8 is-offset-2">
+                                <div class="box">
+                                    <p class="content">
+                                        &#128269 Visitors are <b>not very aware</b> of the air quality issue
+                                        in Pittsburgh but are not reluctant to know more about it.
+                                    </p>
+                                    <p class="content">
+                                        &#128269 <b>Raising awareness</b> of air quality may increase the extent of
+                                        visitors’ knowledge.
+                                    </p>
+                                    <p class="content">
+                                        &#128269 Most visitors <b>only have surface knowledge</b> of, especially the
+                                        negative side of, the air quality in Pittsburgh.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="title is-4 raleway my-6">
+                            <span class='blu'>&#9632</span> Recognizing key learning objectives
+                        </h5>
+                        <p class='content my-6'>
+                            In order to better understand the air quality issues in Pittsburgh, we conducted interviews
+                            with 4 subject matter experts.
+                        </p>
+                        <div class="content is-size-5 my-6">
+                            <p>
+                                These experts informed us on:
+                            </p>
+                            <ul>
+                                <li>the history of air pollution in Pittsburgh</li>
+                                <li>the natures of the air pollutants</li>
+                                <li>how to raise awareness of the air quality issues</li>
+                                <li>how to encourage the participation of local residents.</li>
+                            </ul>
+                        </div>
+                        <figure class="image">
+                            <img src="AirInPgh\SME.png" alt="Subject Matter Experts">
+                        </figure>
+                        <p class="content raleway my-6">
+                            <b>
+                                Learning Objectives
+                            </b>
+                        </p>
+                        <div class="content is-size-5 my-6">
+                            <p>
+                                After interviewing with the subject matter experts, we identified the following learning
+                                objectives:
+                            </p>
+                            <p>Visitors should be able to:</p>
+                            <ul>
+                                <li>
+                                    Recognize that Pittsburgh had a grim history of poor air quality
+                                </li>
+                                <li>
+                                    Recognize the different types of air pollutants and their effects
+                                </li>
+                                <li>
+                                    Understand what actions can be taken to improve air quality 
+                                </li>
+                                <li>
+                                    Recognize how they can contribute to improving air quality
+                                </li>
+                                <li>
+                                    Be positive that the community can work together to improve air quality
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="content raleway my-6">
+                            <b>
+                                Expert Insights
+                            </b>
+                        </p>
+                        <p class="content my-6">
+                            We also gained some design insights from the SME interviews:
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="level">
+            <div class="level-item" data-aos="slide-up">
+                <a class="button is-outlined is-primary" href='index.html'>
+                    Other Projects
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            created() {
+                AOS.init();
+            },
+            data: {
+                isBurgerActive: false
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway' style="font-size: 1rem;">Interested in working with me? <br />Contact me at: <a
+                href="mailto:gzhao@andrew.cmu.edu">gzhao@andrew.cmu.edu</a></p>
+        <p class="raleway" style="font-size: 1rem;">Made with <i class="fas fa-coffee"></i> and <i
+                class="fas fa-heart"></i></p>
+        <p class="raleway" style="font-size: 1rem;">&copy; 2020 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,43 @@
+.raleway {
+    font-family: 'Raleway';
+}
+
+.poppins {
+    font-family: 'poppins'
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.is-vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.blu {
+    color: #03a9f4;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+.has-highlight {
+    background-color: #ccedfc;
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+}
