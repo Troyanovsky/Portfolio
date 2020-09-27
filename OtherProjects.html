@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Other Projects | Guodong Zhao</title>
+    <link rel="icon" href="images\Icon.png">
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145887669-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145887669-1');
+    </script>
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
+
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0;
+        }
+
+        .is-vertical-center {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </h1>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Selected Projects
+                            </a>
+                            <!--
+                            <a class="button is-white">
+                                Case Studies
+                            </a>
+                            <a class="button is-white">
+                                Work Samples
+                            </a>
+                            -->
+                            <a class="button is-white" href="OtherProjects.html#top">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                            <a class="button is-white" href="mailto:gzhao@andrew.cmu.edu" target="_blank">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Other Projects-->
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-8 is-offset-2">
+                            <p class="title is-4 raleway" style="text-decoration: underline">
+                                Other Projects
+                            </p>
+                            <p class="raleway my-6 subtitle is-5" style="font-size: 1.25rem">
+                                Here are some other projects I've done. Some are passion projects and some are my
+                                experiments on new technology.
+                            </p>
+                            <!--UXer Toolbox-->
+                            <div class="box" data-aos="fade-up">
+                                <div class="columns">
+                                    <div class="column is-8">
+                                        <figure class="image is-5by4">
+                                            <img src="OtherProjects\UxerTK Images, with Background_ 600 x 489.png">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4 is-vertical-center">
+                                        <div style="width: 100%">
+                                            <h3 class="title is-4 raleway">
+                                                UXer Toolbox
+                                            </h3>
+                                            <p class="subtitle is-6 raleway">
+                                                A toolbox for UX designers, including color/accessibility/font tools and
+                                                more
+                                            </p>
+                                            <div class="tags">
+                                                <span class="tag">Web Development</span>
+                                                <span class="tag">Vue.js</span>
+                                            </div>
+                                            <hr />
+                                            <div class="columns">
+                                                <div class="column is-one-third">
+                                                    <p class='raleway'><strong>My Role</strong></p>
+                                                </div>
+                                                <div class="column is-two-thirds">
+                                                    <p class='raleway'>Design<br />Development<br />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="buttons">
+                                                <a class="button is-outlined is-primary"
+                                                    href='https://troyanovsky.github.io/UXerToolbox/' target="_blank">
+                                                    See Toolkit
+                                                </a>
+                                                <a class="button is-outlined is-primary"
+                                                    href='https://github.com/Troyanovsky/UXerToolbox' target="_blank">
+                                                    See GitHub Repo
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fragments Editor-->
+                            <div class="box" data-aos="fade-up">
+                                <div class="columns">
+                                    <div class="column is-8">
+                                        <figure class="image is-5by4">
+                                            <img src="OtherProjects\Fragments Images, with Background_ 600 x 490.png">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4 is-vertical-center">
+                                        <div style="width: 100%">
+                                            <h3 class="title is-4 raleway">
+                                                Fragments Snippets Editor
+                                            </h3>
+                                            <p class="subtitle is-6 raleway">
+                                                Script editor for storing and reusing code snippets
+                                            </p>
+                                            <div class="tags">
+                                                <span class="tag">Python</span>
+                                                <span class="tag">Utility Software</span>
+                                            </div>
+                                            <hr />
+                                            <div class="columns">
+                                                <div class="column is-one-third">
+                                                    <p class='raleway'><strong>My Role</strong></p>
+                                                </div>
+                                                <div class="column is-two-thirds">
+                                                    <p class='raleway'>App Design<br />App Development</p>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="buttons">
+                                                <a class="button is-outlined is-primary"
+                                                    @click="isFragmentsActive = true">
+                                                    See Trailer
+                                                </a>
+                                                <a class="button is-outlined is-primary"
+                                                    href='https://github.com/Troyanovsky/Fragments' target="_blank">
+                                                    See GitHub Repo
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <b-modal v-model="isFragmentsActive">
+                                <figure class="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360"
+                                        src="https://www.youtube.com/embed/UwbHcelVWm8?showinfo=0" frameborder="0"
+                                        allowfullscreen></iframe>
+                                </figure>
+                            </b-modal>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            created() {
+                AOS.init();
+            },
+            data: {
+                isBurgerActive: false,
+                isFragmentsActive: false,
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway'>Interested in working with me? <br />Contact me at: <a
+                href="mailto:gzhao@andrew.cmu.edu">gzhao@andrew.cmu.edu</a></p>
+        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+        <p class="raleway">&copy; 2020 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>
