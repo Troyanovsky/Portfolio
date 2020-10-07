@@ -172,7 +172,8 @@
                                 <div class="columns">
                                     <div class="column is-8">
                                         <figure class="image is-5by4">
-                                            <img src="OtherProjects\VR Scenarios Images, with Background_ 600 x 488.png">
+                                            <img
+                                                src="OtherProjects\VR Scenarios Images, with Background_ 600 x 488.png">
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
@@ -217,6 +218,54 @@
                                 <figure class="image is-16by9">
                                     <iframe class="has-ratio" width="640" height="360"
                                         src="https://www.youtube.com/embed/J0QGqIl1OtI?showinfo=0" frameborder="0"
+                                        allowfullscreen></iframe>
+                                </figure>
+                            </b-modal>
+                            <!--Whitewhale-->
+                            <div class="box" data-aos="fade-up">
+                                <div class="columns">
+                                    <div class="column is-8">
+                                        <figure class="image is-5by4" v-on:click="isWhitewhaleModalActive = true" style="cursor: pointer;">
+                                            <img
+                                                src="OtherProjects\Whitewhale Images, with Background_ 600 x 488.png">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4 is-vertical-center">
+                                        <div style="width: 100%">
+                                            <h3 class="title is-4 raleway">
+                                                White Whale Bookstore: Where Cultures Meet
+                                            </h3>
+                                            <p class="subtitle is-6 raleway">
+                                                A short VR documentary about an independent local bookstore
+                                            </p>
+                                            <div class="tags">
+                                                <span class="tag">Virtual Reality</span>
+                                                <span class="tag">Documentary</span>
+                                            </div>
+                                            <hr />
+                                            <div class="columns">
+                                                <div class="column is-one-third">
+                                                    <p class='raleway'><strong>My Role</strong></p>
+                                                </div>
+                                                <div class="column is-two-thirds">
+                                                    <p class='raleway'>Script Writing<br />Video Production</p>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="buttons">
+                                                <a class="button is-outlined is-primary"
+                                                    @click="isWhitewhaleModalActive = true">
+                                                    See 360° Video
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <b-modal v-model="isWhitewhaleModalActive">
+                                <figure class="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360"
+                                        src="https://www.youtube.com/embed/oQ-ZVHighEM?showinfo=0" frameborder="0"
                                         allowfullscreen></iframe>
                                 </figure>
                             </b-modal>
@@ -344,7 +393,8 @@
                 isBurgerActive: false,
                 isFragmentsActive: false,
                 isVueJsActive: false,
-                isScenarioModalActive: false
+                isScenarioModalActive: false,
+                isWhitewhaleModalActive: false
             },
             methods: {
                 toggleBurger: function () {
