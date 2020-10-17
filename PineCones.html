@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PineCones | Guodong Zhao</title>
+    <link rel="icon" href="images\Icon.png">
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="PineCones\PineCones.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145887669-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145887669-1');
+    </script>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </h1>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Selected Projects
+                            </a>
+                            <!--
+                            <a class="button is-white">
+                                Case Studies
+                            </a>
+                            <a class="button is-white">
+                                Work Samples
+                            </a>
+                            -->
+                            <a class="button is-white" href="OtherProjects.html#top">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                            <a class="button is-white" href="mailto:gzhao@andrew.cmu.edu" target="_blank">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Project Entry-->
+        <div class="hero is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <h2 class="title is-3 raleway blu">
+                        PineCones
+                    </h2>
+                    <p class="subtitle is-5 raleway">
+                        An online starred problemset for saving and reviewing mistaken problems.
+                    </p>
+                    <figure class="image is-11by5">
+                        <img src="PineCones\PineCones Project Images, with Background_ 1760 x 800.png"
+                            alt="PineCones Project Image">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <!--Overview-->
+        <div class="hero is-small" id="overview">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway blu has-text-weight-bold has-text-centered my-6">
+                            Overview
+                        </h3>
+                        <div class="columns my-6">
+                            <div class="column is-half">
+                                <p class="content">
+                                    <b class="blu">Time</b><br />
+                                    Jan 2020 - Aug 2020<br />
+                                    <b class="blu">Client</b><br />
+                                    Squirrel AI by Yixue Group<br />
+                                    <b class="blu">My Role</b><br />
+                                    Product Management, Research Lead<br />
+                                    <b class="blu">Keywords</b><br />
+                                    EdTech Tool Design, Online Learning, Product Management<br />
+                                    <b class="blu">Teammates</b><br />
+                                    Miaojun Xu (Project Lead), Yuchen Xie (Design Lead) <br />Jiachen Gong (Development
+                                    Lead)<br />
+                                </p>
+                            </div>
+                            <div class="column is-half">
+                                <p>
+                                    <b class="blu">My Contribution</b>
+                                </p>
+                                <p class="content">
+                                    Led the team in identifying possible problems through qualitative user interviews
+                                    and quantitative metrics analysis.
+                                </p>
+                                <p class="content">
+                                    Collaborated with design lead for ideating possible solutions and prioritizing
+                                    solution features.
+                                    Evaluated and iterated design solutions based on user testing and surveys.
+                                </p>
+                                <p class="content">
+                                    Defined solution features and user stories for handoff to our client’s dev team.
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Problem</u>
+                        </h4>
+                        <p class="poppins is-size-4 my-6 has-highlight">
+                            How Might We help students learn from their most important mistakes by categorizing,
+                            organizing, and analyzing them?
+                        </p>
+                        <p class="content prpl is-size-6" v-on:click="toggleProjectBackground" style="cursor: pointer;">
+                            <u>{{ projectBackgroundButton }}</u>
+                        </p>
+                        <p class="content my-6" v-if="projectBackgroundButton == 'Show Less'">
+                            Our client, Squirrel AI, offers an online learning platform powered by AI in China. The
+                            Squirrel AI online learning platform has a feature called Mistake Analysis System where the
+                            students can do Mistake Analysis Related Study (MARS) like correcting and analyzing mistakes
+                            and reviewing related knowledge components (KC’s). Our project aims to improve the learning
+                            experience of the Mistake analysis system.
+                        </p>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Solution</u>
+                        </h4>
+                        <div class="box my-6">
+                            <div class="columns is-vcentered">
+                                <div class="column is-half">
+                                    <figure class="image">
+                                        <img src="PineCones\videoCover.png" alt="Concept Video" style="cursor: pointer;"
+                                            @click="isConceptVideoActive = true">
+                                    </figure>
+                                </div>
+                                <div class="column is-half">
+                                    <p class="content is-size-4">
+                                        A personalized collection of important mistaken problems with
+                                        intelligent support for reflection and review.
+                                    </p>
+                                    <p class="content is-size-6">
+                                        The solution we proposed is the Starred Problem Set feature to be hosted
+                                        within Squirrel AI's MARS system. Students can filter the mistaken problems that
+                                        are important to them and annotate them with procedural and content scaffolds
+                                        for
+                                        future review.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <b-modal v-model="isConceptVideoActive">
+                            <figure class="image is-16by9">
+                                <iframe class="has-ratio" width="640" height="360"
+                                    src="https://www.youtube.com/embed/QYyGUbYVtTQ?showinfo=0" frameborder="0"
+                                    allowfullscreen></iframe>
+                            </figure>
+                        </b-modal>
+                        <h5 class="title is-4 raleway my-6">
+                            <span class='blu'>&#9632</span> User Story 1: Adding Problems to the Starred Problem Set
+                        </h5>
+                        <p class="content is-size-4 my-6 has-blu-outline">
+                            As a learner, after each lesson, I want to categorize and annotate my most important
+                            mistaken problems, so that I can review them later.
+                        </p>
+                        <figure class="image my-6">
+                            <img src="PineCones\userStory1Flow.png" alt="User Story 1 Flow">
+                        </figure>
+                        <div class="columns is-vcentered my-6">
+                            <div class="column is-4">
+                                <p class="content">
+                                    Add problems and categorize them by importance and difficulty from the MARS system
+                                </p>
+                            </div>
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory1Categorize.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="columns is-vcentered my-6 reverse-column-order">
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory1Text.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                            <div class="column is-4">
+                                <p class="content">
+                                    Highlight important concepts in the problem, add comments with concept definitions
+                                    autofilled, and ask teachers
+                                </p>
+                            </div>
+                        </div>
+                        <div class="columns is-vcentered my-6">
+                            <div class="column is-4">
+                                <p class="content">
+                                    Reflect on problem solving strategies by annotating on images
+                                </p>
+                            </div>
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory1Image.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="columns is-vcentered my-6 reverse-column-order">
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory1Submit.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                            <div class="column is-4">
+                                <p class="content">
+                                    Submit annotated problems for future review
+                                </p>
+                            </div>
+                        </div>
+                        <h5 class="title is-4 raleway my-6">
+                            <span class='blu'>&#9632</span> User Story 2: Reviewing Problems in the Starred Problem Set
+                        </h5>
+                        <p class="content is-size-4 my-6 has-blu-outline">
+                            As a learner, before exams, I want to filter out the relevant problems with my notes, so
+                            that I can review them and practice for the exam.
+                        </p>
+                        <figure class="image my-6">
+                            <img src="PineCones\userStory2Flow.png" alt="User Story 2 Flow">
+                        </figure>
+                        <div class="columns is-vcentered my-6">
+                            <div class="column is-4">
+                                <p class="content">
+                                    Toggle On/Off annotations for different review purposes
+                                </p>
+                            </div>
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory2Viewmodes.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="columns is-vcentered my-6 reverse-column-order">
+                            <div class="column is-8">
+                                <figure class="image">
+                                    <video autoplay loop muted>
+                                        <source src="PineCones\userStory2Teacher.mp4" type="video/mp4" />
+                                    </video>
+                                </figure>
+                            </div>
+                            <div class="column is-4">
+                                <p class="content">
+                                    Interact with the teacher for feedback synchronously or asynchronously
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                            <u>Evaluation</u>
+                        </h4>
+                        <div class="content is-size-5 my-6">
+                            <p>
+                                To measure the success of the design, we conducted surveys with our users regarding the
+                                following aspects:
+                            </p>
+                            <ul>
+                                <li>
+                                    Benefits towards learning
+                                </li>
+                                <li>
+                                    Efficiency during the annotation process
+                                </li>
+                                <li>
+                                    Communication with teachers
+                                </li>
+                                <li>
+                                    Difficulty level in reviewing problems
+                                </li>
+                            </ul>
+                        </div>
+                        <figure class="image my-6">
+                            <img src="PineCones\surveyFeedback.png" alt="Survey Result">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Design Process-->
+
+        <div class="level">
+            <div class="level-item" data-aos="slide-up">
+                <a class="button is-outlined is-primary" href='index.html'>
+                    Other Projects
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            created() {
+                AOS.init();
+            },
+            data: {
+                isBurgerActive: false,
+                projectBackgroundButton: "See project background",
+                isConceptVideoActive: false
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                },
+                toggleProjectBackground: function () {
+                    if (this.projectBackgroundButton == "See project background") {
+                        this.projectBackgroundButton = "Show Less"
+                    } else {
+                        this.projectBackgroundButton = "See project background"
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway' style="font-size: 1rem;">Interested in working with me? <br />Contact me at: <a
+                href="mailto:gzhao@andrew.cmu.edu">gzhao@andrew.cmu.edu</a></p>
+        <p class="raleway" style="font-size: 1rem;">Made with <i class="fas fa-coffee"></i> and <i
+                class="fas fa-heart"></i></p>
+        <p class="raleway" style="font-size: 1rem;">&copy; 2020 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>

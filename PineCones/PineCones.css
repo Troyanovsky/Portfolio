@@ -84,3 +84,16 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+.has-blu-outline {
+    outline-style: solid;
+    outline-color: #5d73df;
+}
+
+@media screen and (max-width: 769px) {
+    .reverse-column-order {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
