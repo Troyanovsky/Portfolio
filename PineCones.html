@@ -122,7 +122,8 @@
                                     <b class="blu">Keywords</b><br />
                                     EdTech Tool Design, Online Learning, Product Management<br />
                                     <b class="blu">Teammates</b><br />
-                                    Miaojun Xu (Project Lead), Yuchen Xie (Design Lead) <br />Jiachen Gong (Development
+                                    Miaojun Xu (Project Lead), Yuchen Xie (Design Lead) <br />Jiachen Gong
+                                    (Development
                                     Lead)<br />
                                 </p>
                             </div>
@@ -131,7 +132,8 @@
                                     <b class="blu">My Contribution</b>
                                 </p>
                                 <p class="content">
-                                    Led the team in identifying possible problems through qualitative user interviews
+                                    Led the team in identifying possible problems through qualitative user
+                                    interviews
                                     and quantitative metrics analysis.
                                 </p>
                                 <p class="content">
@@ -144,193 +146,346 @@
                                 </p>
                             </div>
                         </div>
-                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
-                            <u>Problem</u>
-                        </h4>
-                        <p class="poppins is-size-4 my-6 has-highlight">
-                            How Might We help students learn from their most important mistakes by categorizing,
-                            organizing, and analyzing them?
-                        </p>
-                        <p class="content prpl is-size-6" v-on:click="toggleProjectBackground" style="cursor: pointer;">
-                            <u>{{ projectBackgroundButton }}</u>
-                        </p>
-                        <p class="content my-6" v-if="projectBackgroundButton == 'Show Less'">
-                            Our client, Squirrel AI, offers an online learning platform powered by AI in China. The
-                            Squirrel AI online learning platform has a feature called Mistake Analysis System where the
-                            students can do Mistake Analysis Related Study (MARS) like correcting and analyzing mistakes
-                            and reviewing related knowledge components (KC’s). Our project aims to improve the learning
-                            experience of the Mistake analysis system.
-                        </p>
-                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
-                            <u>Solution</u>
-                        </h4>
-                        <div class="box my-6">
-                            <div class="columns is-vcentered">
-                                <div class="column is-half">
-                                    <figure class="image">
-                                        <img src="PineCones\videoCover.png" alt="Concept Video" style="cursor: pointer;"
-                                            @click="isConceptVideoActive = true">
-                                    </figure>
-                                </div>
-                                <div class="column is-half">
-                                    <p class="content is-size-4">
-                                        A personalized collection of important mistaken problems with
-                                        intelligent support for reflection and review.
-                                    </p>
-                                    <p class="content is-size-6">
-                                        The solution we proposed is the Starred Problem Set feature to be hosted
-                                        within Squirrel AI's MARS system. Students can filter the mistaken problems that
-                                        are important to them and annotate them with procedural and content scaffolds
-                                        for
-                                        future review.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <b-modal v-model="isConceptVideoActive">
-                            <figure class="image is-16by9">
-                                <iframe class="has-ratio" width="640" height="360"
-                                    src="https://www.youtube.com/embed/QYyGUbYVtTQ?showinfo=0" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </figure>
-                        </b-modal>
-                        <h5 class="title is-4 raleway my-6">
-                            <span class='blu'>&#9632</span> User Story 1: Adding Problems to the Starred Problem Set
-                        </h5>
-                        <p class="content is-size-4 my-6 has-blu-outline">
-                            As a learner, after each lesson, I want to categorize and annotate my most important
-                            mistaken problems, so that I can review them later.
-                        </p>
-                        <figure class="image my-6">
-                            <img src="PineCones\userStory1Flow.png" alt="User Story 1 Flow">
-                        </figure>
-                        <div class="columns is-vcentered my-6">
-                            <div class="column is-4">
-                                <p class="content">
-                                    Add problems and categorize them by importance and difficulty from the MARS system
-                                </p>
-                            </div>
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory1Categorize.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="columns is-vcentered my-6 reverse-column-order">
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory1Text.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                            <div class="column is-4">
-                                <p class="content">
-                                    Highlight important concepts in the problem, add comments with concept definitions
-                                    autofilled, and ask teachers
-                                </p>
-                            </div>
-                        </div>
-                        <div class="columns is-vcentered my-6">
-                            <div class="column is-4">
-                                <p class="content">
-                                    Reflect on problem solving strategies by annotating on images
-                                </p>
-                            </div>
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory1Image.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="columns is-vcentered my-6 reverse-column-order">
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory1Submit.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                            <div class="column is-4">
-                                <p class="content">
-                                    Submit annotated problems for future review
-                                </p>
-                            </div>
-                        </div>
-                        <h5 class="title is-4 raleway my-6">
-                            <span class='blu'>&#9632</span> User Story 2: Reviewing Problems in the Starred Problem Set
-                        </h5>
-                        <p class="content is-size-4 my-6 has-blu-outline">
-                            As a learner, before exams, I want to filter out the relevant problems with my notes, so
-                            that I can review them and practice for the exam.
-                        </p>
-                        <figure class="image my-6">
-                            <img src="PineCones\userStory2Flow.png" alt="User Story 2 Flow">
-                        </figure>
-                        <div class="columns is-vcentered my-6">
-                            <div class="column is-4">
-                                <p class="content">
-                                    Toggle On/Off annotations for different review purposes
-                                </p>
-                            </div>
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory2Viewmodes.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="columns is-vcentered my-6 reverse-column-order">
-                            <div class="column is-8">
-                                <figure class="image">
-                                    <video autoplay loop muted>
-                                        <source src="PineCones\userStory2Teacher.mp4" type="video/mp4" />
-                                    </video>
-                                </figure>
-                            </div>
-                            <div class="column is-4">
-                                <p class="content">
-                                    Interact with the teacher for feedback synchronously or asynchronously
-                                </p>
-                            </div>
-                        </div>
-                        <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
-                            <u>Evaluation</u>
-                        </h4>
-                        <div class="content is-size-5 my-6">
-                            <p>
-                                To measure the success of the design, we conducted surveys with our users regarding the
-                                following aspects:
+
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Problem</u>
+                            </h4>
+                            <p class="poppins is-size-4 my-6 has-highlight">
+                                How Might We help students learn from their most important mistakes by categorizing,
+                                organizing, and analyzing them?
                             </p>
-                            <ul>
-                                <li>
-                                    Benefits towards learning
-                                </li>
-                                <li>
-                                    Efficiency during the annotation process
-                                </li>
-                                <li>
-                                    Communication with teachers
-                                </li>
-                                <li>
-                                    Difficulty level in reviewing problems
-                                </li>
-                            </ul>
+                            <p class="content prpl is-size-6" v-on:click="toggleProjectBackground"
+                                style="cursor: pointer;">
+                                <u>{{ projectBackgroundButton }}</u>
+                            </p>
+                            <p class="content my-6" v-if="projectBackgroundButton == 'Show Less'">
+                                Our client, Squirrel AI, offers an online learning platform powered by AI in China. The
+                                Squirrel AI online learning platform has a feature called Mistake Analysis System where
+                                the
+                                students can do Mistake Analysis Related Study (MARS) like correcting and analyzing
+                                mistakes
+                                and reviewing related knowledge components (KC’s). Our project aims to improve the
+                                learning
+                                experience of the Mistake analysis system.
+                            </p>
                         </div>
-                        <figure class="image my-6">
-                            <img src="PineCones\surveyFeedback.png" alt="Survey Result">
-                        </figure>
+
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Solution</u>
+                            </h4>
+
+                            <div class="box my-6">
+                                <div class="columns is-vcentered">
+                                    <div class="column is-half">
+                                        <figure class="image">
+                                            <img src="PineCones\videoCover.png" alt="Concept Video"
+                                                style="cursor: pointer;" @click="isConceptVideoActive = true">
+                                        </figure>
+                                    </div>
+                                    <div class="column is-half">
+                                        <p class="content is-size-4">
+                                            A personalized collection of important mistaken problems with
+                                            intelligent support for reflection and review.
+                                        </p>
+                                        <p class="content is-size-6">
+                                            The solution we proposed is the Starred Problem Set feature to be hosted
+                                            within Squirrel AI's MARS system. Students can filter the mistaken
+                                            problems
+                                            that
+                                            are important to them and annotate them with procedural and content
+                                            scaffolds
+                                            for
+                                            future review.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <b-modal v-model="isConceptVideoActive">
+                                <figure class="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360"
+                                        src="https://www.youtube.com/embed/QYyGUbYVtTQ?showinfo=0" frameborder="0"
+                                        allowfullscreen></iframe>
+                                </figure>
+                            </b-modal>
+
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> User Story 1: Adding Problems to the Starred Problem
+                                    Set
+                                </h5>
+                                <p class="content is-size-4 my-6 has-blu-outline">
+                                    As a learner, after each lesson, I want to categorize and annotate my most important
+                                    mistaken problems, so that I can review them later.
+                                </p>
+                                <figure class="image my-6">
+                                    <img src="PineCones\userStory1Flow.png" alt="User Story 1 Flow">
+                                </figure>
+                                <div class="columns is-vcentered my-6">
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Add problems and categorize them by importance and difficulty from the MARS
+                                            system
+                                        </p>
+                                    </div>
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory1Categorize.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered my-6 reverse-column-order">
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory1Text.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Highlight important concepts in the problem, add comments with concept
+                                            definitions
+                                            autofilled, and ask teachers
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered my-6">
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Reflect on problem solving strategies by annotating on images
+                                        </p>
+                                    </div>
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory1Image.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered my-6 reverse-column-order">
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory1Submit.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Submit annotated problems for future review
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> User Story 2: Reviewing Problems in the Starred
+                                    Problem
+                                    Set
+                                </h5>
+                                <p class="content is-size-4 my-6 has-blu-outline">
+                                    As a learner, before exams, I want to filter out the relevant problems with my
+                                    notes, so
+                                    that I can review them and practice for the exam.
+                                </p>
+                                <figure class="image my-6">
+                                    <img src="PineCones\userStory2Flow.png" alt="User Story 2 Flow">
+                                </figure>
+                                <div class="columns is-vcentered my-6">
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Toggle On/Off annotations for different review purposes
+                                        </p>
+                                    </div>
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory2Viewmodes.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="columns is-vcentered my-6 reverse-column-order">
+                                    <div class="column is-8">
+                                        <figure class="image">
+                                            <video autoplay loop muted>
+                                                <source src="PineCones\userStory2Teacher.mp4" type="video/mp4" />
+                                            </video>
+                                        </figure>
+                                    </div>
+                                    <div class="column is-4">
+                                        <p class="content">
+                                            Interact with the teacher for feedback synchronously or asynchronously
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Evaluation</u>
+                            </h4>
+                            <div class="content is-size-5 my-6">
+                                <p>
+                                    To measure the success of the design, we conducted surveys with our users regarding
+                                    the
+                                    following aspects:
+                                </p>
+                                <ul>
+                                    <li>
+                                        Benefits towards learning
+                                    </li>
+                                    <li>
+                                        Efficiency during the annotation process
+                                    </li>
+                                    <li>
+                                        Communication with teachers
+                                    </li>
+                                    <li>
+                                        Difficulty level in reviewing problems
+                                    </li>
+                                </ul>
+                            </div>
+                            <figure class="image my-6">
+                                <img src="PineCones\surveyFeedback.png" alt="Survey Result">
+                            </figure>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--Design Process-->
+        <div class="hero is-small" id="designProcess">
+            <div class="hero-body">
+                <div class="columns">
+                    <div class="column is-8 is-offset-2">
+                        <h3 class="title is-3 raleway blu has-text-weight-bold has-text-centered my-6">
+                            Design Process
+                        </h3>
+                        <figure class="image my-6">
+                            <img src="PineCones\process.png" alt="Design Process">
+                        </figure>
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Research Phase</u>
+                            </h4>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Preliminary Research
+                                </h5>
+                                <p class="content my-6">
+                                    At the beginning of our project, we conducted a series of preliminary research,
+                                    including
+                                    product analysis, stakeholder mapping, and competitive analysis, to find the focus
+                                    of our project
+                                    and identify potential stakeholders for interviews.
+                                </p>
+                                <p class="content prpl is-size-6" v-on:click="togglePreliminary"
+                                    style="cursor: pointer;">
+                                    <u>{{ preliminaryButton }}</u>
+                                </p>
+                                <div class="my-6" v-if="preliminaryButton == 'Show Less'">
+                                    <b-carousel>
+                                        <b-carousel-item v-for="(carousel, i) in preliminaryResearch" :key="i">
+                                            <figure class="image">
+                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
+                                            </figure>
+                                        </b-carousel-item>
+                                    </b-carousel>
+                                </div>
+                                <p class="content my-6">
+                                    Based on the results of the preliminary research, we identified <span
+                                        class="has-highlight">Mistake-Analysis
+                                        Related Study (MARS)</span> as our main focus. Because it has a relatively <b
+                                        class="blu">low opportunity
+                                        cost and little interference with the main system</b>, but it can have a <b
+                                        class="blu">high positive
+                                        impact</b> on the students’ learning experience and their user experience.
+                                </p>
+                                <figure class="image my-6">
+                                    <img src="PineCones\focusDirectin.png" alt="Focusing Direction">
+                                </figure>
+                            </div>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Understanding the MARS Learning Process
+                                </h5>
+                                <p class="content my-6">
+                                    To understand the essential steps of the MARS learning process, we <b>conducted
+                                        semi-structured interviews with 4 expert students and 6 learning experts
+                                        (SMEs)</b>.
+                                </p>
+                                <p class="content my-6">
+                                    Based on the interviews, we identified the four main steps of the MARS learning
+                                    process:
+                                </p>
+                                <figure class="image my-6">
+                                    <img src="PineCones\MARSFlow.png" alt="MARS learning flow">
+                                </figure>
+                                <p class="content prpl is-size-6" v-on:click="toggleMARSFlow" style="cursor: pointer;">
+                                    <u>{{ flowButton }}</u>
+                                </p>
+                                <div class="my-6" v-if="flowButton == 'Show Less'">
+                                    <b-carousel>
+                                        <b-carousel-item v-for="(carousel, i) in MARSFlow" :key="i">
+                                            <figure class="image">
+                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
+                                            </figure>
+                                        </b-carousel-item>
+                                    </b-carousel>
+                                </div>
+                                <p class="content my-6">
+                                    We found that the current online MARS system does not support the full MARS learning
+                                    process -
+                                    <b class='blu'>the selection and annotation/analysis steps are missing.</b>
+                                </p>
+                            </div>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Understanding User Needs and Challenges
+                                </h5>
+                                <p class="content my-6">
+                                    To understand the needs and challenges of the primary users of the online learning
+                                    platform, the students and teachers, we <b>interviewed 32 students and 7
+                                        teachers</b>. We
+                                    also <b>examined the feature usage metrics</b> in the MARS system.
+                                </p>
+                                <p class="content my-6">
+                                    Based on synthesized insights from affinity diagrams, we built identity models and
+                                    experience maps to illustrate the user needs and challenges, which point to the
+                                    potential areas of improvement for the online MARS system.
+                                </p>
+                                <div class="columns my-6">
+                                    <b-carousel>
+                                        <b-carousel-item v-for="(carousel, i) in userModels" :key="i">
+                                            <figure class="image">
+                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
+                                            </figure>
+                                        </b-carousel-item>
+                                    </b-carousel>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero is-small">
+            <div class="container">
+                <p class="is-size-1 content blu">
+                    TO BE CONTINUED
+                </p>
+            </div>
+        </div>
+
 
         <div class="level">
             <div class="level-item" data-aos="slide-up">
@@ -361,7 +516,22 @@
             data: {
                 isBurgerActive: false,
                 projectBackgroundButton: "See project background",
-                isConceptVideoActive: false
+                isConceptVideoActive: false,
+                preliminaryButton: "See Details",
+                flowButton: "See Details",
+                preliminaryResearch: [
+                    { link: 'PineCones/preliminaryStakeholderMap.png', text: 'Stakeholder Map' },
+                    { link: 'PineCones/preliminaryCompetitive.png', text: 'Competitive Analysis' }
+                ],
+                MARSFlow: [
+                    { link: 'PineCones/flowCollection.png', text: 'Collection Step' },
+                    { link: 'PineCones/flowSelectionAnnotation.png', text: 'Selection and Annotation Steps' },
+                    { link: 'PineCones/flowReview.png', text: 'Review Step' }
+                ],
+                userModels: [
+                    { link: 'PineCones/studentModel.png', text: 'Student Model' },
+                    { link: 'PineCones/teacherModel.png', text: 'Teacher Model' }
+                ]
             },
             methods: {
                 toggleBurger: function () {
@@ -372,6 +542,22 @@
                         this.projectBackgroundButton = "Show Less"
                     } else {
                         this.projectBackgroundButton = "See project background"
+                    }
+                },
+
+                togglePreliminary: function () {
+                    if (this.preliminaryButton == "See Details") {
+                        this.preliminaryButton = "Show Less"
+                    } else {
+                        this.preliminaryButton = "See Details"
+                    }
+                },
+
+                toggleMARSFlow: function () {
+                    if (this.flowButton == "See Details") {
+                        this.flowButton = "Show Less"
+                    } else {
+                        this.flowButton = "See Details"
                     }
                 }
             }

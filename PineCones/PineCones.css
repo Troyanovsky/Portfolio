@@ -90,10 +90,15 @@ p {
     outline-color: #5d73df;
 }
 
+.small-section {
+    display: inline-block
+}
+
 @media screen and (max-width: 769px) {
     .reverse-column-order {
       display: flex;
       flex-direction: column-reverse;
     }
   }
+
 
