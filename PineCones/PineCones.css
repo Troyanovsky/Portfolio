@@ -81,7 +81,7 @@ p {
     background-color: #fff;
     transform: rotateY(180deg);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 

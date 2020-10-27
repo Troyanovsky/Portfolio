@@ -173,6 +173,19 @@
 
                         <div class="small-section my-6">
                             <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Target Users</u>
+                            </h4>
+                            <p class="content">
+                                <span class='has-highlight'>Students in grades 7-12</span> who take part in the
+                                after-school learning program at Squirrel
+                                AI to review learning concepts and practice additional problems on the online adaptive
+                                learning
+                                platform.
+                            </p>
+                        </div>
+
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
                                 <u>Solution</u>
                             </h4>
 
@@ -462,9 +475,19 @@
                                     experience maps to illustrate the user needs and challenges, which point to the
                                     potential areas of improvement for the online MARS system.
                                 </p>
-                                <div class="columns my-6">
+                                <figure class="image my-6">
+                                    <img src="PineCones/studentModel.png" alt="Student Model">
+                                </figure>
+                                <figure class="image my-6">
+                                    <img src="PineCones/teacherModel.png" alt="Teacher Model">
+                                </figure>
+                                <p class="content prpl is-size-6" v-on:click="toggleTeacherFlow"
+                                    style="cursor: pointer;">
+                                    <u>{{ teacherFlowButton }}</u>
+                                </p>
+                                <div class="my-6" v-if="teacherFlowButton == 'Show Less'">
                                     <b-carousel>
-                                        <b-carousel-item v-for="(carousel, i) in userModels" :key="i">
+                                        <b-carousel-item v-for="(carousel, i) in teacherFlow" :key="i">
                                             <figure class="image">
                                                 <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
                                             </figure>
@@ -472,6 +495,141 @@
                                     </b-carousel>
                                 </div>
                             </div>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Synthesizing the Main Problems
+                                </h5>
+                                <p class="content">
+                                    From feature usage metrics and user interviews with students and teachers, we can
+                                    synthesize the results into the following main problems:
+                                </p>
+                                <p class="content is-size-6">* Hover over card to see evidence</p>
+                                <div>
+                                    <div class="columns">
+                                        <div class="column is-3">
+                                            <div class="box">
+                                                <div class="flip-box">
+                                                    <div class="flip-box-inner">
+                                                        <div class="flip-box-front">
+                                                            <p class="content has-text-weight-semibold">
+                                                                The current system does not support the full MARS
+                                                                learning flow.
+                                                            </p>
+                                                        </div>
+                                                        <div class="flip-box-back">
+                                                            <p class="content is-size-6">
+                                                                <b class='blu'>From SME Interviews:</b> <br />
+                                                                The current system <span class="has-highlight">misses
+                                                                    the critical steps of
+                                                                    selection and annotation/analysis</span> in MARS
+                                                                learning.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-3">
+                                            <div class="box">
+                                                <div class="flip-box">
+                                                    <div class="flip-box-inner">
+                                                        <div class="flip-box-front">
+                                                            <p class="content has-text-weight-semibold">
+                                                                Students lack internal & external motivation for doing
+                                                                MARS
+                                                            </p>
+                                                        </div>
+                                                        <div class="flip-box-back">
+                                                            <p class="content is-size-6">
+                                                                <b class='blu'>From Student Interviews:</b> <br />
+                                                                Using MARS <span class="has-highlight">as a formality of
+                                                                    homework</span> can easily lead to
+                                                                a lack of motivation for the students.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-3">
+                                            <div class="box">
+                                                <div class="flip-box">
+                                                    <div class="flip-box-inner">
+                                                        <div class="flip-box-front">
+                                                            <p class="content has-text-weight-semibold">
+                                                                Students can’t see the value of MARS features due to limited
+                                                                metacognitive abilities
+                                                            </p>
+                                                        </div>
+                                                        <div class="flip-box-back">
+                                                            <p class="content is-size-6">
+                                                                <b class='blu'>From Usage Metrics and Teacher
+                                                                    Interviews:</b> <br />
+                                                                Students <span class='has-highlight'>don’t know how to
+                                                                    categorize and analyze</span> their mistakes without
+                                                                scaffolds.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="column is-3">
+                                            <div class="box">
+                                                <div class="flip-box">
+                                                    <div class="flip-box-inner">
+                                                        <div class="flip-box-front">
+                                                            <p class="content has-text-weight-semibold">
+                                                                The current system cannot provide good online-offline
+                                                                integration
+                                                            </p>
+                                                        </div>
+                                                        <div class="flip-box-back">
+                                                            <p class="content is-size-6">
+                                                                <b class='blu'>From Student and Teacher Interviews:</b>
+                                                                <br />
+                                                                Students <span class="has-highlight">have difficulty
+                                                                    accessing the system at school.</span>
+                                                                Thus, they cannot take full advantage of the system.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="small-section my-6">
+                            <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
+                                <u>Design Phase</u>
+                            </h4>
+                            <p class="content my-6">Based on the main problems we've identified, we came up with the
+                                following "How Might We" statements to guide our ideation.</p>
+                            <div class="content is-size-5 my-6">
+                                <p class='blu'>How Might We</p>
+                                <ul>
+                                    <li>Implement the steps of selection and annotation in an online environment?</li>
+                                    <li>Provide additional values other than homework practice in MARS?</li>
+                                    <li>Scaffold students’ metacognitive processes of categorization and analysis?</li>
+                                    <li>Enable students to take advantage of the system both online and offline?</li>
+                                </ul>
+                            </div>
+                            <p class="content my-6">
+                                Based on our HMW statements, we generated <b>over 40 initial ideas</b> through Brainstorming.
+                                We then <b>evaluated those ideas</b> in <span v-on:click="isMatrixActive = true" style="cursor: pointer;">a difficulty & importance matrix</span>, speed-dated them with 11
+                                users and clients to get feedback, and finalized our idea considering design, business,
+                                and implementation constraints.
+                            </p>
+                            <b-modal v-model="isMatrixActive">
+                                <figure class="image">
+                                    <img src="PineCones\matrix.png" alt="Difficulty & Importance Matrix">
+                                </figure>
+                            </b-modal>
+                            <figure class="image">
+                                <img src="PineCones\ideaSelection.png" alt="Narrow down ideas">
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -519,6 +677,8 @@
                 isConceptVideoActive: false,
                 preliminaryButton: "See Details",
                 flowButton: "See Details",
+                teacherFlowButton: "See Details",
+                isMatrixActive: false,
                 preliminaryResearch: [
                     { link: 'PineCones/preliminaryStakeholderMap.png', text: 'Stakeholder Map' },
                     { link: 'PineCones/preliminaryCompetitive.png', text: 'Competitive Analysis' }
@@ -528,10 +688,11 @@
                     { link: 'PineCones/flowSelectionAnnotation.png', text: 'Selection and Annotation Steps' },
                     { link: 'PineCones/flowReview.png', text: 'Review Step' }
                 ],
-                userModels: [
-                    { link: 'PineCones/studentModel.png', text: 'Student Model' },
-                    { link: 'PineCones/teacherModel.png', text: 'Teacher Model' }
-                ]
+                teacherFlow: [
+                    { link: 'PineCones/teacherFlow 1.png', text: 'Teacher Flow 1' },
+                    { link: 'PineCones/teacherFlow 2.png', text: 'Teacher Flow 2' },
+                    { link: 'PineCones/teacherFlow 3.png', text: 'Teacher Flow 3' }
+                ],
             },
             methods: {
                 toggleBurger: function () {
@@ -558,6 +719,13 @@
                         this.flowButton = "Show Less"
                     } else {
                         this.flowButton = "See Details"
+                    }
+                },
+                toggleTeacherFlow: function () {
+                    if (this.teacherFlowButton == "See Details") {
+                        this.teacherFlowButton = "Show Less"
+                    } else {
+                        this.teacherFlowButton = "See Details"
                     }
                 }
             }
