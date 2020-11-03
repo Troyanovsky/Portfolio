@@ -557,7 +557,8 @@
                                                     <div class="flip-box-inner">
                                                         <div class="flip-box-front">
                                                             <p class="content has-text-weight-semibold">
-                                                                Students can’t see the value of MARS features due to limited
+                                                                Students can’t see the value of MARS features due to
+                                                                limited
                                                                 metacognitive abilities
                                                             </p>
                                                         </div>
@@ -605,31 +606,64 @@
                             <h4 class="title is-4 raleway blu has-text-weight-bold my-6">
                                 <u>Design Phase</u>
                             </h4>
-                            <p class="content my-6">Based on the main problems we've identified, we came up with the
-                                following "How Might We" statements to guide our ideation.</p>
-                            <div class="content is-size-5 my-6">
-                                <p class='blu'>How Might We</p>
-                                <ul>
-                                    <li>Implement the steps of selection and annotation in an online environment?</li>
-                                    <li>Provide additional values other than homework practice in MARS?</li>
-                                    <li>Scaffold students’ metacognitive processes of categorization and analysis?</li>
-                                    <li>Enable students to take advantage of the system both online and offline?</li>
-                                </ul>
-                            </div>
-                            <p class="content my-6">
-                                Based on our HMW statements, we generated <b>over 40 initial ideas</b> through Brainstorming.
-                                We then <b>evaluated those ideas</b> in <span v-on:click="isMatrixActive = true" style="cursor: pointer;">a difficulty & importance matrix</span>, speed-dated them with 11
-                                users and clients to get feedback, and finalized our idea considering design, business,
-                                and implementation constraints.
-                            </p>
-                            <b-modal v-model="isMatrixActive">
-                                <figure class="image">
-                                    <img src="PineCones\matrix.png" alt="Difficulty & Importance Matrix">
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Ideation
+                                </h5>
+                                <p class="content my-6">Based on the main problems we've identified, we came up with the
+                                    following "How Might We" statements to guide our ideation.</p>
+                                <div class="content is-size-5 my-6">
+                                    <p class='blu'>How Might We</p>
+                                    <ul>
+                                        <li>Implement the steps of selection and annotation in an online environment?
+                                        </li>
+                                        <li>Provide additional values other than homework practice in MARS?</li>
+                                        <li>Scaffold students’ metacognitive processes of categorization and analysis?
+                                        </li>
+                                        <li>Enable students to take advantage of the system both online and offline?
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="content my-6">
+                                    Based on our HMW statements, we generated <b>over 40 initial ideas</b> through
+                                    Brainstorming.
+                                    We then <b>evaluated those ideas</b> in <span v-on:click="isMatrixActive = true"
+                                        style="cursor: pointer;">a difficulty & importance matrix</span>, speed-dated
+                                    them with 11
+                                    users and clients to get feedback, and finalized our idea considering design,
+                                    business,
+                                    and implementation constraints.
+                                </p>
+                                <b-modal v-model="isMatrixActive">
+                                    <figure class="image">
+                                        <img src="PineCones\matrix.png" alt="Difficulty & Importance Matrix">
+                                    </figure>
+                                </b-modal>
+                                <figure class="image my-6">
+                                    <img src="PineCones\ideaSelection.png" alt="Narrow down ideas">
                                 </figure>
-                            </b-modal>
-                            <figure class="image">
-                                <img src="PineCones\ideaSelection.png" alt="Narrow down ideas">
-                            </figure>
+                            </div>
+                            <div class="small-section my-3">
+                                <h5 class="title is-4 raleway my-6">
+                                    <span class='blu'>&#9632</span> Prototyping
+                                </h5>
+                                <p class="content my-6">
+                                    Using wireframes and low-fidelity prototypes, we tested our idea in <b>3 rounds of user
+                                    testing with 16 users</b> to further flesh out the specific features for the Starred Problem Set and
+                                    iterate on the learning experience and user experience.
+                                </p>
+                                <p class="content">
+                                    Based on the testing of our prototype, <u v-on:click="isWasteFeatureActive = true">after throwing out many features</u>, the final design has the following user stories for the sub-features:
+                                </p>
+                                <figure class="image my-6">
+                                    <img src="PineCones\subfeatureStories.png" alt="Sub-feature User Stories">
+                                </figure>
+                                <b-modal v-model="isWasteFeatureActive">
+                                    <figure class="image">
+                                        <img src="PineCones\wasteFeatures.png" alt="Discarded Stories">
+                                    </figure>
+                                </b-modal>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -679,6 +713,7 @@
                 flowButton: "See Details",
                 teacherFlowButton: "See Details",
                 isMatrixActive: false,
+                isWasteFeatureActive: false,
                 preliminaryResearch: [
                     { link: 'PineCones/preliminaryStakeholderMap.png', text: 'Stakeholder Map' },
                     { link: 'PineCones/preliminaryCompetitive.png', text: 'Competitive Analysis' }
