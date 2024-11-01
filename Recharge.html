@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recharge | Guodong Zhao's Portfolio - Chrome Extension for Healthy Work Habits</title>
+    <meta name="description"
+        content="Recharge is a Chrome extension that helps you maintain healthy work habits. Get customizable reminders for eye breaks, hydration, movement, and stretching, keeping you refreshed and productive.">
+    <link rel="icon" href="images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/Recharge.html" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Recharge - Chrome Extension for Healthy Work Habits">
+    <meta property="og:description"
+        content="Recharge is a simple, customizable Chrome extension that provides reminders for eye, water, movement, and stretch breaks. Stay healthy and productive while working on your computer.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/Recharge.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recharge - Chrome Extension for Healthy Work Habits">
+    <meta name="twitter:description"
+        content="Recharge by Guodong Zhao is a Chrome extension for customizable reminders: blink, hydrate, move, and stretch. Ideal for maintaining healthy habits at work.">
+    <meta name="twitter:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HH0RFQKBHF');
+    </script>
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
+
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .email-link {
+            cursor: url(images/email.png), auto;
+        }
+    </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <a href="https://www.guodong-zhao.com" class="title is-4"
+                        style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </a>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Selected Projects
+                            </a>
+                            <!--
+                            <a class="button is-white">
+                                Case Studies
+                            </a>
+                            <a class="button is-white">
+                                Work Samples
+                            </a>
+                            -->
+                            <a class="button is-white" href="OtherProjects.html#top">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                            <a class="button is-white email-link" href="mailto:gzhao1997@gmail.com" target="_blank">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero is-primary is-medium">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-vcentered">
+                        <div class="column" data-aos="fade-right">
+                            <h1 class="title is-1 poppins">
+                                Recharge - Healthy Work Break Reminders
+                            </h1>
+                            <h2 class="subtitle is-3 raleway">
+                                Stay healthy while you work
+                            </h2>
+                            <p class="subtitle is-5 raleway">
+                                Maintain healthy work habits with customizable reminders for eye breaks, hydration,
+                                movement, and stretching.
+                            </p>
+                            <a href="https://chrome.google.com/webstore" class="button is-white is-rounded is-large">
+                                <span class="icon">
+                                    <i class="fab fa-chrome"></i>
+                                </span>
+                                <span>Add to Chrome</span>
+                            </a>
+                            <a class="button is-white is-rounded is-large" href="https://github.com/Troyanovsky/plugin-recharge"
+                                target="_blank">
+                                <span class="icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span>See GitHub Repo</span>
+                            </a>
+                        </div>
+                        <div class="column" data-aos="fade-left">
+                            <img src="OtherProjects/Recharge_500 x 400.png" alt="Recharge Chrome Extension">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" id="features">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered poppins" data-aos="fade-up">Recharge Reminder Features</h2>
+                <div class="columns is-multiline">
+                    <div class="column is-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fas fa-eye fa-2x"></i>
+                            </span>
+                            <h3 class="title is-4 raleway">Blink Breaks</h3>
+                            <p>Rest your eyes regularly with customizable reminder intervals</p>
+                        </div>
+                    </div>
+                    <div class="column is-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fas fa-tint fa-2x"></i>
+                            </span>
+                            <h3 class="title is-4 raleway">Water Breaks</h3>
+                            <p>Stay hydrated throughout your workday</p>
+                        </div>
+                    </div>
+                    <div class="column is-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="box has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fas fa-walking fa-2x"></i>
+                            </span>
+                            <h3 class="title is-4 raleway">Movement Breaks</h3>
+                            <p>Regular reminders to get up and move around</p>
+                        </div>
+                    </div>
+                    <div class="column is-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="box has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fas fa-bolt fa-2x"></i>
+                            </span>
+                            <h3 class="title is-4 raleway">Stretch Breaks</h3>
+                            <p>Prevent muscle tension with stretching reminders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section has-background-light" id="faq">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered poppins" data-aos="fade-up">Frequently Asked Questions About
+                    Recharge</h2>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <b-collapse class="card" v-for="(faq, index) in faqs" :key="index" :open="true">
+                            <template #trigger="props">
+                                <div class="card-header" role="button">
+                                    <p class="card-header-title raleway">
+                                        {{ faq.question }}
+                                    </p>
+                                    <a class="card-header-icon">
+                                        <b-icon :icon="props.open ? 'chevron-up' : 'chevron-down'">
+                                        </b-icon>
+                                    </a>
+                                </div>
+                            </template>
+                            <div class="card-content">
+                                <div class="content raleway">
+                                    {{ faq.answer }}
+                                </div>
+                            </div>
+                        </b-collapse>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2 class="title is-2 has-text-centered poppins" data-aos="fade-up">Get in Touch</h2>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <iframe
+                            src="https://tally.so/embed/w2xDAV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+                            title="Contact Form">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isBurgerActive: false,
+                isOpen: 0,
+                faqs: [
+                    {
+                        "question": "How do I customize reminder intervals in the Recharge extension?",
+                        "answer": "To set personalized reminder intervals for your breaks, click on the Recharge extension icon in the Chrome toolbar. Within the settings popup, use the sliders to customize timing for each type of break, including eye breaks, water breaks, movement breaks, and stretch breaks. You can adjust the timing from 0 to 60 minutes, making it easy to fit reminders into your work schedule."
+                    },
+                    {
+                        "question": "Can I disable specific types of break reminders, like water or movement reminders?",
+                        "answer": "Absolutely! Recharge allows you to disable any reminder you don’t need. Open the extension popup, where you’ll see switches to toggle each reminder type—such as eye, water, movement, or stretch reminders—on or off. This flexibility helps you receive only the notifications that suit your work and wellness routine."
+                    },
+                    {
+                        "question": "Will Recharge interrupt my work with frequent notifications?",
+                        "answer": "No, Recharge is designed to enhance productivity by running quietly in the background. It sends gentle, unobtrusive desktop notifications at the specific intervals you choose for each type of break. These reminders help you maintain healthy habits, like staying hydrated or moving around, without disrupting your workflow."
+                    },
+                    {
+                        "question": "Is the Recharge extension free to download and use from the Chrome Web Store?",
+                        "answer": "Yes, Recharge is completely free! You can easily download and use this productivity-boosting Chrome extension directly from the Chrome Web Store. It’s an excellent, no-cost tool for maintaining healthier work habits at your computer."
+                    },
+                    {
+                        "question": "Does Recharge allow me to customize break types like eye strain relief, hydration, or stretching?",
+                        "answer": "Yes! Recharge is fully customizable to include different break types such as blink breaks, hydration reminders, movement prompts, and stretch breaks. You can adjust each reminder type individually to support various aspects of wellness during long hours at your computer, making it easy to focus on the health reminders that matter most to you."
+                    },
+                    {
+                        "question": "How does the Recharge extension help with productivity and well-being?",
+                        "answer": "Recharge is designed to support your productivity and well-being by providing timely, adjustable reminders for essential breaks. These breaks help reduce eye strain, encourage hydration, prompt movement, and support muscle stretching, which all contribute to better health and more effective work sessions. The extension’s notifications keep you mindful of your health while working efficiently."
+                    },
+                    {
+                        "question": "Are there notification sound options for the reminders in Recharge?",
+                        "answer": "Yes, Recharge includes optional notification sounds to accompany each reminder. You can enable or disable sound alerts in the settings popup to ensure notifications are noticeable but not disruptive. This feature adds a layer of customization, helping you choose a reminder style that fits your working environment best."
+                    },
+                    {
+                        "question": "How do I know when it’s time for a break with the Recharge Chrome extension?",
+                        "answer": "Recharge makes it easy to remember your breaks by sending desktop notifications according to the interval you set. Each notification is clearly labeled by break type (eye, hydration, movement, or stretch), making it straightforward to identify which reminder is active and take the appropriate action. You’ll receive gentle prompts throughout the day, helping you maintain healthy habits."
+                    }
+                ]
+
+            },
+            created() {
+                AOS.init();
+            },
+            methods: {
+                toggleBurger: function () {
+                    this.isBurgerActive = !this.isBurgerActive;
+                }
+            }
+        })
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Guodong Zhao",
+          "jobTitle": "Product Manager",
+          "url": "https://www.guodong-zhao.com/",
+          "sameAs": [
+            "https://www.linkedin.com/in/guodongzhao/",
+            "https://medium.com/@guodong_zhao"
+          ]
+        }
+        </script>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway'>Interested in working with me? <br />Contact me at: <a href="mailto:gzhao1997@gmail.com"
+                class="email-link">gzhao1997@gmail.com</a></p>
+        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+        <p class="raleway">&copy; 2024 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>
