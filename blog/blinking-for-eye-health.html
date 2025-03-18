@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blinking for Eye Health: Why It Matters | Guodong Zhao</title>
+    <meta name="description"
+        content="Learn why blinking breaks are essential for eye health during computer use, backed by scientific research and practical tips to prevent digital eye strain.">
+    <link rel="icon" href="images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/blog/blinking-for-eye-health.html" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Blinking for Eye Health: Why It Matters">
+    <meta property="og:description"
+        content="Discover how regular blinking breaks can prevent digital eye strain, reduce dry eyes, and maintain eye health during prolonged computer use. Includes scientific evidence and practical tips.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/blog/blinking-for-eye-health.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blinking for Eye Health: Why It Matters">
+    <meta name="twitter:description"
+        content="Learn how the 20-20-20 rule and regular blinking breaks can prevent digital eye strain and maintain eye health during prolonged computer use.">
+    <meta name="twitter:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HH0RFQKBHF');
+    </script>
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
+
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .email-link {
+            cursor: url(images/email.png), auto;
+        }
+    </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <a href="https://www.guodong-zhao.com" class="title is-4"
+                        style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </a>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Selected Projects
+                            </a>
+                            <a class="button is-white" href="OtherProjects.html#top">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                            <a class="button is-white email-link" href="mailto:gzhao1997@gmail.com" target="_blank">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Main-->
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <!-- Left sidebar with Table of Contents -->
+                    <div class="column is-one-quarter">
+                        <div class="box sticky-toc" style="position: sticky; top: 80px;">
+                            <h4 class="title is-4 poppins">Table of Contents</h4>
+                            <div class="menu">
+                                <ul class="menu-list">
+                                    <li><a href="#why-blinking-matters" class="raleway">Why Blinking Matters</a></li>
+                                    <li><a href="#how-they-help" class="raleway">How They Help Your Eyes</a></li>
+                                    <li><a href="#backed-by-science" class="raleway">Backed by Science</a></li>
+                                    <li><a href="#practical-tips" class="raleway">Practical Tips</a></li>
+                                    <li><a href="#in-depth-analysis" class="raleway">In-Depth Analysis</a></li>
+                                    <li><a href="#defining-breaks" class="raleway">Defining Blinking Breaks</a></li>
+                                    <li><a href="#impact-on-health" class="raleway">Impact on Eye Health</a></li>
+                                     <li><a href="#crucial-role" class="raleway">The Crucial Role of Blinking</a></li>
+                                    <li><a href="#benefits-of-breaks" class="raleway">Benefits of Taking Breaks</a></li>
+                                     <li><a href="#scientific-evidence" class="raleway">Scientific Evidence</a></li>
+                                     <li><a href="#practical-tips-incorporating" class="raleway">Practical Tips</a></li>
+                                      <li><a href="#additional-considerations" class="raleway">Additional Considerations</a></li>
+                                      <li><a href="#best-chrome-extension" class="raleway">Recharge Chrome Extension</a></li>
+                                    <li><a href="#conclusion" class="raleway">Conclusion</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Added Share This Article section below TOC -->
+                            <div class="mt-4 pt-3" style="border-top: 1px solid #eee;">
+                                <h5 class="title is-6 poppins">Share This Article</h5>
+                                <div class="buttons are-small">
+                                    <a class="button is-info is-rounded" href="https://twitter.com/intent/tweet?url=https://www.guodong-zhao.com/blog/blinking-for-eye-health.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                    <a class="button is-primary is-rounded" href="https://www.facebook.com/sharer/sharer.php?u=https://www.guodong-zhao.com/blog/blinking-for-eye-health.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                    </a>
+                                    <a class="button is-link is-rounded" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.guodong-zhao.com/blog/blinking-for-eye-health.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main content area -->
+                    <div class="column">
+                        <div class="content">
+                            <h1 class="title is-2 poppins" id="top">Blinking for Eye Health: Why It Matters</h1>
+                            <p class="subtitle is-5 raleway">Published on Mar 17, 2025 • 10 min read</p>
+                            
+                            <figure class="image is-16by9 mb-5">
+                                <img src="https://images.unsplash.com/photo-1494869042583-f6c911f04b4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Person rubbing tired eyes">
+                            </figure>
+                            
+                             <h2 class="title is-3 poppins mt-6" id="why-blinking-matters">Why Blinking Breaks Matter</h2>
+        
+                                <p class="raleway">Blinking breaks are short pauses during computer use where you look away from the screen and blink to rest your eyes. These breaks are important because staring at screens for long periods can cause digital eye strain, with symptoms like dry eyes, blurred vision, and headaches.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="how-they-help">How They Help Your Eyes</h2>
+        
+                                <p class="raleway">When you focus on a screen, you blink less—sometimes by up to 50%—which dries out your eyes and strains them. Blinking spreads tears to keep your eyes moist and clear, and taking breaks lets you do this more often. This can prevent discomfort and maintain eye health, especially during work or entertainment on laptops.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="backed-by-science">Backed by Science</h2>
+        
+                                <p class="raleway">A study testing the 20-20-20 rule—looking 20 feet away for 20 seconds every 20 minutes—found it reduces eye strain and dry eye symptoms (<a href="https://www.sciencedirect.com/science/article/pii/S1367048422001990">The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule</a>). Another source, the American Academy of Ophthalmology, recommends these breaks to ease symptoms (<a href="https://www.aao.org/eye-health/tips-prevention/computer-usage">Computers, Digital Devices, and Eye Strain</a>).</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="practical-tips">Practical Tips</h2>
+        
+                                <p class="raleway">Try setting reminders to follow the 20-20-20 rule, blink rapidly during breaks, or look out a window. This helps relax your eyes and can even improve your focus afterward.</p>
+        
+                                <hr>
+        
+                                <h2 class="title is-3 poppins mt-6" id="in-depth-analysis">In-Depth Analysis of Blinking Breaks During Computer Use</h2>
+        
+                                <p class="raleway">This note provides a comprehensive exploration of why taking blinking breaks during work or entertainment while using computers or laptops is crucial for eye health, expanding on the direct answer with detailed insights and supporting evidence. The focus is on understanding digital eye strain, the role of blinking, and the benefits of regular breaks, backed by scientific research and practical recommendations.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="defining-breaks">Defining Blinking Breaks</h2>
+        
+                                <p class="raleway">"Blinking breaks" refer to short intervals during computer use where individuals deliberately rest their eyes by looking away from the screen and blinking to moisten them. This practice is particularly relevant in the context of prolonged screen time, which is common for both professional work and entertainment in 2025. Given the increasing reliance on digital devices, these breaks are essential for mitigating the adverse effects on eye health.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="impact-on-health">The Impact of Prolonged Computer Use on Eye Health</h2>
+        
+                                <p class="raleway">Extended computer use can lead to digital eye strain, also known as computer vision syndrome, a condition characterized by a range of symptoms. According to WebMD, these include dry eyes, blurred vision, headaches, and neck pain (<a href="https://www.webmd.com/eye-health/computer-vision-syndrome">Computer Vision Syndrome: Causes, Symptoms and Treatments</a>). A study from the National Center for Biotechnology Information (NCBI) highlights that up to 70 million people worldwide experience these effects, making it a significant occupational hazard (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6020759/">Digital eye strain: prevalence, measurement and amelioration</a>).</p>
+        
+                                <p class="raleway">The causes of these symptoms are multifaceted:</p>
+        
+                                <ul class="raleway">
+                                    <li><strong>Reduced Blink Rate:</strong> Normally, people blink 15-20 times per minute, but this can drop by half during computer use, leading to decreased tear production and dry eyes.</li>
+                                    <li><strong>Blue Light Exposure:</strong> Screens emit blue light, which can cause eye strain and disrupt sleep patterns, as noted by Cedars-Sinai (<a href="https://www.cedars-sinai.org/health-library/diseases-and-conditions/c/computer-vision-syndrome.html">Computer Vision Syndrome</a>).</li>
+                                    <li><strong>Focusing Fatigue:</strong> The eyes must constantly adjust to focus on screen characters, which have lower resolution and varying brightness compared to printed text, as per OCL Vision (<a href="https://www.oclvision.com/blog/computer-use-on-eye-health/">How Does Computer Use Impact Your Eye Health?</a>).</li>
+                                    <li><strong>Poor Posture:</strong> Hunching over a computer can contribute to neck and back pain, exacerbating overall discomfort.</li>
+                                </ul>
+        
+                                <h2 class="title is-3 poppins mt-6" id="crucial-role">The Crucial Role of Blinking</h2>
+        
+                                <p class="raleway">Blinking is a natural reflex that keeps eyes moist and protected. It spreads tears across the eye surface, lubricating it, washing away debris, and providing oxygen to the cornea. A study from Cleveland Clinic explains that insufficient blinking can lead to discomfort, redness, and potential corneal damage (<a href="https://my.clevelandclinic.org/health/articles/blinking">Blinking Causes</a>). During computer use, the reduced blink rate increases the risk of dry eyes, a condition characterized by red eyes, stinging, burning sensations, and blurred vision, as noted by Downtown Eyes (<a href="https://www.downtowneyes.com/blog/eye-care/what-are-the-benefits-of-taking-regular-screen-breaks/">What Are the Benefits of Taking Regular Screen Breaks?</a>).</p>
+        
+                                <p class="raleway">Incomplete blinking, where the upper eyelid does not fully cover the cornea, can further exacerbate tear film instability, leading to increased evaporation and dry eye symptoms, according to research from NCBI (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6020759/">Digital eye strain: prevalence, measurement and amelioration</a>). This underscores the importance of taking breaks to ensure adequate blinking and maintain tear film health.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="benefits-of-breaks">Benefits of Taking Blinking Breaks</h2>
+        
+                                <p class="raleway">Taking regular blinking breaks offers multiple benefits, supported by both anecdotal evidence and scientific studies:</p>
+        
+                                <ul class="raleway">
+                                    <li><strong>Reduction in Eye Strain and Fatigue:</strong> Looking away from the screen and blinking helps relax the ciliary muscles responsible for focusing, reducing fatigue. The 20-20-20 rule, recommended by the American Academy of Ophthalmology, involves looking at something 20 feet away for 20 seconds every 20 minutes, which can significantly alleviate strain (<a href="https://www.aao.org/eye-health/tips-prevention/computer-usage">Computers, Digital Devices, and Eye Strain</a>).</li>
+                                    <li><strong>Improved Focus and Productivity:</strong> Short breaks refresh the eyes and mind, potentially enhancing concentration and productivity upon returning to work, as suggested by WebMD (<a href="https://www.webmd.com/eye-health/computer-vision-syndrome">Computer Vision Syndrome: Causes, Symptoms and Treatments</a>).</li>
+                                    <li><strong>Prevention or Alleviation of Headaches:</strong> Eye strain is a common trigger for headaches, and taking breaks can help reduce their frequency, according to Mayo Clinic (<a href="https://www.mayoclinic.org/diseases-conditions/eyestrain/diagnosis-treatment/drc-20372403">Eyestrain - Diagnosis and treatment</a>).</li>
+                                    <li><strong>Promotion of Better Posture:</strong> Encouraging movement during breaks can help maintain good posture, reducing the risk of neck and back pain, as noted by Moorfields Private (<a href="https://www.moorfields.nhs.uk/private/about-moorfields-private/blog-articles/10-steps-for-digital-eye-strain-relief">10 steps for digital eye strain relief</a>).</li>
+                                    <li><strong>Maintenance of Overall Eye Health:</strong> Regular blinking and resting help prevent dry eyes and other vision-related issues, potentially reducing the risk of long-term conditions like myopia, as mentioned by Yeditepe University (<a href="https://yeditepehastaneleri.com/en/health-guide/eye-health/long-term-computer-use-pose-threat-eye-health">Long-term Computer Use Pose a Threat to Eye Health | Yeditepe Üniversitesi Hastanesi</a>).</li>
+                                </ul>
+        
+                                <p class="raleway">An unexpected finding from recent research is that while breaks reduce symptoms immediately, their long-term benefits may fade without consistent practice. A study testing the 20-20-20 rule found that improvements in digital eye strain and dry eye symptoms were not maintained one week after discontinuation, suggesting the need for sustained adherence (<a href="https://www.sciencedirect.com/science/article/pii/S1367048422001990">The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule</a>). This highlights the importance of integrating blinking breaks into daily routines for lasting eye health benefits.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="scientific-evidence">Scientific Evidence and Research Findings</h2>
+        
+                                <p class="raleway">Several studies provide robust evidence for the effectiveness of breaks in reducing digital eye strain:</p>
+        
+                                <ul class="raleway">
+                                    <li>A 2022 study published in ScienceDirect tested the 20-20-20 rule and found a significant decrease in digital eye strain and dry eye symptoms with regular reminders, although the improvements were not sustained post-discontinuation (<a href="https://www.sciencedirect.com/science/article/pii/S1367048422001990">The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule</a>). The study observed an increase in accommodative facility, indicating improved eye muscle flexibility, but no significant changes in binocular vision or ocular surface parameters.</li>
+                                    <li>A 2018 NCBI article on digital eye strain prevalence emphasized management approaches, including regular screen breaks, to improve vision-related quality of life, noting that reduced blink rate and incomplete blinking are key contributors to dry eye symptoms (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6020759/">Digital eye strain: prevalence, measurement and amelioration</a>).</li>
+                                    <li>A study on university students in the United Arab Emirates found no significant association between taking breaks and reducing dry eyes in simple binary logistic regression, suggesting variability in outcomes depending on study design (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991951/">Computer Use and Vision-Related Problems Among University Students In Ajman, United Arab Emirate</a>). However, this contrasts with broader consensus, indicating a need for further research.</li>
+                                </ul>
+        
+                                <p class="raleway">These findings collectively suggest that while breaks are generally beneficial, their effectiveness may vary, and consistent practice is crucial for sustained benefits.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="practical-tips-incorporating">Practical Tips for Incorporating Blinking Breaks</h2>
+        
+                                <p class="raleway">To effectively integrate blinking breaks into daily computer use, consider the following strategies, supported by expert recommendations:</p>
+        
+                                <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+                                    <thead>
+                                        <tr>
+                                            <th>Tip</th>
+                                            <th>Description</th>
+                                            <th>Source</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Follow the 20-20-20 Rule</td>
+                                            <td>Every 20 minutes, look at something 20 feet away for 20 seconds.</td>
+                                            <td>American Academy of Ophthalmology (<a href="https://www.aao.org/eye-health/tips-prevention/computer-usage">Computers, Digital Devices, and Eye Strain</a>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Set Reminders</td>
+                                            <td>Use alarms or apps to remind you to take breaks, ensuring consistency.</td>
+                                            <td>All About Vision (<a href="https://www.allaboutvision.com/conditions/computer-vision-syndrome/digital-eye-strain/relief/">10 Tips for Computer Eye Strain Relief</a>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Blink Rapidly During Breaks</td>
+                                            <td>Close your eyes and blink rapidly a few times to moisten eyes.</td>
+                                            <td>Mittleman Eye Center (<a href="https://mittlemaneye.com/blog/give-your-eyes-a-much-needed-break-from-the-computer-screen/">Give Your Eyes a Much-Needed Break from the Computer Screen</a>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Look Out a Window</td>
+                                            <td>Focus on distant objects, like looking out a window, to relax eye muscles.</td>
+                                            <td>WebMD (<a href="https://www.webmd.com/eye-health/computer-vision-syndrome">Computer Vision Syndrome: Causes, Symptoms and Treatments</a>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Practice Eye Exercises</td>
+                                            <td>Roll your eyes or focus on different distances to relax eye muscles.</td>
+                                            <td>EMVC (<a href="https://www.emvc.net/blog/best-eye-exercises-when-taking-digital-breaks">Best Eye Exercises</a>)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ensure Proper Ergonomics</td>
+                                            <td>Position the screen at eye level, about 25 inches away, and maintain good posture.</td>
+                                            <td>Moorfields Private (<a href="https://www.moorfields.nhs.uk/private/about-moorfields-private/blog-articles/10-steps-for-digital-eye-strain-relief">10 steps for digital eye strain relief</a>)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+        
+                                <p class="raleway">These tips, combined with regular breaks, can significantly enhance eye comfort and reduce strain during extended computer use.</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="additional-considerations">Additional Considerations</h2>
+        
+                                <p class="raleway">While the focus is on blinking breaks, other factors also contribute to eye health during computer use, such as screen brightness, lighting, and the use of blue-light blocking glasses. Adjusting screen settings to reduce glare and ensuring a well-lit workspace can complement the benefits of breaks, as suggested by Mayo Clinic (<a href="https://www.mayoclinic.org/diseases-conditions/eyestrain/diagnosis-treatment/drc-20372403">Eyestrain - Diagnosis and treatment</a>). Additionally, using lubricating eye drops can help with dry eyes, especially for those experiencing persistent symptoms, as recommended by Cleveland Clinic (<a href="https://my.clevelandclinic.org/health/articles/blinking">Blinking Causes</a>).</p>
+        
+                                <h2 class="title is-3 poppins mt-6" id="best-chrome-extension">Best Chrome Extension for Blinking Breaks: Recharge</h2>
+                                
+                                <p class="raleway">For those looking to implement regular blinking breaks effortlessly, <a href="https://chromewebstore.google.com/detail/recharge-healthy-work-bre/miipdoobdjndomfgfdbkiibiagnehlog" target="_blank">Recharge - Healthy Work Break Reminders</a> is an excellent Chrome extension designed specifically for this purpose. This user-friendly tool allows you to set automatic blinking reminders with customizable intervals that suit your personal work habits.</p>
+                                
+                                <figure class="image mb-5">
+                                    <img src="../OtherProjects/Recharge_500 x 400.png" alt="Recharge Chrome Extension">
+                                </figure>
+                                
+                                <p class="raleway">Recharge goes beyond just blinking reminders, offering a comprehensive solution for maintaining overall health during computer use. Key features include:</p>
+                                
+                                <ul class="raleway">
+                                    <li><strong>Customizable Reminders:</strong> Set personalized intervals for eye breaks, water breaks, movement breaks, and stretching breaks.</li>
+                                    <li><strong>Non-Intrusive Notifications:</strong> Gentle reminders that don't disrupt your workflow but effectively prompt healthy habits.</li>
+                                    <li><strong>Easy Configuration:</strong> Simple interface to adjust settings according to your specific needs and work schedule.</li>
+                                    <li><strong>Productivity Enhancement:</strong> By incorporating regular breaks, you can maintain focus and energy throughout your workday.</li>
+                                </ul>
+                                
+                                <p class="raleway">The extension is particularly valuable for professionals who spend long hours in front of screens, students engaged in online learning, and anyone concerned about digital eye strain. By automating the reminder process, Recharge helps establish consistent healthy habits without requiring constant manual attention.</p>
+                                
+                                <p class="raleway">For more detailed information about features and installation instructions, visit the <a href="https://www.guodong-zhao.com/Recharge.html" target="_blank">Recharge official webpage</a> or download directly from the <a href="https://chromewebstore.google.com/detail/recharge-healthy-work-bre/miipdoobdjndomfgfdbkiibiagnehlog" target="_blank">Chrome Web Store</a>.</p>
+
+                                <h2 class="title is-3 poppins mt-6" id="conclusion">Conclusion</h2>
+        
+                                <p class="raleway">Taking blinking breaks during computer use is essential for preserving eye health and preventing digital eye strain. By understanding the role of blinking in maintaining eye moisture, the benefits of regular breaks, and integrating practical tips into daily routines, individuals can mitigate the adverse effects of prolonged screen time. The evidence, while generally supportive, highlights the need for consistent practice to sustain benefits, making blinking breaks a vital strategy for eye care in the digital era.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <!-- Initialize AOS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+            });
+        </script>
+        
+        <!-- Initialize Vue -->
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    isBurgerActive: false
+                },
+                methods: {
+                    toggleBurger: function() {
+                        this.isBurgerActive = !this.isBurgerActive;
+                    }
+                }
+            });
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Recharge - Healthy Work Break Reminders",
+            "applicationCategory": "BrowserExtension",
+            "operatingSystem": "Chrome",
+            "url": "https://chromewebstore.google.com/detail/recharge-healthy-work-bre/miipdoobdjndomfgfdbkiibiagnehlog",
+            "description": "Recharge is a simple, customizable Chrome extension that provides reminders for eye breaks, hydration, movement, and stretch breaks. Stay healthy and productive while working on your computer.",
+            "image": "https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png"
+        }
+    </script>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway'>Interested in working with me? <br />Contact me at: <a href="mailto:gzhao1997@gmail.com"
+                class="email-link">gzhao1997@gmail.com</a></p>
+        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+        <p class="raleway">&copy; 2025 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>
