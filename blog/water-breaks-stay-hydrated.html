@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taking Water Breaks: Stay Hydrated and Healthy | Recharge</title>
+    <meta name="description"
+        content="Learn why water breaks are essential for health during work and daily activities, backed by scientific research and practical tips to prevent dehydration.">
+    <link rel="icon" href="../images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/blog/water-breaks-stay-hydrated.html" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Taking Water Breaks: Stay Hydrated and Healthy">
+    <meta property="og:description"
+        content="Discover how regular water breaks can prevent dehydration, improve cognitive function, and maintain overall health during work and daily activities. Includes scientific evidence and practical tips.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/blog/water-breaks-stay-hydrated.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Taking Water Breaks: Stay Hydrated and Healthy">
+    <meta name="twitter:description"
+        content="Learn how regular water breaks can prevent dehydration, boost productivity, and maintain overall health during work and daily activities.">
+    <meta name="twitter:image" content="https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png">
+
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <!-- Vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <!--Buefy-->
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HH0RFQKBHF');
+    </script>
+    <style>
+        .raleway {
+            font-family: 'Raleway';
+        }
+
+        .poppins {
+            font-family: 'poppins'
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .email-link {
+            cursor: url(images/email.png), auto;
+        }
+    </style>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div id="app">
+        <!--Nav bar-->
+        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <a href="https://www.guodong-zhao.com" class="title is-4"
+                        style="font-family: Poppins; text-decoration: underline">
+                        Guodong Zhao
+                    </a>
+                </div>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
+                    v-bind:class="{'is-active': isBurgerActive}">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-white" href="index.html#top">
+                                Selected Projects
+                            </a>
+                            <a class="button is-white" href="OtherProjects.html#top">
+                                Other Projects
+                            </a>
+                            <a class="button is-white"
+                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
+                                target="_blank">
+                                Resume
+                            </a>
+                            <a class="button is-white email-link" href="mailto:gzhao1997@gmail.com" target="_blank">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Main-->
+        <section class="section">
+            <div class="container">
+                <div class="columns is-desktop">
+                    <!-- Left sidebar with Table of Contents -->
+                    <div class="column is-one-quarter-desktop is-hidden-mobile">
+                        <div class="box sticky-toc" style="position: sticky; top: 80px;">
+                            <h4 class="title is-4 poppins">Table of Contents</h4>
+                            <div class="menu">
+                                <ul class="menu-list">
+                                    <li><a href="#why-water-breaks-matter" class="raleway">Why Water Breaks Matter</a></li>
+                                    <li><a href="#benefits-of-staying-hydrated" class="raleway">Benefits of Staying Hydrated</a></li>
+                                    <li><a href="#practical-tips" class="raleway">Practical Tips</a></li>
+                                    <li><a href="#comprehensive-report" class="raleway">Comprehensive Report</a></li>
+                                    <li><a href="#introduction" class="raleway">Introduction</a></li>
+                                    <li><a href="#understanding-hydration" class="raleway">Understanding Hydration</a></li>
+                                    <li><a href="#consequences-of-dehydration" class="raleway">Consequences of Dehydration</a></li>
+                                    <li><a href="#role-of-water-breaks" class="raleway">Role of Water Breaks</a></li>
+                                    <li><a href="#practical-tips-staying-hydrated" class="raleway">Practical Tips for Staying Hydrated</a></li>
+                                    <li><a href="#recommended-daily-water-intake" class="raleway">Recommended Daily Water Intake</a></li>
+                                    <li><a href="#addressing-common-misconceptions" class="raleway">Addressing Common Misconceptions</a></li>
+                                    <li><a href="#recommended-tools" class="raleway">Recommended Water Reminder</a></li>
+                                    <li><a href="#conclusion" class="raleway">Conclusion</a></li>
+                                    <li><a href="#key-citations" class="raleway">Key Citations</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Added Share This Article section below TOC -->
+                            <div class="mt-4 pt-3" style="border-top: 1px solid #eee;">
+                                <h5 class="title is-6 poppins">Share This Article</h5>
+                                <div class="buttons are-small">
+                                    <a class="button is-info is-rounded" href="https://twitter.com/intent/tweet?url=https://www.guodong-zhao.com/blog/water-breaks-stay-hydrated.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-twitter"></i>
+                                        </span>
+                                    </a>
+                                    <a class="button is-primary is-rounded" href="https://www.facebook.com/sharer/sharer.php?u=https://www.guodong-zhao.com/blog/water-breaks-stay-hydrated.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </span>
+                                    </a>
+                                    <a class="button is-link is-rounded" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.guodong-zhao.com/blog/water-breaks-stay-hydrated.html" target="_blank">
+                                        <span class="icon is-small">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main content area -->
+                    <div class="column">
+                        <div class="content">
+                            <h1 class="title is-2 poppins" id="top">Taking Water Breaks: Stay Hydrated and Healthy</h1>
+                            <p class="subtitle is-5 raleway">Published on Mar 19, 2025 • 9 min read</p>
+                            
+                            <figure class="image mb-5">
+                                <img src="https://images.unsplash.com/photo-1624948465027-6f9b51067557?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hand holding clear drinking glass filled with water">
+                            </figure>
+
+                            <h2 class="title is-3 poppins mt-6" id="why-water-breaks-matter">Why Water Breaks Matter</h2>
+        
+                            <p class="raleway">Staying hydrated is essential for your body to function properly, and taking water breaks ensures you drink enough throughout the day. Whether you're at work or enjoying entertainment, it's easy to forget to drink water, especially when focused on tasks. Water breaks help maintain energy levels, improve concentration, and support physical health, making them a simple yet effective habit.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="benefits-of-staying-hydrated">Benefits of Staying Hydrated</h2>
+        
+                            <p class="raleway">Hydration aids in regulating body temperature, lubricating joints, and transporting nutrients. Research shows that even mild dehydration (a 1-2% body water loss) can decrease productivity by up to 12% and impair cognitive tasks like attention and memory (<a href="https://pubmed.ncbi.nlm.nih.gov/22855911/">Dehydration and cognitive performance</a>). This is particularly important during long work hours or sedentary activities like gaming, where you might not notice thirst.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="practical-tips">Practical Tips</h2>
+        
+                            <ul class="raleway">
+                                <li>Keep a water bottle at your desk to sip regularly.</li>
+                                <li>Set reminders on your phone to drink water every hour.</li>
+                                <li>Choose water over sugary drinks to avoid dehydration risks.</li>
+                                <li>Eat water-rich foods like cucumbers or watermelon for added hydration.</li>
+                            </ul>
+        
+                            <hr>
+        
+                            <h2 class="title is-3 poppins mt-6" id="comprehensive-report">Comprehensive Report on the Importance of Taking Water Breaks</h2>
+        
+                            <h2 class="title is-3 poppins mt-6" id="introduction">Introduction</h2>
+        
+                            <p class="raleway">Staying hydrated is vital for maintaining overall health and well-being, as water is essential for numerous bodily functions such as regulating temperature, lubricating joints, and transporting nutrients. However, in our busy lives, it's common to forget to drink enough water, especially when focused on work or engrossed in entertainment activities. This report explores why taking water breaks during the day is crucial for ensuring adequate hydration, particularly in these contexts, and provides practical guidance for incorporating this habit into daily routines.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="understanding-hydration">Understanding Hydration and Its Importance</h2>
+        
+                            <p class="raleway">Hydration refers to the process of providing sufficient water to the body to maintain its normal functions. Water constitutes about 60% of an adult's body weight and is involved in critical physiological processes:</p>
+        
+                            <ul class="raleway">
+                                <li><strong>Temperature Regulation:</strong> Water helps cool the body through sweat and evaporation, preventing overheating during physical activity or in hot environments.</li>
+                                <li><strong>Nutrient Transport:</strong> It carries essential nutrients and oxygen to cells while removing waste products, supporting overall metabolic health.</li>
+                                <li><strong>Joint Lubrication:</strong> Water keeps joints lubricated and flexible, reducing the risk of stiffness and injury.</li>
+                                <li><strong>Digestion:</strong> It aids in breaking down food and absorbing nutrients, ensuring efficient digestive system function.</li>
+                                <li><strong>Cognitive Function:</strong> Proper hydration is crucial for maintaining focus, concentration, and mental clarity, which are essential for productivity and decision-making.</li>
+                            </ul>
+        
+                            <p class="raleway">Given these roles, staying hydrated is not merely about quenching thirst but is fundamental to sustaining health and performance, especially during demanding activities.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="consequences-of-dehydration">Consequences of Dehydration</h2>
+        
+                            <p class="raleway">Dehydration occurs when the body loses more water than it takes in, and even mild dehydration can have significant impacts. Common consequences include:</p>
+        
+                            <ul class="raleway">
+                                <li><strong>Physical Performance:</strong> Dehydration can reduce endurance, strength, and power, leading to fatigue and decreased physical capacity. For instance, studies show that a 2% body weight loss due to dehydration can impair exercise performance by up to 30% (<a href="https://us.humankinetics.com/blogs/excerpt/dehydration-and-its-effects-on-performance">Dehydration and its effects on performance</a>).</li>
+                                <li><strong>Cognitive Function:</strong> It can impair memory, attention, and decision-making skills, with research indicating that a 2% dehydration level affects tasks requiring attention, psychomotor, and immediate memory skills (<a href="https://pubmed.ncbi.nlm.nih.gov/22855911/">Dehydration and cognitive performance</a>).</li>
+                                <li><strong>Mood and Energy Levels:</strong> Dehydration often results in fatigue, irritability, and decreased motivation, which can hinder daily activities.</li>
+                                <li><strong>Health Risks:</strong> Prolonged dehydration can lead to serious conditions such as kidney stones, urinary tract infections, and heatstroke, particularly in vulnerable groups like older adults and children.</li>
+                            </ul>
+        
+                            <p class="raleway">In the workplace, the impact is notable, with studies suggesting that a 1% dehydration can decrease productivity by 12%, and 3-4% dehydration can lead to a 25-50% decline in work performance (<a href="https://www.officeh2o.com/blog/helpful-tips/how-hydration-impacts-your-productivity/">How Hydration Impacts Your Productivity</a>). This highlights the need for proactive hydration strategies to maintain optimal performance.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="role-of-water-breaks">The Role of Water Breaks in Maintaining Hydration</h2>
+        
+                            <p class="raleway">Taking regular water breaks is a practical and effective way to ensure adequate water intake throughout the day, especially when engaged in work or entertainment. Here's why they are particularly important:</p>
+        
+                            <ul class="raleway">
+                                <li><strong>Prevents Dehydration:</strong> Scheduled water breaks remind individuals to drink water before feeling thirsty, as thirst is not always a reliable indicator, especially for older adults (<a href="https://www.mayoclinic.org/diseases-conditions/dehydration/symptoms-causes/syc-20354086">Dehydration-Dehydration - Symptoms & causes</a>). This helps maintain optimal hydration levels, preventing the onset of dehydration.</li>
+                                <li><strong>Boosts Productivity:</strong> By preventing dehydration, water breaks sustain cognitive function and physical performance, leading to better productivity and fewer mistakes. For example, a study found that participants who drank water showed a 14% boost in productivity compared to those who didn't (<a href="https://www.officeh2o.com/blog/helpful-tips/how-hydration-impacts-your-productivity/">How Hydration Impacts Your Productivity</a>).</li>
+                                <li><strong>Supports Overall Health:</strong> Regular water intake supports digestion, helps maintain a healthy weight by reducing the likelihood of overeating, and reduces the risk of various health issues, contributing to long-term well-being.</li>
+                                <li><strong>Provides a Moment to Relax:</strong> Taking a break to drink water can also serve as a short pause from work, helping to reduce stress and improve mental well-being. This dual benefit can enhance overall job satisfaction and efficiency, particularly during long periods of focus.</li>
+                            </ul>
+        
+                            <p class="raleway">During entertainment, such as watching movies or playing video games, individuals may become so engrossed that they forget to drink water. Taking water breaks every hour or so can help maintain hydration, especially during sedentary activities where fluid loss might be less noticeable but still occurs through respiration and minimal movement.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="practical-tips-staying-hydrated">Practical Tips for Staying Hydrated</h2>
+        
+                            <p class="raleway">To ensure adequate hydration, consider the following strategies, which are particularly useful during work or entertainment:</p>
+        
+                            <ul class="raleway">
+                                <li>Keep a Water Bottle Handy: Having a reusable water bottle at your desk or within reach encourages frequent sips, making it easier to meet daily fluid needs.</li>
+                                <li>Set Reminders: Use alarms or apps on your phone to remind yourself to drink water at regular intervals, such as every hour, to maintain consistent intake.</li>
+                                <li>Drink Before, During, and After Meals: Make it a habit to drink a glass of water before eating, and have water with meals to boost overall fluid intake.</li>
+                                <li>Choose Water Over Other Beverages: Opt for water instead of sugary drinks or those containing caffeine, as caffeinated beverages can act as diuretics, potentially leading to further fluid loss (<a href="https://health.ucdavis.edu/blog/good-food/why-its-important-for-you-to-drink-water-and-stay-hydrated/2022/07">Why it’s important for you to drink water and stay hydrated</a>).</li>
+                                <li>Eat Water-Rich Foods: Include fruits and vegetables like watermelon, cucumbers, and oranges in your diet, as they contribute to fluid intake and provide additional nutritional benefits (<a href="https://www.cdc.gov/healthy-weight-growth/water-healthy-drinks/index.html">About Water and Healthier Drinks</a>).</li>
+                                <li>Listen to Your Body: Pay attention to signs of thirst and drink water when you feel thirsty. Additionally, monitor the color of your urine; if it's dark, it may indicate dehydration, and you should drink more water (<a href="https://www.health.harvard.edu/staying-healthy/symptoms-of-dehydration-what-they-are-and-what-to-do-if-you-experience-them">Symptoms of dehydration: What they are and what to do if you experience them</a>).</li>
+                            </ul>
+        
+                            <h2 class="title is-3 poppins mt-6" id="recommended-daily-water-intake">Recommended Daily Water Intake</h2>
+        
+                            <p class="raleway">The recommended daily water intake varies by individual factors such as age, sex, activity level, and climate. General guidelines suggest:</p>
+        
+                            <ul class="raleway">
+                                <li>Men need about 15.5 cups (3.7 liters) of total water intake per day, including from food and beverages.</li>
+                                <li>Women need about 11.5 cups (2.7 liters) per day, with higher amounts needed during pregnancy or breastfeeding.</li>
+                            </ul>
+        
+                            <p class="raleway">These amounts can be met through plain water, other beverages, and water-rich foods, but it's preferable to prioritize water for optimal hydration (<a href="https://www.health.harvard.edu/staying-healthy/how-much-water-should-you-drink">How much water should I drink a day?</a>).</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="addressing-common-misconceptions">Addressing Common Misconceptions</h2>
+        
+                            <p class="raleway">Some individuals might believe they don't need water breaks if they don't feel thirsty, or that other beverages like coffee or soda are sufficient. However, thirst is not always a reliable indicator, particularly for older adults, and caffeinated drinks can lead to further fluid loss due to their diuretic effects (<a href="https://www.webmd.com/a-to-z-guides/dehydration-adults">Dehydration - Signs, Symptoms, Causes, and Prevention</a>). Another misconception is that taking water breaks disrupts workflow, but research suggests that short breaks can improve productivity by refreshing the mind and preventing burnout, while also maintaining cognitive function (<a href="https://thewellbeingthesis.org.uk/foundations-for-success/importance-of-taking-breaks-and-having-other-interests/">The Importance of Taking Breaks</a>). Prioritizing water breaks is thus essential for a healthy and productive routine.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="recommended-tools">Recommended Tool for Water Break Reminders</h2>
+                            
+                            <p class="raleway">To help establish a consistent water break routine, technology can be a valuable ally. One particularly effective tool is <strong>Recharge - Healthy Work Break Reminders</strong>, a Chrome extension designed specifically to help users maintain healthy habits during computer use.</p>
+                            
+                            <figure class="image mb-5">
+                                <img src="../OtherProjects/Recharge_500 x 400.png" alt="Recharge Chrome Extension">
+                            </figure>
+
+                            <p class="raleway">This extension offers customizable reminders for:</p>
+                            <ul class="raleway">
+                                <li><strong>Water breaks</strong> - Set intervals that work with your schedule to ensure consistent hydration</li>
+                                <li><strong>Eye breaks</strong> - Reminders to blink and rest your eyes to prevent digital eye strain</li>
+                                <li><strong>Movement breaks</strong> - Prompts to stand up and move around to improve circulation</li>
+                                <li><strong>Stretch breaks</strong> - Suggestions for simple stretches to reduce muscle tension</li>
+                            </ul>
+                            
+                            <p class="raleway mt-3">What makes Recharge particularly effective is its non-intrusive notification system and customizable settings that adapt to your work style. The extension helps build healthy habits without disrupting productivity, making it easier to maintain proper hydration throughout the workday.</p>
+                            
+                            <div class="buttons mt-3 is-centered">
+                                <a href="https://www.guodong-zhao.com/Recharge.html" class="button is-info is-outlined" target="_blank">Learn More</a>
+                                <a href="https://chromewebstore.google.com/detail/recharge-healthy-work-bre/miipdoobdjndomfgfdbkiibiagnehlog" class="button is-primary" target="_blank">Get the Extension</a>
+                            </div>
+        
+                            <h2 class="title is-3 poppins mt-6" id="conclusion">Conclusion</h2>
+        
+                            <p class="raleway">Taking water breaks is a simple yet effective strategy to ensure adequate hydration throughout the day, particularly during work or entertainment when distractions are common. By preventing dehydration, water breaks support cognitive function, physical performance, and overall health, ultimately enhancing productivity and well-being. Incorporating regular water breaks into daily routines, with practical tips like keeping a water bottle handy and setting reminders, can help individuals meet their hydration needs and maintain optimal health.</p>
+        
+                            <h2 class="title is-3 poppins mt-6" id="key-citations">Key Citations</h2>
+        
+                            <ul class="raleway">
+                                <li><a href="https://pubmed.ncbi.nlm.nih.gov/22855911/">Dehydration and cognitive performance study</a></li>
+                                <li><a href="https://www.officeh2o.com/blog/helpful-tips/how-hydration-impacts-your-productivity/">How Hydration Impacts Your Productivity blog</a></li>
+                                <li><a href="https://us.humankinetics.com/blogs/excerpt/dehydration-and-its-effects-on-performance">Dehydration and its effects on performance excerpt</a></li>
+                                <li><a href="https://www.mayoclinic.org/diseases-conditions/dehydration/symptoms-causes/syc-20354086">Dehydration-Dehydration - Symptoms & causes Mayo Clinic</a></li>
+                                <li><a href="https://health.ucdavis.edu/blog/good-food/why-its-important-for-you-to-drink-water-and-stay-hydrated/2022/07">Why it’s important for you to drink water and stay hydrated blog</a></li>
+                                <li><a href="https://www.cdc.gov/healthy-weight-growth/water-healthy-drinks/index.html">About Water and Healthier Drinks CDC page</a></li>
+                                <li><a href="https://www.health.harvard.edu/staying-healthy/symptoms-of-dehydration-what-they-are-and-what-to-do-if-you-experience-them">Symptoms of dehydration: What they are and what to do if you experience them Harvard Health</a></li>
+                                <li><a href="https://www.health.harvard.edu/staying-healthy/how-much-water-should-you-drink">How much water should I drink a day? Harvard Health</a></li>
+                                <li><a href="https://thewellbeingthesis.org.uk/foundations-for-success/importance-of-taking-breaks-and-having-other-interests/">The Importance of Taking Breaks wellbeing thesis page</a></li>
+                                <li><a href="https://www.webmd.com/a-to-z-guides/dehydration-adults">Dehydration - Signs, Symptoms, Causes, and Prevention WebMD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
+
+    <!--Scroll to View-->
+    <script>
+        function scrollToView(viewId) {
+            var elmnt = document.getElementById(viewId);
+            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
+        }
+    </script>
+
+    <!-- Initialize AOS -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+            });
+        </script>
+        
+        <!-- Initialize Vue -->
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    isBurgerActive: false
+                },
+                methods: {
+                    toggleBurger: function() {
+                        this.isBurgerActive = !this.isBurgerActive;
+                    }
+                }
+            });
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Recharge - Healthy Work Break Reminders",
+            "applicationCategory": "BrowserExtension",
+            "operatingSystem": "Chrome",
+            "url": "https://chromewebstore.google.com/detail/recharge-healthy-work-bre/miipdoobdjndomfgfdbkiibiagnehlog",
+            "description": "Recharge is a simple, customizable Chrome extension that provides reminders for eye breaks, hydration, movement, and stretch breaks. Stay healthy and productive while working on your computer.",
+            "image": "https://www.guodong-zhao.com/OtherProjects/Recharge_500 x 400.png"
+        }
+    </script>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p class='raleway'>Interested in working with me? <br />Contact me at: <a href="mailto:gzhao1997@gmail.com"
+                class="email-link">gzhao1997@gmail.com</a></p>
+        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
+        <p class="raleway">&copy; 2025 Guodong Zhao</p>
+    </div>
+</footer>
+
+</html>
