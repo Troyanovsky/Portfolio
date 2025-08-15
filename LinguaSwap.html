@@ -31,9 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--Fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!--Buefy-->
-    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -63,6 +61,22 @@
 
         .email-link {
             cursor: url(images/email.png), auto;
+        }
+
+        /* Custom FAQ accordion button styling */
+        .card-header-icon {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0.5rem !important;
+        }
+
+        .card-header-icon:hover {
+            background: rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .card-header-icon .icon {
+            color: #069bcd;
         }
     </style>
 </head>
@@ -273,23 +287,23 @@
                 <h2 class="title is-2 has-text-centered poppins mb-6" data-aos="fade-up">Frequently Asked Questions About LinguaSwap</h2>
                 <div class="columns is-centered">
                     <div class="column is-8">
-                        <b-collapse v-for="(faq, index) in faqs" :key="index" class="card" :open="true">
-                            <template #trigger="props">
-                                <div class="card-header" role="button">
-                                    <p class="card-header-title poppins">
-                                        {{ faq.question }}
-                                    </p>
-                                    <a class="card-header-icon">
-                                        <b-icon :icon="props.open ? 'chevron-up' : 'chevron-down'"></b-icon>
-                                    </a>
-                                </div>
-                            </template>
-                            <div class="card-content">
+                        <div class="card" v-for="(faq, index) in faqs" :key="index">
+                            <header class="card-header" @click="toggleAccordion(index)" style="cursor: pointer;">
+                                <p class="card-header-title poppins">
+                                    {{ faq.question }}
+                                </p>
+                                <button class="card-header-icon" aria-label="toggle">
+                                    <span class="icon">
+                                        <i class="fas" :class="isAccordionOpen(index) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                    </span>
+                                </button>
+                            </header>
+                            <div class="card-content" v-show="isAccordionOpen(index)">
                                 <div class="content raleway">
                                     {{ faq.answer }}
                                 </div>
                             </div>
-                        </b-collapse>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,6 +343,7 @@
             data: {
                 isBurgerActive: false,
                 isOpen: 0,
+                openAccordions: [0], // Start with first FAQ open
                 faqs: [
                     {
                         question: "What is the best Chrome extension for learning vocabulary while browsing?",
@@ -382,6 +397,20 @@
             methods: {
                 toggleBurger: function () {
                     this.isBurgerActive = !this.isBurgerActive;
+                },
+
+                // Accordion methods
+                toggleAccordion: function(index) {
+                    const accordionIndex = this.openAccordions.indexOf(index);
+                    if (accordionIndex > -1) {
+                        this.openAccordions.splice(accordionIndex, 1);
+                    } else {
+                        this.openAccordions.push(index);
+                    }
+                },
+
+                isAccordionOpen: function(index) {
+                    return this.openAccordions.includes(index);
                 }
             }
         })

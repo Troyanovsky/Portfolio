@@ -12,15 +12,106 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--Fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!--Buefy-->
-    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="PineCones\PineCones.css">
+    <style>
+        /* Custom carousel styles */
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.9);
+        }
+
+        .carousel-btn-prev { left: 10px; }
+        .carousel-btn-next { right: 10px; }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #dbdbdb;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-indicator.is-active {
+            background: #3273dc;
+        }
+
+        .carousel-indicator:hover {
+            background: #b5b5b5;
+        }
+
+        .carousel-indicator.is-active:hover {
+            background: #2366d1;
+        }
+
+        /* Fix carousel image sizing */
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .carousel-slide figure {
+            height: 100%;
+            margin: 0;
+        }
+
+        .carousel-slide .image {
+            height: 100%;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
     <script>
@@ -207,13 +298,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <b-modal v-model="isConceptVideoActive">
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"
-                                        src="https://www.youtube.com/embed/QYyGUbYVtTQ?showinfo=0" frameborder="0"
-                                        allowfullscreen></iframe>
-                                </figure>
-                            </b-modal>
+                            <!-- Native Bulma modal -->
+                            <div class="modal" :class="{'is-active': isConceptVideoActive}">
+                                <div class="modal-background" @click="isConceptVideoActive = false"></div>
+                                <div class="modal-content">
+                                    <figure class="image is-16by9">
+                                        <iframe class="has-ratio" width="640" height="360"
+                                            src="https://www.youtube.com/embed/QYyGUbYVtTQ?showinfo=0" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </figure>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close" @click="isConceptVideoActive = false"></button>
+                            </div>
 
                             <div class="small-section my-3">
                                 <h5 class="title is-4 raleway my-6">
@@ -397,13 +493,29 @@
                                     <u>{{ preliminaryButton }}</u>
                                 </p>
                                 <div class="my-6" v-if="preliminaryButton == 'Show Less'">
-                                    <b-carousel>
-                                        <b-carousel-item v-for="(carousel, i) in preliminaryResearch" :key="i">
-                                            <figure class="image">
-                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                            </figure>
-                                        </b-carousel-item>
-                                    </b-carousel>
+                                    <div class="image-carousel">
+                                        <div class="carousel-container">
+                                            <div class="carousel-track" :style="{transform: `translateX(-${currentPreliminarySlide * 100}%)`}">
+                                                <div class="carousel-slide" v-for="(carousel, i) in preliminaryResearch" :key="i">
+                                                    <figure class="image">
+                                                        <img :src="carousel.link" :alt="carousel.text">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn carousel-btn-prev" @click="prevSlide('preliminary')" v-if="preliminaryResearch.length > 1">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="carousel-btn carousel-btn-next" @click="nextSlide('preliminary')" v-if="preliminaryResearch.length > 1">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="carousel-indicators" v-if="preliminaryResearch.length > 1">
+                                            <button v-for="(slide, index) in preliminaryResearch" :key="index" 
+                                                    @click="setSlide(index, 'preliminary')"
+                                                    :class="{'is-active': currentPreliminarySlide === index}"
+                                                    class="carousel-indicator"></button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p class="content my-6">
                                     Based on the results of the preliminary research, we identified <span
@@ -438,13 +550,29 @@
                                     <u>{{ flowButton }}</u>
                                 </p>
                                 <div class="my-6" v-if="flowButton == 'Show Less'">
-                                    <b-carousel>
-                                        <b-carousel-item v-for="(carousel, i) in MARSFlow" :key="i">
-                                            <figure class="image">
-                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                            </figure>
-                                        </b-carousel-item>
-                                    </b-carousel>
+                                    <div class="image-carousel">
+                                        <div class="carousel-container">
+                                            <div class="carousel-track" :style="{transform: `translateX(-${currentMARSSlide * 100}%)`}">
+                                                <div class="carousel-slide" v-for="(carousel, i) in MARSFlow" :key="i">
+                                                    <figure class="image">
+                                                        <img :src="carousel.link" :alt="carousel.text">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn carousel-btn-prev" @click="prevSlide('MARS')" v-if="MARSFlow.length > 1">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="carousel-btn carousel-btn-next" @click="nextSlide('MARS')" v-if="MARSFlow.length > 1">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="carousel-indicators" v-if="MARSFlow.length > 1">
+                                            <button v-for="(slide, index) in MARSFlow" :key="index" 
+                                                    @click="setSlide(index, 'MARS')"
+                                                    :class="{'is-active': currentMARSSlide === index}"
+                                                    class="carousel-indicator"></button>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p class="content my-6">
                                     We found that the current online MARS system does not support the full MARS learning
@@ -478,13 +606,29 @@
                                     <u>{{ teacherFlowButton }}</u>
                                 </p>
                                 <div class="my-6" v-if="teacherFlowButton == 'Show Less'">
-                                    <b-carousel>
-                                        <b-carousel-item v-for="(carousel, i) in teacherFlow" :key="i">
-                                            <figure class="image">
-                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                            </figure>
-                                        </b-carousel-item>
-                                    </b-carousel>
+                                    <div class="image-carousel">
+                                        <div class="carousel-container">
+                                            <div class="carousel-track" :style="{transform: `translateX(-${currentTeacherSlide * 100}%)`}">
+                                                <div class="carousel-slide" v-for="(carousel, i) in teacherFlow" :key="i">
+                                                    <figure class="image">
+                                                        <img :src="carousel.link" :alt="carousel.text">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn carousel-btn-prev" @click="prevSlide('teacher')" v-if="teacherFlow.length > 1">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="carousel-btn carousel-btn-next" @click="nextSlide('teacher')" v-if="teacherFlow.length > 1">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="carousel-indicators" v-if="teacherFlow.length > 1">
+                                            <button v-for="(slide, index) in teacherFlow" :key="index" 
+                                                    @click="setSlide(index, 'teacher')"
+                                                    :class="{'is-active': currentTeacherSlide === index}"
+                                                    class="carousel-indicator"></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="small-section my-3">
@@ -626,11 +770,16 @@
                                     business,
                                     and implementation constraints.
                                 </p>
-                                <b-modal v-model="isMatrixActive">
-                                    <figure class="image">
-                                        <img src="PineCones\matrix.png" alt="Difficulty & Importance Matrix">
-                                    </figure>
-                                </b-modal>
+                                <!-- Native Bulma modal for matrix -->
+                                <div class="modal" :class="{'is-active': isMatrixActive}">
+                                    <div class="modal-background" @click="isMatrixActive = false"></div>
+                                    <div class="modal-content">
+                                        <figure class="image">
+                                            <img src="PineCones\matrix.png" alt="Difficulty & Importance Matrix">
+                                        </figure>
+                                    </div>
+                                    <button class="modal-close is-large" aria-label="close" @click="isMatrixActive = false"></button>
+                                </div>
                                 <figure class="image my-6">
                                     <img src="PineCones\ideaSelection.png" alt="Narrow down ideas">
                                 </figure>
@@ -668,11 +817,16 @@
                                 <figure class="image my-6">
                                     <img src="PineCones\subfeatureStories.png" alt="Sub-feature User Stories">
                                 </figure>
-                                <b-modal v-model="isWasteFeatureActive">
-                                    <figure class="image">
-                                        <img src="PineCones\wasteFeatures.png" alt="Discarded Stories">
-                                    </figure>
-                                </b-modal>
+                                <!-- Native Bulma modal for waste features -->
+                                <div class="modal" :class="{'is-active': isWasteFeatureActive}">
+                                    <div class="modal-background" @click="isWasteFeatureActive = false"></div>
+                                    <div class="modal-content">
+                                        <figure class="image">
+                                            <img src="PineCones\wasteFeatures.png" alt="Discarded Stories">
+                                        </figure>
+                                    </div>
+                                    <button class="modal-close is-large" aria-label="close" @click="isWasteFeatureActive = false"></button>
+                                </div>
                             </div>
                             <div class="small-section my-3">
                                 <h5 class="title is-4 raleway my-6">
@@ -725,6 +879,10 @@
                 teacherFlowButton: "See Details",
                 isMatrixActive: false,
                 isWasteFeatureActive: false,
+                // Carousel states
+                currentPreliminarySlide: 0,
+                currentMARSSlide: 0,
+                currentTeacherSlide: 0,
                 preliminaryResearch: [
                     { link: 'PineCones/preliminaryStakeholderMap.png', text: 'Stakeholder Map' },
                     { link: 'PineCones/preliminaryCompetitive.png', text: 'Competitive Analysis' }
@@ -772,6 +930,43 @@
                         this.teacherFlowButton = "Show Less"
                     } else {
                         this.teacherFlowButton = "See Details"
+                    }
+                },
+
+                // Carousel methods
+                nextSlide: function(slideType) {
+                    const mapping = {
+                        'preliminary': { slide: 'currentPreliminarySlide', array: this.preliminaryResearch },
+                        'MARS': { slide: 'currentMARSSlide', array: this.MARSFlow },
+                        'teacher': { slide: 'currentTeacherSlide', array: this.teacherFlow }
+                    };
+                    const config = mapping[slideType];
+                    if (config) {
+                        this[config.slide] = (this[config.slide] + 1) % config.array.length;
+                    }
+                },
+
+                prevSlide: function(slideType) {
+                    const mapping = {
+                        'preliminary': { slide: 'currentPreliminarySlide', array: this.preliminaryResearch },
+                        'MARS': { slide: 'currentMARSSlide', array: this.MARSFlow },
+                        'teacher': { slide: 'currentTeacherSlide', array: this.teacherFlow }
+                    };
+                    const config = mapping[slideType];
+                    if (config) {
+                        this[config.slide] = this[config.slide] === 0 ? config.array.length - 1 : this[config.slide] - 1;
+                    }
+                },
+
+                setSlide: function(index, slideType) {
+                    const mapping = {
+                        'preliminary': 'currentPreliminarySlide',
+                        'MARS': 'currentMARSSlide',
+                        'teacher': 'currentTeacherSlide'
+                    };
+                    const slideProperty = mapping[slideType];
+                    if (slideProperty) {
+                        this[slideProperty] = index;
                     }
                 }
             }

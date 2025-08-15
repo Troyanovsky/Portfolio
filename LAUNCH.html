@@ -12,15 +12,106 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--Fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!--Buefy-->
-    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="LAUNCH\launch.css">
+    <style>
+        /* Custom carousel styles */
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.9);
+        }
+
+        .carousel-btn-prev { left: 10px; }
+        .carousel-btn-next { right: 10px; }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #dbdbdb;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-indicator.is-active {
+            background: #3273dc;
+        }
+
+        .carousel-indicator:hover {
+            background: #b5b5b5;
+        }
+
+        .carousel-indicator.is-active:hover {
+            background: #2366d1;
+        }
+
+        /* Fix carousel image sizing */
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .carousel-slide figure {
+            height: 100%;
+            margin: 0;
+        }
+
+        .carousel-slide .image {
+            height: 100%;
+        }
+    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
     <script>
@@ -313,22 +404,54 @@
                         </p>
                         <div class="columns is-vcentered my-6">
                             <div class="column is-one-third is-offset-1">
-                                <b-carousel>
-                                    <b-carousel-item v-for="(carousel, i) in observations" :key="i">
-                                        <figure class="image is-square">
-                                            <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                        </figure>
-                                    </b-carousel-item>
-                                </b-carousel>
+                                <div class="image-carousel">
+                                    <div class="carousel-container">
+                                        <div class="carousel-track" :style="{transform: `translateX(-${currentObservationSlide * 100}%)`}">
+                                            <div class="carousel-slide" v-for="(carousel, i) in observations" :key="i">
+                                                <figure class="image is-square">
+                                                    <img :src="carousel.link" :alt="carousel.text">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-btn carousel-btn-prev" @click="prevSlide('observation')" v-if="observations.length > 1">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="carousel-btn carousel-btn-next" @click="nextSlide('observation')" v-if="observations.length > 1">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="carousel-indicators" v-if="observations.length > 1">
+                                        <button v-for="(slide, index) in observations" :key="index" 
+                                                @click="setSlide(index, 'observation')"
+                                                :class="{'is-active': currentObservationSlide === index}"
+                                                class="carousel-indicator"></button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="column is-one-third is-offset-1">
-                                <b-carousel>
-                                    <b-carousel-item v-for="(carousel, i) in surveys" :key="i">
-                                        <figure class="image is-16by9">
-                                            <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                        </figure>
-                                    </b-carousel-item>
-                                </b-carousel>
+                                <div class="image-carousel">
+                                    <div class="carousel-container">
+                                        <div class="carousel-track" :style="{transform: `translateX(-${currentSurveySlide * 100}%)`}">
+                                            <div class="carousel-slide" v-for="(carousel, i) in surveys" :key="i">
+                                                <figure class="image is-16by9">
+                                                    <img :src="carousel.link" :alt="carousel.text">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-btn carousel-btn-prev" @click="prevSlide('survey')" v-if="surveys.length > 1">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="carousel-btn carousel-btn-next" @click="nextSlide('survey')" v-if="surveys.length > 1">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="carousel-indicators" v-if="surveys.length > 1">
+                                        <button v-for="(slide, index) in surveys" :key="index" 
+                                                @click="setSlide(index, 'survey')"
+                                                :class="{'is-active': currentSurveySlide === index}"
+                                                class="carousel-indicator"></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <p class="content raleway my-6">
@@ -632,13 +755,29 @@
                             With these main features chosen, the learning experience can be shown with the following
                             journey map:
                         </p>
-                        <b-carousel>
-                            <b-carousel-item v-for="(carousel, i) in learningExperiences" :key="i">
-                                <figure class="image">
-                                    <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                </figure>
-                            </b-carousel-item>
-                        </b-carousel>
+                        <div class="image-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track" :style="{transform: `translateX(-${currentLearningSlide * 100}%)`}">
+                                    <div class="carousel-slide" v-for="(carousel, i) in learningExperiences" :key="i">
+                                        <figure class="image">
+                                            <img :src="carousel.link" :alt="carousel.text">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <button class="carousel-btn carousel-btn-prev" @click="prevSlide('learning')" v-if="learningExperiences.length > 1">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn carousel-btn-next" @click="nextSlide('learning')" v-if="learningExperiences.length > 1">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-indicators" v-if="learningExperiences.length > 1">
+                                <button v-for="(slide, index) in learningExperiences" :key="index" 
+                                        @click="setSlide(index, 'learning')"
+                                        :class="{'is-active': currentLearningSlide === index}"
+                                        class="carousel-indicator"></button>
+                            </div>
+                        </div>
                         <h4 class="title is-4 raleway prpl has-text-weight-bold my-6">
                             <u>Prototype & Iterations Phase</u>
                         </h4>
@@ -690,13 +829,29 @@
                             </div>
                             <div class="columns my-6">
                                 <div class="column is-8 is-offset-2">
-                                    <b-carousel>
-                                        <b-carousel-item v-for="(carousel, i) in wizardOfOz" :key="i">
-                                            <figure class="image">
-                                                <img v-bind:src="carousel.link" v-bind:alt="carousel.text">
-                                            </figure>
-                                        </b-carousel-item>
-                                    </b-carousel>
+                                    <div class="image-carousel">
+                                        <div class="carousel-container">
+                                            <div class="carousel-track" :style="{transform: `translateX(-${currentWizardSlide * 100}%)`}">
+                                                <div class="carousel-slide" v-for="(carousel, i) in wizardOfOz" :key="i">
+                                                    <figure class="image">
+                                                        <img :src="carousel.link" :alt="carousel.text">
+                                                    </figure>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-btn carousel-btn-prev" @click="prevSlide('wizard')" v-if="wizardOfOz.length > 1">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="carousel-btn carousel-btn-next" @click="nextSlide('wizard')" v-if="wizardOfOz.length > 1">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="carousel-indicators" v-if="wizardOfOz.length > 1">
+                                            <button v-for="(slide, index) in wizardOfOz" :key="index" 
+                                                    @click="setSlide(index, 'wizard')"
+                                                    :class="{'is-active': currentWizardSlide === index}"
+                                                    class="carousel-indicator"></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -935,6 +1090,11 @@
                 diagnosticButton: "Show More",
                 speedDatingButton: "Show More",
                 paperButton: "Show More",
+                // Carousel states
+                currentObservationSlide: 0,
+                currentSurveySlide: 0,
+                currentLearningSlide: 0,
+                currentWizardSlide: 0,
                 surveys: [
                     { link: 'LAUNCH/Survey.png', text: 'Survey' },
                     { link: 'LAUNCH/Survey Response.png', text: 'Survey Response' }
@@ -1000,6 +1160,46 @@
                         this.paperButton = "Show Less"
                     } else {
                         this.paperButton = "Show More"
+                    }
+                },
+
+                // Carousel methods
+                nextSlide: function(slideType) {
+                    const mapping = {
+                        'observation': { slide: 'currentObservationSlide', array: this.observations },
+                        'survey': { slide: 'currentSurveySlide', array: this.surveys },
+                        'learning': { slide: 'currentLearningSlide', array: this.learningExperiences },
+                        'wizard': { slide: 'currentWizardSlide', array: this.wizardOfOz }
+                    };
+                    const config = mapping[slideType];
+                    if (config) {
+                        this[config.slide] = (this[config.slide] + 1) % config.array.length;
+                    }
+                },
+
+                prevSlide: function(slideType) {
+                    const mapping = {
+                        'observation': { slide: 'currentObservationSlide', array: this.observations },
+                        'survey': { slide: 'currentSurveySlide', array: this.surveys },
+                        'learning': { slide: 'currentLearningSlide', array: this.learningExperiences },
+                        'wizard': { slide: 'currentWizardSlide', array: this.wizardOfOz }
+                    };
+                    const config = mapping[slideType];
+                    if (config) {
+                        this[config.slide] = this[config.slide] === 0 ? config.array.length - 1 : this[config.slide] - 1;
+                    }
+                },
+
+                setSlide: function(index, slideType) {
+                    const mapping = {
+                        'observation': 'currentObservationSlide',
+                        'survey': 'currentSurveySlide',
+                        'learning': 'currentLearningSlide',
+                        'wizard': 'currentWizardSlide'
+                    };
+                    const slideProperty = mapping[slideType];
+                    if (slideProperty) {
+                        this[slideProperty] = index;
                     }
                 }
             }
