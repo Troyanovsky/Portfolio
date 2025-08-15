@@ -12,9 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--Fontawesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!--Buefy-->
-    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
-    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
     <!--Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
@@ -123,11 +121,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 LinguaSwap
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A chrome extension that learns languages while you browse
                                             </p>
                                             <div class="tags">
@@ -168,11 +166,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 Recharge
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A chrome extension that reminds you to take a break
                                             </p>
                                             <div class="tags">
@@ -212,11 +210,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 UXer Toolbox
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A toolbox for UX designers, including color/accessibility/font tools and
                                                 more
                                             </p>
@@ -258,11 +256,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 German Adjective Endings
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A 10-hour course designed to teach German adjectives to college freshman
                                             </p>
                                             <div class="tags">
@@ -279,21 +277,19 @@
                                                 </div>
                                             </div>
                                             <hr />
-                                            <b-tooltip label="Links to External Pages">
-                                                <div class="buttons">
-                                                    <a class="button is-outlined is-primary"
-                                                        href="https://drive.google.com/file/d/1X6fOExnsEfQQR-a0y_ypDLWZAYOWyLyy/view?usp=sharing"
-                                                        target="_blank">
-                                                        See Poster
-                                                    </a>
+                                            <div class="buttons" title="Links to External Pages">
+                                                <a class="button is-outlined is-primary"
+                                                    href="https://drive.google.com/file/d/1X6fOExnsEfQQR-a0y_ypDLWZAYOWyLyy/view?usp=sharing"
+                                                    target="_blank">
+                                                    See Poster
+                                                </a>
 
-                                                    <a class="button is-outlined is-primary"
-                                                        href="https://drive.google.com/file/d/1tlDSSCkjXd_t_Z4qm6UEIm-3-OqZNZIk/view?usp=sharing"
-                                                        target="_blank">
-                                                        See Report
-                                                    </a>
-                                                </div>
-                                            </b-tooltip>
+                                                <a class="button is-outlined is-primary"
+                                                    href="https://drive.google.com/file/d/1tlDSSCkjXd_t_Z4qm6UEIm-3-OqZNZIk/view?usp=sharing"
+                                                    target="_blank">
+                                                    See Report
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -308,11 +304,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 VR Conversation Scenarios
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 Immersive VR scenarios for language assessments
                                             </p>
                                             <div class="tags">
@@ -345,13 +341,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <b-modal v-model="isScenarioModalActive">
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"
-                                        src="https://www.youtube.com/embed/J0QGqIl1OtI?showinfo=0" frameborder="0"
-                                        allowfullscreen></iframe>
-                                </figure>
-                            </b-modal>
+                            <!-- VR Scenarios Modal -->
+                            <div class="modal" v-bind:class="{'is-active': isScenarioModalActive}">
+                                <div class="modal-background" @click="isScenarioModalActive = false"></div>
+                                <div class="modal-content">
+                                    <figure class="image is-16by9">
+                                        <iframe class="has-ratio" width="640" height="360"
+                                            src="https://www.youtube.com/embed/J0QGqIl1OtI?showinfo=0" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </figure>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close" @click="isScenarioModalActive = false"></button>
+                            </div>
                             <!--Whitewhale-->
                             <div class="box" data-aos="fade-up">
                                 <div class="columns is-vertical-center">
@@ -362,11 +363,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 White Whale Bookstore: Where Cultures Meet
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A short VR documentary about an independent local bookstore
                                             </p>
                                             <div class="tags">
@@ -393,13 +394,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <b-modal v-model="isWhitewhaleModalActive">
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"
-                                        src="https://www.youtube.com/embed/oQ-ZVHighEM?showinfo=0" frameborder="0"
-                                        allowfullscreen></iframe>
-                                </figure>
-                            </b-modal>
+                            <!-- Whitewhale Modal -->
+                            <div class="modal" v-bind:class="{'is-active': isWhitewhaleModalActive}">
+                                <div class="modal-background" @click="isWhitewhaleModalActive = false"></div>
+                                <div class="modal-content">
+                                    <figure class="image is-16by9">
+                                        <iframe class="has-ratio" width="640" height="360"
+                                            src="https://www.youtube.com/embed/oQ-ZVHighEM?showinfo=0" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </figure>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close" @click="isWhitewhaleModalActive = false"></button>
+                            </div>
                             <!--Short Intro of Vue-->
                             <div class="box" data-aos="fade-up">
                                 <div class="columns is-vertical-center">
@@ -409,11 +415,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 A Very Short Intro of Vue.js
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 A short introduction video explaining the basics of Vue.js framework
                                             </p>
                                             <div class="tags">
@@ -439,13 +445,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <b-modal v-model="isVueJsActive">
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"
-                                        src="https://www.youtube.com/embed/S1tSH1lKlMM?showinfo=0" frameborder="0"
-                                        allowfullscreen></iframe>
-                                </figure>
-                            </b-modal>
+                            <!-- Vue.js Modal -->
+                            <div class="modal" v-bind:class="{'is-active': isVueJsActive}">
+                                <div class="modal-background" @click="isVueJsActive = false"></div>
+                                <div class="modal-content">
+                                    <figure class="image is-16by9">
+                                        <iframe class="has-ratio" width="640" height="360"
+                                            src="https://www.youtube.com/embed/S1tSH1lKlMM?showinfo=0" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </figure>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close" @click="isVueJsActive = false"></button>
+                            </div>
                             <!--Fragments Editor-->
                             <div class="box" data-aos="fade-up">
                                 <div class="columns is-vertical-center">
@@ -455,11 +466,11 @@
                                         </figure>
                                     </div>
                                     <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
+                                        <div style="width: 100%" class="py-2">
+                                            <h3 class="title is-4 raleway mb-2">
                                                 Fragments Snippets Editor
                                             </h3>
-                                            <p class="subtitle is-6 raleway">
+                                            <p class="subtitle is-6 raleway mt-0 mb-4">
                                                 Script editor for storing and reusing code snippets
                                             </p>
                                             <div class="tags">
@@ -490,13 +501,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <b-modal v-model="isFragmentsActive">
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"
-                                        src="https://www.youtube.com/embed/UwbHcelVWm8?showinfo=0" frameborder="0"
-                                        allowfullscreen></iframe>
-                                </figure>
-                            </b-modal>
+                            <!-- Fragments Modal -->
+                            <div class="modal" v-bind:class="{'is-active': isFragmentsActive}">
+                                <div class="modal-background" @click="isFragmentsActive = false"></div>
+                                <div class="modal-content">
+                                    <figure class="image is-16by9">
+                                        <iframe class="has-ratio" width="640" height="360"
+                                            src="https://www.youtube.com/embed/UwbHcelVWm8?showinfo=0" frameborder="0"
+                                            allowfullscreen></iframe>
+                                    </figure>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close" @click="isFragmentsActive = false"></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -519,6 +535,12 @@
             el: "#app",
             created() {
                 AOS.init();
+                // Add keyboard event listener for ESC key
+                document.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        this.closeAllModals();
+                    }
+                });
             },
             data: {
                 isBurgerActive: false,
@@ -530,6 +552,12 @@
             methods: {
                 toggleBurger: function () {
                     this.isBurgerActive = !this.isBurgerActive;
+                },
+                closeAllModals: function () {
+                    this.isFragmentsActive = false;
+                    this.isVueJsActive = false;
+                    this.isScenarioModalActive = false;
+                    this.isWhitewhaleModalActive = false;
                 }
             }
         })
