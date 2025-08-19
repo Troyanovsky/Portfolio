@@ -1,55 +1,26 @@
-.raleway {
-    font-family: 'Raleway';
-}
+/* 
+  Project: Instructional Design Toolkit
+  Accent Color: Green (#10b981)
+  This file is kept for reference. Styles are now primarily handled by Tailwind CSS in the HTML file.
+*/
 
-.poppins {
-    font-family: 'poppins'
+.accent-primary { 
+    color: #10b981; /* emerald-500 */
 }
-
-html {
-    scroll-behavior: smooth;
+.accent-bg { 
+    background-color: #10b981; 
 }
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+.accent-border { 
+    border-color: #10b981; 
 }
-
-.is-vertical-center {
-    display: flex;
-    align-items: center;
+.accent-hover:hover { 
+    background-color: #0f9a6c; /* emerald-600 */
 }
-
-.grn {
-    color: #8ABC8B;
+.accent-text-hover:hover {
+    color: #10b981;
 }
-
-p {
-    font-size: 1.25rem;
+.highlight {
+    background-color: #d1fae5; /* emerald-100 */
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
 }
-
-.has-highlight {
-    background-color: #b0e8b1;
-}
-
-.iframe-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  }
-  
-  /* Then style the iframe to fit in the container div with full height and width */
-  .responsive-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }

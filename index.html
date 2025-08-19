@@ -1,180 +1,387 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | Guodong Zhao's Portfolio</title>
-    <meta name="description"
-        content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
-    <link rel="icon" href="images\Icon.png">
+    <meta name="description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    <link rel="icon" href="images/Icon.png">
     <link rel="canonical" href="https://www.guodong-zhao.com/" />
-
-    <!-- Open Graph tags -->
+    
+    <!-- SEO Meta Tags -->
     <meta property="og:title" content="Guodong Zhao - Product Manager">
-    <meta property="og:description"
-        content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    <meta property="og:description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
     <meta property="og:url" content="https://www.guodong-zhao.com/">
     <meta property="og:type" content="website">
-
+    
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Guodong Zhao - Product Manager">
-    <meta name="twitter:description"
-        content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
-
-    <!--Bulma-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <!-- Vue development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!--Fontawesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-    <!--AOS-->
+    <meta name="twitter:description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.12/dist/index.global.min.js"></script>
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-HH0RFQKBHF');
     </script>
+    
     <style>
         .raleway {
-            font-family: 'Raleway';
+            font-family: 'Raleway', sans-serif;
         }
 
         .poppins {
-            font-family: 'poppins'
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        hr {
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid #ccc;
-            margin: 1em 0;
-            padding: 0;
-        }
-
-        .is-vertical-center {
-            display: flex;
-            align-items: center;
+            font-family: 'Poppins', sans-serif;
         }
 
         .email-link {
             cursor: url(images/email.png), auto;
         }
+        
+        /* Custom aspect ratio for project images */
+        .aspect-5-4 {
+            aspect-ratio: 5 / 4;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-
-<body class="has-navbar-fixed-top">
+<body class="poppins bg-gray-50 pt-16">
     <div id="app">
-        <!--Nav bar-->
-        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
-            <div class="navbar-brand">
-                <div class="navbar-item">
-                    <a href="https://www.guodong-zhao.com" class="title is-4" style="font-family: Poppins; text-decoration: underline">
-                        Guodong Zhao
-                    </a>
-                </div>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
-                    v-bind:class="{'is-active': isBurgerActive}">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-white" href="index.html#top">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="https://www.guodong-zhao.com" class="text-xl font-semibold text-gray-900 poppins hover:text-blue-600 transition-colors underline">
+                            Guodong Zhao
+                        </a>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-6">
+                            <a href="index.html#top" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Selected Projects
                             </a>
-                            <a class="button is-white" href="OtherProjects.html#top">
+                            <a href="OtherProjects.html#top" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Other Projects
                             </a>
-                            <a class="button is-white"
-                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
-                                target="_blank">
+                            <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Resume
                             </a>
-                            <a class="button is-white email-link" href="mailto:gzhao1997@gmail.com" target="_blank">
+                            <a href="mailto:gzhao1997@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200 email-link">
                                 Contact Me
                             </a>
                         </div>
                     </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 hover:text-blue-600 focus:outline-none p-2" aria-label="Toggle mobile menu" :aria-expanded="mobileMenuOpen">
+                            <i class="fas fa-bars text-lg" v-if="!mobileMenuOpen"></i>
+                            <i class="fas fa-times text-lg" v-if="mobileMenuOpen"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div v-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200">
+                <div class="px-4 pt-2 pb-3 space-y-1">
+                    <a href="index.html#top" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">
+                        Selected Projects
+                    </a>
+                    <a href="OtherProjects.html#top" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">
+                        Other Projects
+                    </a>
+                    <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">
+                        Resume
+                    </a>
+                    <a href="mailto:gzhao1997@gmail.com" class="block mx-3 my-2 px-4 py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors email-link">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </nav>
 
-        <!--Entry-->
-        <section class="hero is-small">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns my-6">
-                        <div class="column is-8 is-offset-2">
-                            <H1 class="title is-2 raleway" style="font-weight: normal">Hi! My name is <span
-                                    style="font-weight: bold; white-space: nowrap;">Guodong Zhao<img
-                                        src='images\waving hand.gif' style="height: 1em" alt="waving hand" /></span></p>
-                            <p class="subtitle is-4 raleway" style="font-weight: normal">
-                                I design and develop products and experiences for better learning and living.
-                            </p>
-                            <br />
-                            <br />
-                            <p class="raleway is-size-5">
-                                Master's in <a href="https://metals.hcii.cmu.edu/" target="_blank">Educational
-                                    Technology and Applied Learning Science</a> in <a href="https://hcii.cmu.edu/"
-                                    target="_blank">HCI Institute</a> @ CMU.
-                            </p>
-                            <p class="raleway is-size-5">
-                                B.S. in <a href="https://www.cheme.engineering.cmu.edu/" target="_blank">Chemical
-                                    Engineering</a>
-                                and <a href="https://www.cmu.edu/dietrich/modlang/undergraduate/german.html"
-                                    target="_blank">German
-                                    Studies</a> @ CMU.
-                            </p>
-                            <br />
-                            <br />
-                            <!-- 
-                            <p class="raleway my-5 is-size-5">
-                                <b>Currently seeking a full-time <span class="has-background-link-light">Product Management</span> opportunity.</b>
-                            </p>
-                            <div class="buttons">
-                                <a class="button is-rounded is-link"
-                                    href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
-                                    target="_blank">
-                                    View Resume Now
-                                </a>
-                                <a class="button is-rounded is-link is-outlined"
-                                    href="images\简历 - 赵国栋.pdf"
-                                    target="_blank">
-                                    查看中文简历
-                                </a>
+        <!-- Hero Section -->
+        <section class="py-16 lg:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-5xl font-normal text-gray-900 mb-6 raleway">
+                        Hi! My name is 
+                        <span class="font-semibold whitespace-nowrap">
+                            Guodong Zhao<img src='images/waving hand.gif' class="inline-block h-10 ml-2 align-top" alt="waving hand" />
+                        </span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-gray-600 mb-12 raleway font-normal">
+                        I design and develop products and experiences for better learning and living.
+                    </p>
+                    
+                    <div class="mb-8 space-y-2 text-lg text-gray-700">
+                        <p>
+                            Master's in <a href="https://metals.hcii.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">Educational Technology and Applied Learning Science</a> in <a href="https://hcii.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">HCI Institute</a> @ CMU.
+                        </p>
+                        <p>
+                            B.S. in <a href="https://www.cheme.engineering.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">Chemical Engineering</a> and <a href="https://www.cmu.edu/dietrich/modlang/undergraduate/german.html" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">German Studies</a> @ CMU.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://www.linkedin.com/in/guodongzhao/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            LinkedIn Profile
+                        </a>
+                        <a href="https://medium.com/@guodong_zhao" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                            Writings on Medium
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects Section -->
+        <section class="py-16" id="projects">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-gray-900 mb-12 raleway text-center lg:text-left">
+                        <span @click="scrollToView('projects')" class="cursor-pointer underline hover:text-blue-600 transition-colors">
+                            Selected Projects ↓
+                        </span>
+                    </h2>
+                    
+                    <div class="space-y-12">
+                        <!-- Pacer Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="OtherProjects/Pacer, with Background_ 600 x 490.png.png" alt="Pacer Walking App" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        Pacer Walking App
+                                    </h3>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">
+                                        Walking App, Weight Loss & Walking Community
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Mobile App/Web</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Product Management</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">SEO/ASO</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">GenAI</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Product Management<br />Research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='https://apps.apple.com/us/app/pacer-pedometer-step-tracker/id600446812' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See App
+                                    </a>
+                                </div>
                             </div>
-                            -->
-                            <div class="buttons">
-                                <a class="button is-rounded is-link" href="https://www.linkedin.com/in/guodongzhao/"
-                                    target="_blank">
-                                    LinkedIn Profile
-                                </a>
-                                <a class="button is-rounded is-link is-outlined" href="https://medium.com/@guodong_zhao"
-                                    target="_blank">
-                                    Writings on Medium
-                                </a>
+                        </div>
+
+                        <!-- PineCones Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="PineCones/PineCones Project Images, with Background_ 600 x 490.png" alt="PineCones, Online starred problem set" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        PineCones
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        Online starred problem set
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: Squirrel AI by Yixue Group
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">EdTech Tool Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Online Learning</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Product Management</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Product Management<br />User Research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='PineCones.html' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Case Study
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LAUNCH Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="LAUNCH/Project Images, with Background_ 600 x 480.png" alt="LAUNCH, Interactive documentation tool in PBL" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        LAUNCH
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        Interactive documentation tool in PBL
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: A local private high school
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Learning Experience Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">EdTech Tool Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Rapid Prototyping</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Research<br />Design<br />Prototype</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='LAUNCH.html' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Case Study
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructional Design Toolkit Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="InstructionalDesignToolkit/Project Images, with Background_ 600 x 480.png" alt="Instructional Design Toolkit" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        Instructional Design Toolkit
+                                    </h3>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">
+                                        Reference toolkit for instructional designers
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Instructional Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Knowledge Organization</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Synthesis<br />Writing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="IDToolkit.html" class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Toolkit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Invisible Threats Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="AirInPgh/Project Images, with Background_ 600 x 486.png" alt="The Invisible Threats online museum exhibit" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        The Invisible Threats
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        An online museum exhibit about air quality in Pittsburgh
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: Carnegie Museum of Natural History
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Learning Experience Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Instructional Design</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Research<br />LX Design<br />Website Development</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <a href="InvisibleThreats.html" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 text-center rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                            See Case Study
+                                        </a>
+                                        <a href="https://troyanovsky.github.io/LIM/" target="_blank" class="flex-1 inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 text-center rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                            See Exhibit
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,317 +389,88 @@
             </div>
         </section>
 
-        <!--Selected Projects-->
-        <section class="hero is-small">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column is-8 is-offset-2">
-                            <p class="title is-4 raleway" style="text-decoration: underline" id="projects">
-                                <span onclick="scrollToView('projects')" style="cursor: pointer">Selected Projects
-                                    ↓</span>
-                            </p>
-                            <!--Pacer-->
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img src="OtherProjects/Pacer, with Background_ 600 x 490.png.png" alt="Pacer Walking App">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%" class="py-2">
-                                            <h3 class="title is-4 raleway mb-2">
-                                                Pacer Walking App
-                                            </h3>
-                                            <p class="subtitle is-6 raleway mt-0 mb-4">
-                                                Walking App, Weight Loss & Walking Community
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">Mobile App/Web</span>
-                                                <span class="tag">Product Management</span>
-                                                <span class="tag">SEO/ASO</span>
-                                                <span class="tag">GenAI</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Product Management<br />Research</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <a class="button is-outlined is-primary"
-                                                href='https://apps.apple.com/us/app/pacer-pedometer-step-tracker/id600446812'>
-                                                See App
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--PineCones-->
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img
-                                                src="PineCones\PineCones Project Images, with Background_ 600 x 490.png" alt="PineCones, Online starred problem set">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%" class="py-2">
-                                            <h3 class="title is-4 raleway mb-2">
-                                                PineCones
-                                            </h3>
-                                            <p class="subtitle is-6 raleway mt-0 mb-4">
-                                                Online starred problem set <br />
-                                                <span style="font-size: 0.75rem">Client: Squirrel AI by Yixue
-                                                    Group</span>
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">EdTech Tool Design</span>
-                                                <span class="tag">Online Learning</span>
-                                                <span class="tag">Product Management</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Product Management<br />User Research</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <a class="button is-outlined is-primary" href='PineCones.html'>
-                                                See Case Study
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--LAUNCH-->
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img src="LAUNCH\Project Images, with Background_ 600 x 480.png" alt="LUNCH, Interactive documentation tool in PBL">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%" class="py-2">
-                                            <h3 class="title is-4 raleway mb-2">
-                                                LAUNCH
-                                            </h3>
-                                            <p class="subtitle is-6 raleway mt-0 mb-4">
-                                                Interactive documentation tool in PBL <br />
-                                                <span style="font-size: 0.75rem">Client: A local private high
-                                                    school</span>
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">Learning Experience Design</span>
-                                                <span class="tag">EdTech Tool Design</span>
-                                                <span class='tag'>Rapid Prototyping</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Research<br />Design<br />Prototype</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <a class="button is-outlined is-primary" href='LAUNCH.html'>
-                                                See Case Study
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Instructioanl Design Toolbox-->
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img
-                                                src="InstructionalDesignToolkit\Project Images, with Background_ 600 x 480.png"
-                                                alt="Instructional Design Toolkit">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%" class="py-2">
-                                            <h3 class="title is-4 raleway mb-2">
-                                                Instructional Design Toolkit
-                                            </h3>
-                                            <p class="subtitle is-6 raleway mt-0 mb-4">
-                                                Reference toolkit for instructional designers
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">Instructional Design</span>
-                                                <span class="tag">Knowledge Organization</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Synthesis<br />Writing</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <a class="button is-outlined is-primary" href="IDToolkit.html">
-                                                See Toolkit
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Listening Practice Software-->
-                            <!--
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img src="ListeningPractice\Project Images, with Background_ 600 x 480.png">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%">
-                                            <h3 class="title is-4 raleway">
-                                                Listening Practice Software
-                                            </h3>
-                                            <p class="subtitle is-6 raleway">
-                                                Desktop app for practice foreign language listening skills
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">EdTech Tool Design</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Design<br />Prototype<br />Development</p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <a class="button is-outlined is-primary">
-                                                See Prototype
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            -->
-                            <!--The Invisible Threats-->
-                            <div class="box" data-aos="fade-up">
-                                <div class="columns is-vertical-center">
-                                    <div class="column is-8">
-                                        <figure class="image is-5by4">
-                                            <img src="AirInPgh\Project Images, with Background_ 600 x 486.png" alt="The Invisible Threats online museum exhibit">
-                                        </figure>
-                                    </div>
-                                    <div class="column is-4 is-vertical-center">
-                                        <div style="width: 100%" class="py-2">
-                                            <h3 class="title is-4 raleway mb-2">
-                                                The Invisible Threats
-                                            </h3>
-                                            <p class="subtitle is-6 raleway mt-0 mb-4">
-                                                An online museum exhibit about air quality in Pittsburgh <br />
-                                                <span style="font-size: 0.75rem">Client: Carnegie Museum of Natural
-                                                    History</span>
-                                            </p>
-                                            <div class="tags">
-                                                <span class="tag">Learning Experience Design</span>
-                                                <span class="tag">Instructional Design</span>
-                                            </div>
-                                            <hr />
-                                            <div class="columns">
-                                                <div class="column is-one-third">
-                                                    <p class='raleway'><strong>My Role</strong></p>
-                                                </div>
-                                                <div class="column is-two-thirds">
-                                                    <p class='raleway'>Research<br />LX Design<br />Website Development
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div class="buttons">
-                                                <a class="button is-outlined is-primary" href="InvisibleThreats.html">
-                                                    See Case Study
-                                                </a>
-                                                <a class="button is-outlined is-primary"
-                                                    href="https://troyanovsky.github.io/LIM/" target="_blank">
-                                                    See Exhibit
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center">
+                    <p class="text-gray-600 mb-2">Interested in working with me?</p>
+                    <p class="text-gray-900 font-medium mb-6">
+                        Contact me at: 
+                        <a href="mailto:gzhao1997@gmail.com" class="text-blue-600 hover:text-blue-700 transition-colors email-link">
+                            gzhao1997@gmail.com
+                        </a>
+                    </p>
+                    
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="https://www.linkedin.com/in/guodongzhao/" target="_blank" 
+                           class="text-gray-400 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://medium.com/@guodong_zhao" target="_blank" 
+                           class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i class="fab fa-medium text-xl"></i>
+                        </a>
                     </div>
+                    
+                    <p class="text-gray-500 text-sm">
+                        Made with <i class="fas fa-coffee text-amber-600"></i> and <i class="fas fa-heart text-red-500"></i>
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2">&copy; 2025 Guodong Zhao</p>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
-    <!--AOS-->
-    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-
-    <!--Scroll to View-->
+    
+    <!-- Vue 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.18/dist/vue.global.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Scroll to View Function -->
     <script>
         function scrollToView(viewId) {
             var elmnt = document.getElementById(viewId);
             elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
         }
     </script>
-
+    
+    <!-- Vue App -->
     <script>
-        var app = new Vue({
-            el: "#app",
-            created() {
-                AOS.init();
-            },
-            data: {
-                isBurgerActive: false
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    mobileMenuOpen: false
+                }
             },
             methods: {
-                toggleBurger: function () {
-                    this.isBurgerActive = !this.isBurgerActive;
+                scrollToView: function(viewId) {
+                    scrollToView(viewId);
                 }
+            },
+            mounted() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
             }
-        })
+        }).mount('#app');
     </script>
+    
+    <!-- Structured Data -->
     <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Guodong Zhao",
-          "jobTitle": "Product Manager",
-          "url": "https://www.guodong-zhao.com/",
-          "sameAs": [
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Guodong Zhao",
+        "jobTitle": "Product Manager",
+        "url": "https://www.guodong-zhao.com/",
+        "sameAs": [
             "https://www.linkedin.com/in/guodongzhao/",
             "https://medium.com/@guodong_zhao"
-          ]
-        }
-        </script>
-
+        ]
+    }
+    </script>
 </body>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p class='raleway'>Interested in working with me? <br />Contact me at: <a href="mailto:gzhao1997@gmail.com"
-                class="email-link">gzhao1997@gmail.com</a></p>
-        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
-        <p class="raleway">&copy; 2025 Guodong Zhao</p>
-    </div>
-</footer>
-
 </html>

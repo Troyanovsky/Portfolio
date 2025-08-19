@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -25,205 +25,169 @@
         content="Make language learning a part of your daily browsing with LinguaSwap. Add words, manage vocabulary, and see translations seamlessly as you surf the web.">
     <meta name="twitter:image" content="https://www.guodong-zhao.com/OtherProjects/LinguaSwap_500 x 400.png">
 
-    <!--Bulma-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <!-- Vue development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!--Fontawesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-    <!--AOS-->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.12/dist/index.global.min.js"></script>
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-HH0RFQKBHF');
     </script>
     <style>
-        .raleway {
-            font-family: 'Raleway';
-        }
+        .raleway { font-family: 'Raleway', sans-serif; }
+        .poppins { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
 
-        .poppins {
-            font-family: 'poppins'
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .email-link {
-            cursor: url(images/email.png), auto;
-        }
-
-        /* Custom FAQ accordion button styling */
-        .card-header-icon {
-            background: none !important;
-            border: none !important;
-            box-shadow: none !important;
-            padding: 0.5rem !important;
-        }
-
-        .card-header-icon:hover {
-            background: rgba(0, 0, 0, 0.05) !important;
-        }
-
-        .card-header-icon .icon {
-            color: #069bcd;
-        }
+        /* Default blue theme */
+        .accent-primary { color: #3b82f6; }
+        .accent-bg { background-color: #3b82f6; }
+        .accent-border { border-color: #3b82f6; }
+        .accent-hover:hover { background-color: #2563eb; }
+        .accent-text-hover:hover { color: #3b82f6; }
     </style>
 </head>
 
-<body class="has-navbar-fixed-top">
+<body class="poppins bg-gray-50 pt-16">
     <div id="app">
-        <!--Nav bar-->
-        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
-            <div class="navbar-brand">
-                <div class="navbar-item">
-                    <a href="https://www.guodong-zhao.com" class="title is-4"
-                        style="font-family: Poppins; text-decoration: underline">
-                        Guodong Zhao
-                    </a>
-                </div>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
-                    v-bind:class="{'is-active': isBurgerActive}">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-white" href="index.html#top">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-xl font-semibold text-gray-900 poppins accent-text-hover transition-colors underline">
+                            Guodong Zhao
+                        </a>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-6">
+                            <a href="index.html" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Selected Projects
                             </a>
-                            <a class="button is-white" href="OtherProjects.html#top">
+                            <a href="OtherProjects.html" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Other Projects
                             </a>
-                            <a class="button is-white"
-                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
-                                target="_blank">
+                            <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Resume
                             </a>
-                            <a class="button is-white email-link" href="mailto:gzhao1997@gmail.com" target="_blank">
+                            <a href="mailto:gzhao1997@gmail.com" class="accent-bg text-white px-4 py-2 rounded-lg text-sm font-medium accent-hover transition-colors duration-200">
                                 Contact Me
                             </a>
                         </div>
                     </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 accent-text-hover focus:outline-none p-2" aria-label="Toggle mobile menu">
+                            <i class="fas fa-bars text-lg" v-if="!mobileMenuOpen"></i>
+                            <i class="fas fa-times text-lg" v-if="mobileMenuOpen"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div v-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200">
+                <div class="px-4 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Selected Projects
+                    </a>
+                    <a href="OtherProjects.html" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Other Projects
+                    </a>
+                    <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Resume
+                    </a>
+                    <a href="mailto:gzhao1997@gmail.com" class="block mx-3 my-2 px-4 py-2 accent-bg text-white text-center rounded-lg accent-hover transition-colors">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </nav>
 
-        <!--Main Content-->
         <!-- Hero Section -->
-        <section class="hero is-medium has-background-info-light">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-vcentered">
-                        <div class="column" data-aos="fade-right">
-                            <h1 class="title is-1 poppins">
-                                Lingua<span style="color: #069bcd;">Swap</span>
-                            </h1>
-                            <h2 class="subtitle is-3 raleway">
-                                Learn foreign language words while you browse
-                            </h2>
-                            <div class="buttons is-flex-wrap-wrap">
-                                <a href="https://chromewebstore.google.com/detail/linguaswap/alccaibaldgnhnfbooofkmdljijcemie"
-                                    class="button is-info-light is-large is-rounded" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-chrome"></i>
-                                    </span>
-                                    <span>Add to Chrome</span>
-                                </a>
-                                <a href="https://github.com/Troyanovsky/plugin-linguaswap"
-                                    class="button is-info-light is-large is-rounded" target="_blank">
-                                    <span class="icon">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                    <span>See GitHub Repo</span>
-                                </a>
-                            </div>
+        <section class="py-20 bg-blue-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h1 class="text-5xl md:text-6xl font-bold poppins text-gray-900">
+                            Lingua<span class="accent-primary">Swap</span>
+                        </h1>
+                        <p class="mt-4 text-xl md:text-2xl text-gray-600 raleway">
+                            Learn foreign language words while you browse
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://chromewebstore.google.com/detail/linguaswap/alccaibaldgnhnfbooofkmdljijcemie"
+                                class="inline-flex items-center gap-3 px-6 py-3 accent-bg text-white rounded-lg font-semibold accent-hover transition-colors" target="_blank">
+                                <i class="fab fa-chrome text-xl"></i>
+                                <span>Add to Chrome</span>
+                            </a>
+                            <a href="https://github.com/Troyanovsky/plugin-linguaswap"
+                                class="inline-flex items-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold hover:bg-gray-300 transition-colors" target="_blank">
+                                <i class="fab fa-github text-xl"></i>
+                                <span>See GitHub Repo</span>
+                            </a>
                         </div>
-                        <div class="column" data-aos="fade-left">
-                            <figure class="image">
-                                <img src="OtherProjects/LinguaSwap_500 x 400.png" alt="LinguaSwap Screenshot">
-                            </figure>
-                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <img src="OtherProjects/LinguaSwap_500 x 400.png" alt="LinguaSwap Screenshot" class="rounded-lg shadow-xl">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered poppins mb-6" data-aos="fade-up">LinguaSwap Features</h2>
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">LinguaSwap Features</h2>
                 
-                <!-- Feature 1 -->
-                <div class="columns is-vcentered my-6">
-                    <div class="column is-hidden-mobile" data-aos="fade-right">
-                        <div class="content has-text-centered">
-                            <h3 class="title is-4 poppins">Multiple Languages Supported</h3>
-                            <p class="raleway">LinguaSwap supports multiple languages, allowing you to learn the language of your choice.</p>
+                <div class="space-y-16">
+                    <!-- Feature 1 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center">
+                            <i class="fas fa-globe fa-4x accent-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Multiple Languages Supported</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">LinguaSwap supports multiple languages, allowing you to learn the language of your choice.</p>
                         </div>
                     </div>
-                    <div class="column has-text-centered" data-aos="fade-left">
-                        <span class="icon is-large" style="color: #069bcd;">
-                            <i class="fas fa-globe fa-3x"></i>
-                        </span>
-                        <div class="content is-hidden-tablet has-text-centered mt-4">
-                            <h3 class="title is-4 poppins">Multiple Languages Supported</h3>
-                            <p class="raleway">LinguaSwap supports multiple languages, allowing you to learn the language of your choice.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Feature 2 -->
-                <div class="columns is-vcentered my-6">
-                    <div class="column has-text-centered" data-aos="fade-right">
-                        <span class="icon is-large" style="color: #069bcd;">
-                            <i class="fas fa-list-alt fa-3x"></i>
-                        </span>
-                        <div class="content is-hidden-tablet has-text-centered mt-4">
-                            <h3 class="title is-4 poppins">Personal Word List Management</h3>
-                            <p class="raleway">Easily add, edit, and manage your personalized vocabulary list to track your learning progress.</p>
+                    <!-- Feature 2 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center md:order-last">
+                            <i class="fas fa-list-alt fa-4x accent-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Personal Word List Management</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">Easily add, edit, and manage your personalized vocabulary list to track your learning progress.</p>
                         </div>
                     </div>
-                    <div class="column is-hidden-mobile" data-aos="fade-left">
-                        <div class="content has-text-centered">
-                            <h3 class="title is-4 poppins">Personal Word List Management</h3>
-                            <p class="raleway">Easily add, edit, and manage your personalized vocabulary list to track your learning progress.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Feature 3 -->
-                <div class="columns is-vcentered my-6">
-                    <div class="column is-hidden-mobile" data-aos="fade-right">
-                        <div class="content has-text-centered">
-                            <h3 class="title is-4 poppins">Immersive Word Replacement</h3>
-                            <p class="raleway">Seamlessly see translations of familiar words in your target language as you browse the web.</p>
+                    <!-- Feature 3 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center">
+                            <i class="fas fa-th-large fa-4x accent-primary"></i>
                         </div>
-                    </div>
-                    <div class="column has-text-centered" data-aos="fade-left">
-                        <span class="icon is-large" style="color: #069bcd;">
-                            <i class="fas fa-th-large fa-3x"></i>
-                        </span>
-                        <div class="content is-hidden-tablet has-text-centered mt-4">
-                            <h3 class="title is-4 poppins">Immersive Word Replacement</h3>
-                            <p class="raleway">Seamlessly see translations of familiar words in your target language as you browse the web.</p>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Immersive Word Replacement</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">Seamlessly see translations of familiar words in your target language as you browse the web.</p>
                         </div>
                     </div>
                 </div>
@@ -231,78 +195,46 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="section has-background-info-light">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered poppins mb-6" data-aos="fade-up">How LinguaSwap Works</h2>
-                <div class="columns is-vcentered">
-                    <div class="column" data-aos="fade-right">
-                        <div class="box has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fas fa-language fa-2x"></i>
-                            </span>
-                            <h3 class="title is-4 poppins">Set Language Pair</h3>
-                            <p class="raleway">Choose your native language and the language you want to learn.
-                                LinguaSwap will do the rest.</p>
-                        </div>
+        <section class="py-20 bg-blue-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">How LinguaSwap Works</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up">
+                        <i class="fas fa-language fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Set Language Pair</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Choose your native language and the language you want to learn. LinguaSwap will do the rest.</p>
                     </div>
-                    <div class="column" data-aos="fade-left">
-                        <div class="box has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fas fa-mouse-pointer fa-2x"></i>
-                            </span>
-                            <h3 class="title is-4 poppins">Add Words to Your List</h3>
-                            <p class="raleway">Highlight words in your native language, right-click, and add them to
-                                your personalized vocabulary list.</p>
-                        </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-mouse-pointer fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Add Words to Your List</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Highlight words in your native language, right-click, and add them to your personalized vocabulary list.</p>
                     </div>
-                </div>
-                <div class="columns is-vcentered">
-                    <div class="column" data-aos="fade-right">
-                        <div class="box has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fas fa-sync-alt fa-2x"></i>
-                            </span>
-                            <h3 class="title is-4 poppins">Dynamic Replacement</h3>
-                            <p class="raleway">As you browse, LinguaSwap will automatically replace the words you're
-                                learning with their translations.</p>
-                        </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-sync-alt fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Dynamic Replacement</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">As you browse, LinguaSwap will automatically replace the words you're learning with their translations.</p>
                     </div>
-                    <div class="column" data-aos="fade-left">
-                        <div class="box has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fas fa-book fa-2x"></i>
-                            </span>
-                            <h3 class="title is-4 poppins">Passive Learning</h3>
-                            <p class="raleway">Exposure to the target language words through natural reading helps you
-                                remember them better.</p>
-                        </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-book fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Passive Learning</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Exposure to the target language words through natural reading helps you remember them better.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered poppins mb-6" data-aos="fade-up">Frequently Asked Questions About LinguaSwap</h2>
-                <div class="columns is-centered">
-                    <div class="column is-8">
-                        <div class="card" v-for="(faq, index) in faqs" :key="index">
-                            <header class="card-header" @click="toggleAccordion(index)" style="cursor: pointer;">
-                                <p class="card-header-title poppins">
-                                    {{ faq.question }}
-                                </p>
-                                <button class="card-header-icon" aria-label="toggle">
-                                    <span class="icon">
-                                        <i class="fas" :class="isAccordionOpen(index) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-                                    </span>
-                                </button>
-                            </header>
-                            <div class="card-content" v-show="isAccordionOpen(index)">
-                                <div class="content raleway">
-                                    {{ faq.answer }}
-                                </div>
-                            </div>
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div v-for="(faq, index) in faqs" :key="index" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" data-aos="fade-up">
+                        <button @click="toggleAccordion(index)" class="w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-lg font-semibold poppins text-gray-800">{{ faq.question }}</span>
+                            <i class="fas transition-transform duration-300" :class="isAccordionOpen(index) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                        </button>
+                        <div v-show="isAccordionOpen(index)" class="px-6 pb-6">
+                            <p class="text-gray-600 raleway text-lg">{{ faq.answer }}</p>
                         </div>
                     </div>
                 </div>
@@ -310,97 +242,81 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section class="section" id="contact">
-            <div class="container">
-                <h2 class="title is-2 has-text-centered poppins" data-aos="fade-up">Feedback for LinguaSwap</h2>
-                <div class="columns is-centered">
-                    <div class="column is-8">
-                        <iframe
-                            src="https://tally.so/embed/3llGvW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-                            title="Contact Form">
-                        </iframe>
-                    </div>
+        <section class="py-20 bg-gray-100" id="contact">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-12" data-aos="fade-up">Feedback for LinguaSwap</h2>
+                <div class="rounded-lg overflow-hidden shadow-xl" data-aos="fade-up">
+                    <iframe
+                        src="https://tally.so/embed/3llGvW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                        width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+                        title="Contact Form">
+                    </iframe>
                 </div>
             </div>
         </section>
 
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center">
+                    <p class="text-gray-600 mb-2">Interested in working with me?</p>
+                    <p class="text-gray-900 font-medium mb-6">
+                        Contact me at: 
+                        <a href="mailto:gzhao1997@gmail.com" class="accent-primary hover:text-blue-700 transition-colors">
+                            gzhao1997@gmail.com
+                        </a>
+                    </p>
+                    
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="https://www.linkedin.com/in/guodongzhao/" target="_blank" 
+                           class="text-gray-400 accent-text-hover transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://medium.com/@guodong_zhao" target="_blank" 
+                           class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i class="fab fa-medium text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <p class="text-gray-500 text-sm">
+                        Made with <i class="fas fa-coffee text-amber-600"></i> and <i class="fas fa-heart text-red-500"></i>
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2">&copy; 2025 Guodong Zhao</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <!--AOS-->
-    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-
-    <!--Scroll to View-->
+    
+    <!-- Vue 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.18/dist/vue.global.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Vue App -->
     <script>
-        function scrollToView(viewId) {
-            var elmnt = document.getElementById(viewId);
-            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
-        }
-    </script>
-
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                isBurgerActive: false,
-                isOpen: 0,
-                openAccordions: [0], // Start with first FAQ open
-                faqs: [
-                    {
-                        question: "What is the best Chrome extension for learning vocabulary while browsing?",
-                        answer: "LinguaSwap is an innovative Chrome extension that seamlessly integrates vocabulary learning into your daily browsing. It automatically replaces words you're learning with their translations, making it an effective tool for passive language learning while reading online content."
-                    },
-                    {
-                        question: "How can I learn a new language while browsing the internet?",
-                        answer: "LinguaSwap offers a unique approach to learning language while browsing by allowing you to create a personalized vocabulary list and automatically replacing words you know in your native language with their translations in your target language, creating an immersive learning experience during regular web browsing."
-                    },
-                    {
-                        question: "What is LinguaSwap and how does it work?",
-                        answer: "LinguaSwap is a Chrome extension that transforms everyday browsing into a language learning experience. It works by allowing users to highlight words in their native language while browsing, save them with translations, and automatically replace these words with their target language equivalents during future browsing sessions."
-                    },
-                    {
-                        question: "Is there a free tool to learn vocabulary while reading online?",
-                        answer: "Yes, LinguaSwap is a free Chrome extension that helps you learn vocabulary while reading online. It includes a hosted backend for translations and features like word list management, making it an accessible tool for language learners without requiring additional API subscriptions."
-                    },
-                    {
-                        question: "How do I set up LinguaSwap in my browser?",
-                        answer: "Setting up LinguaSwap is a simple three-step process: First, install the extension from the Chrome Web Store. Then, open the LinguaSwap extension to configure your default (native) and target (learning) languages. Finally, you can start browsing and adding words to your vocabulary list."
-                    },
-                    {
-                        question: "What are the main features of LinguaSwap?",
-                        answer: "LinguaSwap's main features include interactive vocabulary building through language pair setup, effortless word addition via right-click menu, dynamic word replacement while browsing, and user-friendly word list management through the extension popup. The latest version also includes search, sort, and export capabilities for your word list."
-                    },
-                    {
-                        question: "Do I need a DeepL API key to use LinguaSwap?",
-                        answer: "No, you don't need a DeepL API key anymore. While version 1.0.0 required users to have their own DeepL API key, the current version (1.0.1) includes a hosted backend that handles translations without requiring individual API keys."
-                    },
-                    {
-                        question: "How can I manage my saved words in LinguaSwap?",
-                        answer: "You can manage your saved words through the LinguaSwap popup interface, which allows you to edit translations, delete words, adjust language settings, and use new features like searching, sorting, and exporting your word list."
-                    },
-                    {
-                        question: "What makes LinguaSwap different from other language learning extensions?",
-                        answer: "LinguaSwap stands out by offering a unique approach to vocabulary acquisition through natural reading. Instead of traditional flashcards or exercises, it seamlessly integrates target language words into your everyday browsing, creating an immersive learning experience without disrupting your regular online activities."
-                    },
-                    {
-                        question: "Can LinguaSwap help with passive language learning?",
-                        answer: "Yes, LinguaSwap is specifically designed for passive language learning. By automatically replacing familiar words with their translations in your target language, it helps you naturally absorb vocabulary while reading content you're interested in, making language learning an effortless part of your daily routine."
-                    },
-                    {
-                        question: "How can I support LinguaSwap?",
-                        answer: "Since LinguaSwap now offers hosted translation API for free, the best way to support the project is through Buy Me a Coffee at buymeacoffee.com/troyanovsky. Your support helps maintain the free translation service and enables continued development of new features."
-                    },
-                ]
-            },
-            created() {
-                AOS.init();
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    mobileMenuOpen: false,
+                    openAccordions: [0], // Start with first FAQ open
+                    faqs: [
+                        { question: "What is the best Chrome extension for learning vocabulary while browsing?", answer: "LinguaSwap is an innovative Chrome extension that seamlessly integrates vocabulary learning into your daily browsing. It automatically replaces words you're learning with their translations, making it an effective tool for passive language learning while reading online content." },
+                        { question: "How can I learn a new language while browsing the internet?", answer: "LinguaSwap offers a unique approach to learning language while browsing by allowing you to create a personalized vocabulary list and automatically replacing words you know in your native language with their translations in your target language, creating an immersive learning experience during regular web browsing." },
+                        { question: "What is LinguaSwap and how does it work?", answer: "LinguaSwap is a Chrome extension that transforms everyday browsing into a language learning experience. It works by allowing users to highlight words in their native language while browsing, save them with translations, and automatically replace these words with their target language equivalents during future browsing sessions." },
+                        { question: "Is there a free tool to learn vocabulary while reading online?", answer: "Yes, LinguaSwap is a free Chrome extension that helps you learn vocabulary while reading online. It includes a hosted backend for translations and features like word list management, making it an accessible tool for language learners without requiring additional API subscriptions." },
+                        { question: "How do I set up LinguaSwap in my browser?", answer: "Setting up LinguaSwap is a simple three-step process: First, install the extension from the Chrome Web Store. Then, open the LinguaSwap extension to configure your default (native) and target (learning) languages. Finally, you can start browsing and adding words to your vocabulary list." },
+                        { question: "What are the main features of LinguaSwap?", answer: "LinguaSwap's main features include interactive vocabulary building through language pair setup, effortless word addition via right-click menu, dynamic word replacement while browsing, and user-friendly word list management through the extension popup. The latest version also includes search, sort, and export capabilities for your word list." },
+                        { question: "Do I need a DeepL API key to use LinguaSwap?", answer: "No, you don't need a DeepL API key anymore. While version 1.0.0 required users to have their own DeepL API key, the current version (1.0.1) includes a hosted backend that handles translations without requiring individual API keys." },
+                        { question: "How can I manage my saved words in LinguaSwap?", answer: "You can manage your saved words through the LinguaSwap popup interface, which allows you to edit translations, delete words, adjust language settings, and use new features like searching, sorting, and exporting your word list." },
+                        { question: "What makes LinguaSwap different from other language learning extensions?", answer: "LinguaSwap stands out by offering a unique approach to vocabulary acquisition through natural reading. Instead of traditional flashcards or exercises, it seamlessly integrates target language words into your everyday browsing, creating an immersive learning experience without disrupting your regular online activities." },
+                        { question: "Can LinguaSwap help with passive language learning?", answer: "Yes, LinguaSwap is specifically designed for passive language learning. By automatically replacing familiar words with their translations in your target language, it helps you naturally absorb vocabulary while reading content you're interested in, making language learning an effortless part of your daily routine." },
+                        { question: "How can I support LinguaSwap?", answer: "Since LinguaSwap now offers hosted translation API for free, the best way to support the project is through Buy Me a Coffee at buymeacoffee.com/troyanovsky. Your support helps maintain the free translation service and enables continued development of new features." },
+                    ]
+                }
             },
             methods: {
-                toggleBurger: function () {
-                    this.isBurgerActive = !this.isBurgerActive;
-                },
-
-                // Accordion methods
-                toggleAccordion: function(index) {
+                toggleAccordion(index) {
                     const accordionIndex = this.openAccordions.indexOf(index);
                     if (accordionIndex > -1) {
                         this.openAccordions.splice(accordionIndex, 1);
@@ -408,12 +324,18 @@
                         this.openAccordions.push(index);
                     }
                 },
-
-                isAccordionOpen: function(index) {
+                isAccordionOpen(index) {
                     return this.openAccordions.includes(index);
                 }
+            },
+            mounted() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
             }
-        })
+        }).mount('#app');
     </script>
     <script type="application/ld+json">
         {
@@ -427,8 +349,7 @@
             "https://medium.com/@guodong_zhao"
           ]
         }
-        </script>
-
+    </script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -441,7 +362,6 @@
             "image": "https://www.guodong-zhao.com/OtherProjects/LinguaSwap_500 x 400.png"
         }
     </script>
-
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -538,16 +458,5 @@
             ]
           }          
     </script>
-
 </body>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p class='raleway'>Interested in working with me? <br />Contact me at: <a href="mailto:gzhao1997@gmail.com"
-                class="email-link">gzhao1997@gmail.com</a></p>
-        <p class="raleway">Made with <i class="fas fa-coffee"></i> and <i class="fas fa-heart"></i></p>
-        <p class="raleway">&copy; 2025 Guodong Zhao</p>
-    </div>
-</footer>
-
 </html>

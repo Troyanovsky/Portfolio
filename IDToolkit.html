@@ -1,272 +1,327 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Instructional Design Toolkit | Guodong Zhao's Portfolio</title>
-    <link rel="icon" href="images\Icon.png">
-    <!--Bulma-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <!-- Vue development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!--Fontawesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-    <!--AOS-->
+    <meta name="description" content="A useful toolkit for instructional designers and instructors, with frameworks, methods, tools etc.">
+    <link rel="icon" href="images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/IDToolkit.html">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Instructional Design Toolkit | Guodong Zhao's Portfolio">
+    <meta property="og:description" content="A useful toolkit for instructional designers and instructors, with frameworks, methods, tools etc.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/IDToolkit.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instructional Design Toolkit | Guodong Zhao's Portfolio">
+    <meta name="twitter:description" content="A useful toolkit for instructional designers and instructors, with frameworks, methods, tools etc.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="InstructionalDesignToolkit\IDToolkit.css">
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.12/dist/index.global.min.js"></script>
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HH0RFQKBHF');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HH0RFQKBHF');
     </script>
+    
+    <style>
+        .raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Project-specific green theme */
+        .accent-primary { 
+            color: #10b981; 
+        }
+        .accent-bg { 
+            background-color: #10b981; 
+        }
+        .accent-border { 
+            border-color: #10b981; 
+        }
+        .accent-hover:hover { 
+            background-color: #0f9a6c; 
+        }
+        .accent-text-hover:hover {
+            color: #10b981;
+        }
+        .highlight {
+            background-color: #d1fae5;
+            padding: 0.125rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Responsive iframe container */
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-
-<body class="has-navbar-fixed-top">
+<body class="poppins bg-gray-50 pt-16">
     <div id="app">
-        <!--Nav bar-->
-        <nav class="navbar has-shadow is-fixed-top" role="navigation" aria-label="main navigation" id="navBar">
-            <div class="navbar-brand">
-                <div class="navbar-item">
-                    <h1 class="title is-4" style="font-family: Poppins; text-decoration: underline">
-                        Guodong Zhao
-                    </h1>
-                </div>
-
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarMenu" id="navbarBurger" v-on:click="toggleBurger"
-                    v-bind:class="{'is-active': isBurgerActive}">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarMenu" class="navbar-menu" v-bind:class="{'is-active': isBurgerActive}">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-white" href="index.html#top">
+        <!-- Navigation -->
+        <nav class="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-xl font-semibold text-gray-900 poppins accent-text-hover transition-colors underline">
+                            Guodong Zhao
+                        </a>
+                    </div>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-6">
+                            <a href="index.html" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Selected Projects
                             </a>
-                            <a class="button is-white" href="OtherProjects.html#top">
+                            <a href="OtherProjects.html" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Other Projects
                             </a>
-                            <a class="button is-white"
-                                href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing"
-                                target="_blank">
+                            <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="text-gray-700 accent-text-hover px-3 py-2 text-sm font-medium transition-colors duration-200">
                                 Resume
                             </a>
-                            <a class="button is-white" href="mailto:gzhao1997@gmail.com" target="_blank">
+                            <a href="mailto:gzhao1997@gmail.com" class="accent-bg text-white px-4 py-2 rounded-lg text-sm font-medium accent-hover transition-colors duration-200">
                                 Contact Me
                             </a>
                         </div>
                     </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-700 accent-text-hover focus:outline-none p-2" aria-label="Toggle mobile menu">
+                            <i class="fas fa-bars text-lg" v-if="!mobileMenuOpen"></i>
+                            <i class="fas fa-times text-lg" v-if="mobileMenuOpen"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div v-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200">
+                <div class="px-4 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Selected Projects
+                    </a>
+                    <a href="OtherProjects.html" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Other Projects
+                    </a>
+                    <a href="https://drive.google.com/file/d/15ET_riOxf6NwooUtp8o8BnQzCD6K7qVb/view?usp=sharing" target="_blank" class="block px-3 py-2 text-base font-medium text-gray-700 accent-text-hover hover:bg-gray-50 rounded-md">
+                        Resume
+                    </a>
+                    <a href="mailto:gzhao1997@gmail.com" class="block mx-3 my-2 px-4 py-2 accent-bg text-white text-center rounded-lg accent-hover transition-colors">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </nav>
 
-        <!--Project Entry-->
-        <div class="hero is-medium">
-            <div class="hero-body">
-                <div class="container">
-                    <h2 class="title is-3 raleway grn mb-4">
+        <!-- Hero Section -->
+        <section class="py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 raleway accent-primary">
                         Instructional Design Toolkit
-                    </h2>
-                    <p class="subtitle is-5 raleway">
-                        A useful toolkit for instructional designers and instructors, with frameworks, methods, tools
-                        etc.
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-gray-600 mb-12 raleway">
+                        A useful toolkit for instructional designers and instructors, with frameworks, methods, tools etc.
                     </p>
-                    <figure class="image is-11by5">
-                        <img src="InstructionalDesignToolkit\Project Images, with Background_ 1760x800.png"
-                            alt="Instructional Design Toolkit Project Image">
-                    </figure>
-                </div>
-            </div>
-        </div>
-
-        <!--Overview-->
-        <div class="hero is-small has-background-light" id="introduction">
-            <div class="hero-body">
-                <div class="columns">
-                    <div class="column is-8 is-offset-2">
-                        <h3 class="title is-3 raleway grn has-text-weight-bold has-text-centered my-6">
-                            Introduction
-                        </h3>
-                        <p class="content my-6">
-                            Instructional design is definitely a difficult and complicated process. However, it is often
-                            difficult for instructional designers, learning engineers, and instructors to design the
-                            details in their instructional designs to better help the learners learn - not only the
-                            knowledge they need to succeed in a particular course, but also for their life-long
-                            improvements.
-                        </p>
-                        <p class="content my-6">
-                            This toolkit was inspired by a course - Educational Goals, Instruction, and Assessment at
-                            Carnegie Mellon University. Most of the “tools” in this toolkit were introduced to me in
-                            this class, but I also included many other research-based and evidence-proved techniques
-                            that I learned along the way.
-                        </p>
-                        <p class="content my-6">
-                            In this toolkit, there are descriptions of the instructional design processes and of the
-                            useful techniques that can be applied in the design process. However, while using this
-                            toolkit, it should be kept in mind that these techniques should not be used without
-                            considerations of the actual context. <span class='has-highlight'>The technique that
-                                aligns with the actual context,
-                                learning goals, and learner needs is the best approach.</span>
-                        </p>
+                    <div class="aspect-video bg-gray-100 rounded-xl overflow-hidden">
+                        <img src="InstructionalDesignToolkit/Project Images, with Background_ 1760x800.png" 
+                             alt="Instructional Design Toolkit Project Image" 
+                             class="w-full h-full object-cover" 
+                             loading="eager">
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!--Toolkit-->
-        <div class="section hero is-small">
-            <div class="hero-body">
-                <div class="columns">
-                    <div class="column is-8 is-offset-2">
-                        <h3 class="title is-3 raleway grn has-text-weight-bold has-text-centered my-6">
-                            The Toolkit
-                        </h3>
-                        <p class="content my-6">
-                            The toolkit consists of two parts: design processes and tools/principles.
-                        </p>
-                        <p class="content my-6">
-                            In the design processes part, I included descriptions of some common design process models,
-                            including backward design, ADDIE model, SAM Model, Rapid Prototyping, etc. These
-                            instructional design process models will help instructional designers approach instructional
-                            design more systematically.
-                        </p>
-                        <p class="content my-6">
-                            To help instructional designers design the details in the instruction, the tools/principles
-                            part provides overviews of some research-proven, evidence-based instructional techniques and
-                            principles that may be applied. They could be used as starting points or as inspirations for
-                            the design but should not be applied directly.
-                        </p>
-                        <p class="content my-6">
-                            You can access the toolbox below just by clicking the links and navigate forward/backward
-                            using the forward/backward buttons in your browser.
-                        </p>
-                        <p class="content my-6">
-                            The toolkit is constantly revised and iterated by me as my own knowledge of instructional
-                            design grows. To see the changelog, scroll down to the bottom of this page.
+        <!-- Introduction Section -->
+        <section class="py-16 bg-white" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-semibold text-gray-900 mb-12 raleway accent-primary text-center">
+                    Introduction
+                </h2>
+                <div class="space-y-6 text-lg text-gray-700">
+                    <p>
+                        Instructional design is definitely a difficult and complicated process. However, it is often difficult for instructional designers, learning engineers, and instructors to design the details in their instructional designs to better help the learners learn - not only the knowledge they need to succeed in a particular course, but also for their life-long improvements.
+                    </p>
+                    <p>
+                        This toolkit was inspired by a course - Educational Goals, Instruction, and Assessment at Carnegie Mellon University. Most of the “tools” in this toolkit were introduced to me in this class, but I also included many other research-based and evidence-proved techniques that I learned along the way.
+                    </p>
+                    <p>
+                        In this toolkit, there are descriptions of the instructional design processes and of the useful techniques that can be applied in the design process. However, while using this toolkit, it should be kept in mind that these techniques should not be used without considerations of the actual context. <span class='highlight'>The technique that aligns with the actual context, learning goals, and learner needs is the best approach.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Toolkit Section -->
+        <section class="py-16" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-semibold text-gray-900 mb-12 raleway accent-primary text-center">
+                    The Toolkit
+                </h2>
+                <div class="space-y-6 text-lg text-gray-700 mb-12">
+                    <p>
+                        The toolkit consists of two parts: design processes and tools/principles.
+                    </p>
+                    <p>
+                        In the design processes part, I included descriptions of some common design process models, including backward design, ADDIE model, SAM Model, Rapid Prototyping, etc. These instructional design process models will help instructional designers approach instructional design more systematically.
+                    </p>
+                    <p>
+                        To help instructional designers design the details in the instruction, the tools/principles part provides overviews of some research-proven, evidence-based instructional techniques and principles that may be applied. They could be used as starting points or as inspirations for the design but should not be applied directly.
+                    </p>
+                    <p>
+                        You can access the toolbox below just by clicking the links and navigate forward/backward using the forward/backward buttons in your browser.
+                    </p>
+                    <p>
+                        The toolkit is constantly revised and iterated by me as my own knowledge of instructional design grows. To see the changelog, scroll down to the bottom of this page.
+                    </p>
+                </div>
+                <div class="iframe-container shadow-lg">
+                    <iframe src="https://troyanovsky.github.io/Instructional-Design-Toolkit/" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Iterations/Change Log Section -->
+        <section class="py-16 bg-white" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-semibold text-gray-900 mb-12 raleway accent-primary text-center">
+                    Iterations/Change Log
+                </h2>
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold raleway accent-primary mb-4"><u>Iteration # 1</u></h3>
+                        <p class="text-lg text-gray-700">
+                            On Mar. 01, 2020, I have added <b class="font-semibold accent-primary">Jigsaw</b> as an individual page. Jigsaw is a very useful method for organizing classroom activities to make students dependent on each other. It's a method of active learning and can be applied to both classroom learning or online learning.
                         </p>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="iframe-container">
-                        <iframe src="https://troyanovsky.github.io/Instructional-Design-Toolkit/"
-                            class="responsive-iframe" frameborder="0" allowfullscreen></iframe>
+                    <div>
+                        <h3 class="text-2xl font-semibold raleway accent-primary mb-4"><u>Iteration # 2</u></h3>
+                        <p class="text-lg text-gray-700">
+                            On Mar. 22, 2020, since I found that it's not clearly explained how to specify learning objectives. I have added a subpage on identifying <b class="font-semibold accent-primary">Specific, Observable, and Measurable Learning Objectives</b>. In this page, I enumerated and explained some useful frameworks/techniques that could help instructional designers to identify the learning objectives, including ABCD, KLI framework, Bloom's Taxonomy, and DOK (Depth of Knowledge).
+                        </p>
                     </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-8 is-offset-2">
-                        <h3 class="title is-3 raleway grn has-text-weight-bold has-text-centered my-6">
-                            Iterations/Change Log
-                        </h3>
-                        <h4 class="title is-4 raleway grn has-text-weight-bold my-6">
-                            <u>Iteration # 1</u>
-                        </h4>
-                        <p class="content my-6">
-                            On Mar. 01, 2020, I have added <b><span class="grn">Jigsaw</span></b> as an individual page.
-                            Jigsaw
-                            is a very useful method for
-                            organizing classroom activities to make students dependent on each other. It's a method of
-                            active
-                            learning and can be applied to both classroom learning or online learning.
+                    <div>
+                        <h3 class="text-2xl font-semibold raleway accent-primary mb-4"><u>Iteration # 3</u></h3>
+                        <p class="text-lg text-gray-700">
+                            On Mar. 24, 2020, I changed the <b class="font-semibold accent-primary">index page to include all pages and subpages</b> so that visitors can easily navigate to a particular page of their choice quickly. This change to the index page streamlines the experience of using the toolkit.
                         </p>
-                        <h4 class="title is-4 raleway grn has-text-weight-bold my-6">
-                            <u>Iteration # 2</u>
-                        </h4>
-                        <p class="content my-6">
-                            On Mar. 22, 2020, since I found that it's not clearly explained how to specify learning
-                            objectives. I have added a subpage on identifying <b><span class="grn">Specific, Observable,
-                                    and Measurable Learning Objectives</span></b>. In this page, I enumerated and
-                            explained some useful
-                            frameworks/techniques that could help instructional designers to identify the learning
-                            objectives, including ABCD, KLI framework, Bloom's Taxonomy, and DOK (Depth of Knowledge).
-                        </p>
-                        <h4 class="title is-4 raleway grn has-text-weight-bold my-6">
-                            <u>Iteration # 3</u>
-                        </h4>
-                        <p class="content my-6">
-                            On Mar. 24, 2020, I changed the <b><span class="grn">index page to include all pages and
-                                    subpages</span></b> so that visitors can easily navigate to a particular page of
-                            their choice quickly. This change to
-                            the index page streamlines the experience of using the toolkit.
-                        </p>
-                        <h4 class="title is-4 raleway grn has-text-weight-bold my-6">
-                            <u>Iteration # 4</u>
-                        </h4>
-                        <p class="content my-6">
-                            On Apr. 4, 2020, I added <b><span class="grn">SAMR Model</span></b> and <b><span
-                                    class="grn">Bloom's Digital Taxonomy</span></b> subpages under Use of
-                            Technology. These two models are specific to the use of EdTech tools in classes. The SAMR
-                            model can help instructional designers and instructors identify the degree of technology
-                            integration in the course and evaluate the usefulness of EdTech tools. The Bloom's Digital
-                            Taxonomy is an adaptation of the Bloom's Taxonomy for digital learning. It includes specific
-                            learning verbs for specific, observable, and measurable learning objectives in this digital
-                            learning age.
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold raleway accent-primary mb-4"><u>Iteration # 4</u></h3>
+                        <p class="text-lg text-gray-700">
+                            On Apr. 4, 2020, I added <b class="font-semibold accent-primary">SAMR Model</b> and <b class="font-semibold accent-primary">Bloom's Digital Taxonomy</b> subpages under Use of Technology. These two models are specific to the use of EdTech tools in classes. The SAMR model can help instructional designers and instructors identify the degree of technology integration in the course and evaluate the usefulness of EdTech tools. The Bloom's Digital Taxonomy is an adaptation of the Bloom's Taxonomy for digital learning. It includes specific learning verbs for specific, observable, and measurable learning objectives in this digital learning age.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-
-        <div class="level">
-            <div class="level-item" data-aos="slide-up">
-                <a class="button is-outlined is-primary" href='index.html'>
+        <!-- Navigation to Other Projects -->
+        <section class="py-16" data-aos="fade-up">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <a href="index.html" class="inline-flex items-center justify-center px-6 py-3 border accent-border accent-primary rounded-lg hover:bg-emerald-50 transition-colors duration-200 font-medium text-lg">
                     Other Projects
                 </a>
             </div>
-        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-gray-200 mt-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center">
+                    <p class="text-gray-600 mb-2">Interested in working with me?</p>
+                    <p class="text-gray-900 font-medium mb-6">
+                        Contact me at: 
+                        <a href="mailto:gzhao1997@gmail.com" class="accent-primary hover:text-emerald-700 transition-colors">
+                            gzhao1997@gmail.com
+                        </a>
+                    </p>
+                    
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="https://www.linkedin.com/in/guodongzhao/" target="_blank" 
+                           class="text-gray-400 accent-text-hover transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://medium.com/@guodong_zhao" target="_blank" 
+                           class="text-gray-400 hover:text-green-600 transition-colors">
+                            <i class="fab fa-medium text-xl"></i>
+                        </a>
+                    </div>
+                    
+                    <p class="text-gray-500 text-sm">
+                        Made with <i class="fas fa-coffee text-amber-600"></i> and <i class="fas fa-heart text-red-500"></i>
+                    </p>
+                    <p class="text-gray-500 text-sm mt-2">&copy; 2025 Guodong Zhao</p>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <!--AOS-->
-    <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js"></script>
-
-    <!--Scroll to View-->
+    
+    <!-- Vue 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.18/dist/vue.global.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Vue App -->
     <script>
-        function scrollToView(viewId) {
-            var elmnt = document.getElementById(viewId);
-            elmnt.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" });
-        }
-    </script>
-
-    <script>
-        var app = new Vue({
-            el: "#app",
-            created() {
-                AOS.init();
-            },
-            data: {
-                isBurgerActive: false,
-            },
-            methods: {
-                toggleBurger: function () {
-                    this.isBurgerActive = !this.isBurgerActive;
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    mobileMenuOpen: false,
                 }
+            },
+            mounted() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
             }
-        })
+        }).mount('#app');
     </script>
 </body>
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p class='raleway' style="font-size: 1rem;">Interested in working with me? <br />Contact me at: <a
-                href="mailto:gzhao1997@gmail.com">gzhao1997@gmail.com</a></p>
-        <p class="raleway" style="font-size: 1rem;">Made with <i class="fas fa-coffee"></i> and <i
-                class="fas fa-heart"></i></p>
-        <p class="raleway" style="font-size: 1rem;">&copy; 2025 Guodong Zhao</p>
-    </div>
-</footer>
-
 </html>
