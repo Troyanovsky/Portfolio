@@ -2,79 +2,85 @@
 
 ## Project Overview
 This is a personal portfolio website for Guodong Zhao, hosted on **GitHub Pages**.
-It is a **static website** that uses modern frontend libraries via CDN without a build step.
+It is a **static website** built with Vite (multi-page build) and deployed via GitHub Actions.
 
 ### Key Technologies
 - **HTML5**: The core structure of the pages.
-- **Vue.js 3 (CDN)**: Used for interactivity (mobile menu, modals, carousels, toggles).
-- **Tailwind CSS (CDN)**: Used for utility-first styling.
+- **Vite**: Multi-page build pipeline and dev server.
+- **Vue.js 3**: Used for interactivity (mobile menu, modals, carousels, toggles).
+- **Tailwind CSS (PostCSS build)**: Used for utility-first styling.
 - **AOS (Animate On Scroll)**: Used for scroll animations.
 - **Font Awesome**: Used for icons.
 
 ## Architecture & File Structure
 
 ### Core Files
-- `index.html`: The main landing page / "Selected Projects".
-- `OtherProjects.html`: A secondary listing page.
-- `[ProjectName].html`: Individual case study pages (e.g., `PineCones.html`, `LAUNCH.html`).
-- `CNAME`: Configures the custom domain.
-- `.nojekyll`: Bypasses Jekyll processing on GitHub Pages (allowing folders starting with `_` or just ensuring standard static serving).
+- `src/pages/index.html`: The main landing page / "Selected Projects".
+- `src/pages/OtherProjects.html`: A secondary listing page.
+- `src/pages/[ProjectName].html`: Individual case study pages (e.g., `PineCones.html`, `LAUNCH.html`).
+- `public/CNAME`: Configures the custom domain (copied to `dist/` during build).
+- `public/.nojekyll`: Bypasses Jekyll processing on GitHub Pages.
+- `vite.config.js`: Multi-page build config and HTML partial injection.
 
 ### Asset Organization
 Assets are organized by project/context:
-- `images/`: General assets (profile pic, icons, resume).
-- `PineCones/`, `LAUNCH/`, `AirInPgh/`, etc.: Project-specific images and videos.
-- `aos/`: Local copies of AOS library files.
-- `components/`: Shared navigation and footer templates with auto-loader.
+- `public/images/`: General assets (profile pic, icons, resume).
+- `public/PineCones/`, `public/LAUNCH/`, `public/AirInPgh/`, etc.: Project-specific images and videos.
+- `src/partials/`: Shared navigation and footer templates injected at build time.
+- `src/scripts/`: Page-level Vue apps and shared logic.
+- `src/pages/styles/`: Tailwind entry + site-specific CSS.
 
 ## Development Conventions
 
-### 1. No Build System
-**There is no `npm run build` or webpack configuration.**
-- All libraries are imported via `<script>` or `<link>` tags in the `<head>` or body.
-- You edit the HTML files directly.
-- **Tailwind CSS** is loaded via the standalone script tag, which processes classes in the browser.
+### 1. Vite Build Pipeline
+Use Vite for local development and production builds.
+- Run `npm install` once, then `npm run dev` for local work.
+- Build output goes to `dist/` via `npm run build`.
+- Preview the build with `npm run preview`.
 
 ### 2. Vue.js Implementation
-- Vue is initialized at the bottom of each HTML page within a `<script>` tag.
-- Each page has its own isolated Vue instance (`createApp`).
-- **Data & Logic:** Component data (like carousel slides or modal states) is hardcoded directly in the `data()` function of that page's Vue instance.
+- Vue is initialized per page from `src/scripts/pages/*.js`.
+- Each page has its own isolated Vue app (`createApp`).
+- **Data & Logic:** Component data (like carousel slides or modal states) is hardcoded directly in the `data()` function for that page.
 
 ### 3. Shared Components (Nav & Footer)
-
-Navigation and footer are loaded from `components/` as reusable templates with auto-injection and path-aware routing.
+Navigation and footer are loaded from `src/partials/` and injected by `vite.config.js`.
+Use the `<!-- NAVIGATION -->` and `<!-- FOOTER -->` placeholders in page HTML.
 
 ### 4. Styling
 - Primarily **Tailwind CSS** classes.
+- Tailwind is built from `src/pages/styles/tailwind.css` and imported in `src/pages/styles/main.css`.
 - Each individual project page may have its own accent color.
-- Custom styles are defined in the `<style>` block in the `<head>` (e.g., font families, custom animations, specific overrides).
-- Google Fonts (Raleway, Poppins) are used.
+- Custom styles live in `src/pages/styles/main.css`.
+- Fonts are sourced from npm packages and copied into `src/pages/styles/files/` and `src/pages/webfonts/` by `scripts/copy-font-assets.js`.
 
 ## Building & Running
 
 ### Local Development
-Since it is a static site, you can serve it using any simple HTTP server.
-
-**Using Python:**
+**Using Vite:**
 ```bash
-python3 -m http.server 8000
+npm run dev
 ```
-Then visit `http://localhost:8000` in your browser.
+Then visit the URL shown in the terminal.
 
-**Using VS Code:**
-- Use the "Live Server" extension if available.
+**Build + Preview:**
+```bash
+npm run build
+npm run preview
+```
 
 ### Deployment
-- The site is hosted on **GitHub Pages**.
-- **Deploy:** Simply commit and push changes to the `main` (or `master`) branch.
-- Changes usually go live within a few minutes.
+- The site is hosted on **GitHub Pages** via GitHub Actions.
+- **Deploy:** Commit and push; the workflow in `.github/workflows/pages.yml` publishes `dist/`.
+- **Pages Settings:** Set Source to **GitHub Actions** (not branch/root).
 
 ## Common Tasks
 
 ### Adding a New Project Page
-1.  Copy an existing project page (e.g., `PineCones.html`) to use as a template.
+1.  Copy an existing project page (e.g., `PineCones.html`) in `src/pages/`.
 2.  Update the `<title>` and meta tags.
 3.  Update the content sections.
-4.  Update the Vue `data()` to reflect the new project's images/slides.
-5.  Add a link to the new page in `index.html` or `OtherProjects.html`.
+4.  Update the matching script in `src/scripts/pages/` for the new page's Vue data.
+5.  Add the page to `vite.config.js` `build.rollupOptions.input`.
+6.  Add a link to the new page in `src/pages/index.html` or `src/pages/OtherProjects.html`.
 
