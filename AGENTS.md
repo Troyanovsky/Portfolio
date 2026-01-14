@@ -41,6 +41,7 @@ Assets are organized by project/context:
 
 ### 4. Styling
 - Primarily **Tailwind CSS** classes.
+- Each individual project page may have its own accent color.
 - Custom styles are defined in the `<style>` block in the `<head>` (e.g., font families, custom animations, specific overrides).
 - Google Fonts (Raleway, Poppins) are used.
 
