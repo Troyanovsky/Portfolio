@@ -123,6 +123,12 @@ Use GitHub Actions to:
 2. Build the site (`npm run build`).
 3. Upload `dist/` as a Pages artifact and deploy.
 
+### GitHub Pages settings
+After migrating to the Vite build:
+- Go to **Settings -> Pages** and set **Source** to **GitHub Actions**.
+- This replaces the previous "Deploy from a branch (root)" mode because the site is now built to `dist/`.
+- No other Pages changes are required for a custom domain (keep `public/CNAME` and `public/.nojekyll`).
+
 ### Base path handling (custom domain vs project pages)
 GitHub Pages can serve either:
 - Custom domain at root (current repo includes `CNAME`), or
@@ -198,6 +204,8 @@ This structure keeps the site multi-page and minimizes path churn while enabling
 
 Exit criteria:
 - A written parity checklist exists for each page.
+Done:
+- Checklist at docs\phase-0-parity-checklist.md
 
 ### Phase 1 — Introduce local toolchain without changing runtime behavior yet
 **Goal**: create a deterministic build that still outputs the same pages.

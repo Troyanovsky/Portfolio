@@ -1,0 +1,365 @@
+<!-- Page: Main portfolio landing page with selected projects and profile. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Guodong Zhao's Portfolio</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    <link rel="icon" href="images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/" />
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Guodong Zhao - Product Manager">
+    <meta property="og:description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Guodong Zhao - Product Manager">
+    <meta name="twitter:description" content="Portfolio for Guodong Zhao, an experienced product manager specializing in health & fitness, edtech, and AI applications. Discover his projects and work.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HH0RFQKBHF');
+    </script>
+    
+    <style>
+        .raleway {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .email-link {
+            cursor: pointer;
+        }
+
+        /* Navigation component styles - default blue theme */
+        .nav-link-hover:hover {
+            color: #2563eb;
+        }
+        .nav-bg-primary {
+            background-color: #2563eb;
+        }
+        .nav-bg-hover:hover {
+            background-color: #1d4ed8;
+        }
+        
+        /* Custom aspect ratio for project images */
+        .aspect-5-4 {
+            aspect-ratio: 5 / 4;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="poppins bg-gray-50 pt-16">
+    <div id="app">
+        <!-- Navigation Container -->
+        <!-- NAVIGATION -->
+
+        <!-- Hero Section -->
+        <section class="py-16 lg:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-5xl font-normal text-gray-900 mb-6 raleway">
+                        Hi! My name is 
+                        <span class="font-semibold whitespace-nowrap">
+                            Guodong Zhao<img src='images/waving hand.gif' class="inline-block h-10 ml-2 align-top" alt="waving hand" />
+                        </span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-gray-600 mb-12 raleway font-normal">
+                        I design and develop products and experiences for better learning and living.
+                    </p>
+                    
+                    <div class="mb-8 space-y-2 text-lg text-gray-700">
+                        <p>
+                            Master's in <a href="https://metals.hcii.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">Educational Technology and Applied Learning Science</a> in <a href="https://hcii.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">HCI Institute</a> @ CMU.
+                        </p>
+                        <p>
+                            B.S. in <a href="https://www.cheme.engineering.cmu.edu/" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">Chemical Engineering</a> and <a href="https://www.cmu.edu/dietrich/modlang/undergraduate/german.html" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">German Studies</a> @ CMU.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://www.linkedin.com/in/guodongzhao/" target="_blank" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            LinkedIn Profile
+                        </a>
+                        <a href="https://medium.com/@guodong_zhao" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                            Writings on Medium
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects Section -->
+        <section class="py-16" id="projects">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-gray-900 mb-12 raleway text-center lg:text-left">
+                        <span @click="scrollToView('projects')" class="cursor-pointer underline hover:text-blue-600 transition-colors">
+                            Selected Projects &darr;
+                        </span>
+                    </h2>
+                    
+                    <div class="space-y-12">
+                        <!-- Pacer Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="OtherProjects/Pacer, with Background_ 600 x 490.png.png" alt="Pacer Walking App" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        Pacer Walking App
+                                    </h3>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">
+                                        Walking App with 7 million+ Active Users
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Mobile App/Web</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Product Management</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">SEO/ASO</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">GenAI</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Product Management<br />Growth</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='https://apps.apple.com/us/app/pacer-pedometer-step-tracker/id600446812' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See App
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PineCones Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="PineCones/PineCones Project Images, with Background_ 600 x 490.png" alt="PineCones, Online starred problem set" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        PineCones
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        Online starred problem set
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: Squirrel AI by Yixue Group
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">EdTech Tool Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Online Learning</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Product Management</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Product Management<br />User Research</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='PineCones.html' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Case Study
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LAUNCH Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="LAUNCH/Project Images, with Background_ 600 x 480.png" alt="LAUNCH, Interactive documentation tool in PBL" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        LAUNCH
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        Interactive documentation tool in PBL
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: A local private high school
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Learning Experience Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">EdTech Tool Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Rapid Prototyping</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Research<br />Design<br />Prototype</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href='LAUNCH.html' class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Case Study
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructional Design Toolkit Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="InstructionalDesignToolkit/Project Images, with Background_ 600 x 480.png" alt="Instructional Design Toolkit" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        Instructional Design Toolkit
+                                    </h3>
+                                    <p class="text-gray-600 mb-4 leading-relaxed">
+                                        Reference toolkit for instructional designers
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Instructional Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Knowledge Organization</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Synthesis<br />Writing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="IDToolkit.html" class="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                        See Toolkit
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Invisible Threats Project -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100" data-aos="fade-up">
+                            <div class="flex flex-col lg:flex-row">
+                                <div class="lg:w-2/3 p-6">
+                                    <div class="aspect-5-4 bg-gray-100 rounded-lg overflow-hidden">
+                                        <img src="AirInPgh/Project Images, with Background_ 600 x 486.png" alt="The Invisible Threats online museum exhibit" class="w-full h-full object-cover" loading="lazy">
+                                    </div>
+                                </div>
+                                <div class="lg:w-1/3 p-6 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-semibold text-gray-900 mb-3 raleway">
+                                        The Invisible Threats
+                                    </h3>
+                                    <p class="text-gray-600 mb-2 leading-relaxed">
+                                        An online museum exhibit about air quality in Pittsburgh
+                                    </p>
+                                    <p class="text-gray-500 text-xs mb-4">
+                                        Client: Carnegie Museum of Natural History
+                                    </p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Learning Experience Design</span>
+                                        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full font-medium">Instructional Design</span>
+                                    </div>
+                                    
+                                    <div class="border-t border-gray-100 pt-4 mb-6">
+                                        <div class="flex justify-between items-start">
+                                            <div>
+                                                <p class="font-semibold text-gray-900 text-sm">My Role</p>
+                                            </div>
+                                            <div class="text-right text-gray-600 text-sm">
+                                                <p>Research<br />LX Design<br />Website Development</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex flex-col sm:flex-row gap-3">
+                                        <a href="InvisibleThreats.html" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 text-center rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                            See Case Study
+                                        </a>
+                                        <a href="https://troyanovsky.github.io/LIM/" target="_blank" class="flex-1 inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 text-center rounded-lg hover:bg-blue-50 transition-colors duration-200 text-sm font-medium">
+                                            See Exhibit
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+<!-- FOOTER -->
+    </div>
+    
+    <!-- Shared Components -->
+    <!-- Vue App -->
+    <script type="module" src="../scripts/pages/index.js"></script>
+<!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Guodong Zhao",
+        "jobTitle": "Product Manager",
+        "url": "https://www.guodong-zhao.com/",
+        "sameAs": [
+            "https://www.linkedin.com/in/guodongzhao/",
+            "https://medium.com/@guodong_zhao"
+        ]
+    }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

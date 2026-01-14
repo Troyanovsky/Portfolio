@@ -1,2 +1,8 @@
 .DS_Store
 .vscode/settings.json
+node_modules/
+dist/
+public/assets/files/
+public/webfonts/
+src/pages/styles/files/
+src/pages/webfonts/

@@ -1,0 +1,5 @@
+# Ignore generated and vendored output.
+dist/
+node_modules/
+public/assets/files/
+public/webfonts/

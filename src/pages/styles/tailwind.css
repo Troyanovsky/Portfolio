@@ -1,0 +1,6 @@
+/*
+ * Tailwind CSS directives and source configuration for the portfolio site.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

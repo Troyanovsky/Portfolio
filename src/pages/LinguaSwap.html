@@ -1,0 +1,331 @@
+<!-- Page: LinguaSwap extension case study with FAQ accordion. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LinguaSwap - Interactive Language Learning Chrome Extension</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <meta name="description"
+        content="LinguaSwap is a Chrome extension that turns everyday browsing into a language learning experience. Build vocabulary seamlessly while reading in your native language.">
+    <link rel="icon" href="images/Icon.png">
+    <link rel="canonical" href="https://www.guodong-zhao.com/LinguaSwap.html" />
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="LinguaSwap - Interactive Language Learning Chrome Extension">
+    <meta property="og:description"
+        content="Enhance your vocabulary in a new language while browsing the web. LinguaSwap replaces words in your native language with translations, making language learning part of your everyday online experience.">
+    <meta property="og:url" content="https://www.guodong-zhao.com/LinguaSwap.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.guodong-zhao.com/OtherProjects/LinguaSwap_500 x 400.png">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LinguaSwap - Interactive Language Learning Chrome Extension">
+    <meta name="twitter:description"
+        content="Make language learning a part of your daily browsing with LinguaSwap. Add words, manage vocabulary, and see translations seamlessly as you surf the web.">
+    <meta name="twitter:image" content="https://www.guodong-zhao.com/OtherProjects/LinguaSwap_500 x 400.png">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HH0RFQKBHF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HH0RFQKBHF');
+    </script>
+    <style>
+        .raleway { font-family: 'Raleway', sans-serif; }
+        .poppins { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        /* Default blue theme */
+        .accent-primary { color: #3b82f6; }
+        .accent-bg { background-color: #3b82f6; }
+        .accent-border { border-color: #3b82f6; }
+        .accent-hover:hover { background-color: #2563eb; }
+        .accent-text-hover:hover { color: #3b82f6; }
+
+        /* Navigation component styles - project-specific theme */
+        .nav-link-hover:hover { color: #3b82f6; }
+        .nav-bg-primary { background-color: #3b82f6; }
+        .nav-bg-hover:hover { background-color: #2563eb; }
+    </style>
+</head>
+
+<body class="poppins bg-gray-50 pt-16">
+    <div id="app">
+        <!-- Navigation Container -->
+        <!-- NAVIGATION -->
+
+        <!-- Hero Section -->
+        <section class="py-20 bg-blue-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h1 class="text-5xl md:text-6xl font-bold poppins text-gray-900">
+                            Lingua<span class="accent-primary">Swap</span>
+                        </h1>
+                        <p class="mt-4 text-xl md:text-2xl text-gray-600 raleway">
+                            Learn foreign language words while you browse
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://chromewebstore.google.com/detail/linguaswap/alccaibaldgnhnfbooofkmdljijcemie"
+                                class="inline-flex items-center gap-3 px-6 py-3 accent-bg text-white rounded-lg font-semibold accent-hover transition-colors" target="_blank">
+                                <i class="fab fa-chrome text-xl"></i>
+                                <span>Add to Chrome</span>
+                            </a>
+                            <a href="https://github.com/Troyanovsky/plugin-linguaswap"
+                                class="inline-flex items-center gap-3 px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold hover:bg-gray-300 transition-colors" target="_blank">
+                                <i class="fab fa-github text-xl"></i>
+                                <span>See GitHub Repo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left">
+                        <img src="OtherProjects/LinguaSwap_500 x 400.png" alt="LinguaSwap Screenshot" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">LinguaSwap Features</h2>
+                
+                <div class="space-y-16">
+                    <!-- Feature 1 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center">
+                            <i class="fas fa-globe fa-4x accent-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Multiple Languages Supported</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">LinguaSwap supports multiple languages, allowing you to learn the language of your choice.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center md:order-last">
+                            <i class="fas fa-list-alt fa-4x accent-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Personal Word List Management</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">Easily add, edit, and manage your personalized vocabulary list to track your learning progress.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+                        <div class="text-center">
+                            <i class="fas fa-th-large fa-4x accent-primary"></i>
+                        </div>
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-semibold poppins">Immersive Word Replacement</h3>
+                            <p class="mt-2 text-lg text-gray-600 raleway">Seamlessly see translations of familiar words in your target language as you browse the web.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 bg-blue-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">How LinguaSwap Works</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up">
+                        <i class="fas fa-language fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Set Language Pair</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Choose your native language and the language you want to learn. LinguaSwap will do the rest.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-mouse-pointer fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Add Words to Your List</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Highlight words in your native language, right-click, and add them to your personalized vocabulary list.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-sync-alt fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Dynamic Replacement</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">As you browse, LinguaSwap will automatically replace the words you're learning with their translations.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-book fa-3x accent-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold poppins">Passive Learning</h3>
+                        <p class="mt-2 text-lg text-gray-600 raleway">Exposure to the target language words through natural reading helps you remember them better.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-16" data-aos="fade-up">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div v-for="(faq, index) in faqs" :key="index" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden" data-aos="fade-up">
+                        <button @click="toggleAccordion(index)" class="w-full flex justify-between items-center p-6 text-left">
+                            <span class="text-lg font-semibold poppins text-gray-800">{{ faq.question }}</span>
+                            <i class="fas transition-transform duration-300" :class="isAccordionOpen(index) ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                        </button>
+                        <div v-show="isAccordionOpen(index)" class="px-6 pb-6">
+                            <p class="text-gray-600 raleway text-lg">{{ faq.answer }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-20 bg-gray-100" id="contact">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center poppins mb-12" data-aos="fade-up">Feedback for LinguaSwap</h2>
+                <div class="rounded-lg overflow-hidden shadow-xl" data-aos="fade-up">
+                    <iframe
+                        src="https://tally.so/embed/3llGvW?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                        width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+                        title="Contact Form">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Container -->
+        <!-- FOOTER -->
+    </div>
+    
+    <!-- Shared Components -->
+    <!-- Vue App -->
+    <script type="module" src="../scripts/pages/LinguaSwap.js"></script>
+<script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Guodong Zhao",
+          "jobTitle": "Product Manager",
+          "url": "https://www.guodong-zhao.com/",
+          "sameAs": [
+            "https://www.linkedin.com/in/guodongzhao/",
+            "https://medium.com/@guodong_zhao"
+          ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "LinguaSwap - Immersive Language Learning Chrome Extension",
+            "applicationCategory": "BrowserExtension",
+            "operatingSystem": "Chrome",
+            "url": "https://chromewebstore.google.com/detail/linguaswap/alccaibaldgnhnfbooofkmdljijcemie?authuser=0&hl=en",
+            "description": "Enhance your vocabulary in a new language while browsing the web. LinguaSwap replaces words in your native language with translations, making language learning part of your everyday online experience.",
+            "image": "https://www.guodong-zhao.com/OtherProjects/LinguaSwap_500 x 400.png"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the best Chrome extension for learning vocabulary while browsing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "LinguaSwap is an innovative Chrome extension that seamlessly integrates vocabulary learning into your daily browsing. It automatically replaces words you're learning with their translations, making it an effective tool for passive language learning while reading online content."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I learn a new language while browsing the internet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "LinguaSwap offers a unique approach to learning language while browsing by allowing you to create a personalized vocabulary list and automatically replacing words you know in your native language with their translations in your target language, creating an immersive learning experience during regular web browsing."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is LinguaSwap and how does it work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "LinguaSwap is a Chrome extension that transforms everyday browsing into a language learning experience. It works by allowing users to highlight words in their native language while browsing, save them with translations, and automatically replace these words with their target language equivalents during future browsing sessions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a free tool to learn vocabulary while reading online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, LinguaSwap is a free Chrome extension that helps you learn vocabulary while reading online. It includes a hosted backend for translations and features like word list management, making it an accessible tool for language learners without requiring additional API subscriptions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I set up LinguaSwap in my browser?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Setting up LinguaSwap is a simple three-step process: First, install the extension from the Chrome Web Store. Then, open the LinguaSwap extension to configure your default (native) and target (learning) languages. Finally, you can start browsing and adding words to your vocabulary list."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are the main features of LinguaSwap?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "LinguaSwap's main features include interactive vocabulary building through language pair setup, effortless word addition via right-click menu, dynamic word replacement while browsing, and user-friendly word list management through the extension popup. The latest version also includes search, sort, and export capabilities for your word list."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need a DeepL API key to use LinguaSwap?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No, you don't need a DeepL API key anymore. While version 1.0.0 required users to have their own DeepL API key, the current version (1.0.1) includes a hosted backend that handles translations without requiring individual API keys."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I manage my saved words in LinguaSwap?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can manage your saved words through the LinguaSwap popup interface, which allows you to edit translations, delete words, adjust language settings, and use new features like searching, sorting, and exporting your word list."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes LinguaSwap different from other language learning extensions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "LinguaSwap stands out by offering a unique approach to vocabulary acquisition through natural reading. Instead of traditional flashcards or exercises, it seamlessly integrates target language words into your everyday browsing, creating an immersive learning experience without disrupting your regular online activities."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can LinguaSwap help with passive language learning?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, LinguaSwap is specifically designed for passive language learning. By automatically replacing familiar words with their translations in your target language, it helps you naturally absorb vocabulary while reading content you're interested in, making language learning an effortless part of your daily routine."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I support LinguaSwap?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Since LinguaSwap now offers hosted translation API for free, the best way to support the project is through Buy Me a Coffee at buymeacoffee.com/troyanovsky. Your support helps maintain the free translation service and enables continued development of new features."
+                }
+              }
+            ]
+          }          
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
