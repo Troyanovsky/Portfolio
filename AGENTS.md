@@ -1,4 +1,4 @@
-# AGENTS.md - Context & Instructions
+# AGENTS.md - Context & Instructions for Coding Agents
 
 ## Project Overview
 This is a personal portfolio website for Guodong Zhao, hosted on **GitHub Pages**.
@@ -25,6 +25,7 @@ Assets are organized by project/context:
 - `images/`: General assets (profile pic, icons, resume).
 - `PineCones/`, `LAUNCH/`, `AirInPgh/`, etc.: Project-specific images and videos.
 - `aos/`: Local copies of AOS library files.
+- `components/`: Shared navigation and footer templates with auto-loader.
 
 ## Development Conventions
 
@@ -38,6 +39,10 @@ Assets are organized by project/context:
 - Vue is initialized at the bottom of each HTML page within a `<script>` tag.
 - Each page has its own isolated Vue instance (`createApp`).
 - **Data & Logic:** Component data (like carousel slides or modal states) is hardcoded directly in the `data()` function of that page's Vue instance.
+
+### 3. Shared Components (Nav & Footer)
+
+Navigation and footer are loaded from `components/` as reusable templates with auto-injection and path-aware routing.
 
 ### 4. Styling
 - Primarily **Tailwind CSS** classes.
