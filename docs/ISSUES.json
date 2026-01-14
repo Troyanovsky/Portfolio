@@ -57,8 +57,8 @@
       "title": "Establish Button Hierarchy System",
       "description": "Multiple button styles throughout the site create confusion about visual hierarchy and interaction patterns. A consistent button system needs to be established.",
       "acceptance_criteria": [
-        "Primary button style defined: Filled blue with white text",
-        "Secondary button style defined: Outline blue",
+        "Primary button style defined: Filled blue/accent color with white text",
+        "Secondary button style defined: Outline blue/accent color",
         "Tertiary button style defined: Text-only with underline",
         "All buttons across the site conform to one of the three styles",
         "Consistent hover states defined and implemented for all button types",

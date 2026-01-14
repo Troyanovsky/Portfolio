@@ -162,8 +162,14 @@
         loadAllComponents
     };
 
-    // Auto-load when DOM is ready
-    if (document.readyState === 'loading') {
+    function hasComponentTargets() {
+        return Boolean(document.getElementById('navigation-container') || document.getElementById('footer-container'));
+    }
+
+    // Auto-load as early as possible, but retry once if the DOM isn't ready.
+    if (hasComponentTargets()) {
+        loadAllComponents();
+    } else if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadAllComponents);
     } else {
         loadAllComponents();
