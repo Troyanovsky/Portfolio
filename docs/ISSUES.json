@@ -1,0 +1,75 @@
+{
+  "issues": [
+    {
+      "id": "BUG-260114-001",
+      "type": "bug",
+      "epic": "UX/Accessibility",
+      "title": "Missing Hover States on Project Cards",
+      "description": "Project cards appear interactive (shadow changes on hover) but don't have cursor-pointer class, making it unclear to users that the cards are clickable.",
+      "acceptance_criteria": [
+        "All project cards in index.html have cursor-pointer class",
+        "All project cards in OtherProjects.html have cursor-pointer class",
+        "Cursor pointer appears on hover for all clickable project cards",
+        "Visual feedback (shadow) matches cursor behavior"
+      ],
+      "passes": false,
+      "locations": [
+        "index.html:176-386",
+        "OtherProjects.html:138-513"
+      ]
+    },
+    {
+      "id": "BUG-260114-002",
+      "type": "bug",
+      "epic": "Navigation",
+      "title": "Inconsistent Navigation Links",
+      "description": "'Selected Projects' and 'Other Projects' navigation links are inconsistent across pages, causing potential confusion for users navigating the site.",
+      "acceptance_criteria": [
+        "All navigation links standardized across all pages. Selected Projects should navigate to Selected Projects section on index and Other Projects to OtherProjects.html",
+        "Navigation is consistent across index.html, OtherProjects.html, and individual project pages",
+        "All pages follow the same navigation pattern"
+      ],
+      "passes": false
+    },
+    {
+      "id": "CHANGE-260114-003",
+      "type": "change",
+      "epic": "Code Quality",
+      "title": "Code Duplication - Navigation Bar & Footer",
+      "description": "Navigation bar and footer sections are duplicated across all HTML files, violating DRY principles and making maintenance more difficult.",
+      "acceptance_criteria": [
+        "Navigation bar is consolidated into a single reusable component",
+        "Footer is consolidated into a single reusable component",
+        "All HTML pages reference the shared navigation and footer",
+        "Solution works with static site (GitHub Pages) without build system"
+      ],
+      "passes": false,
+      "locations": [
+        "All HTML files - navigation and footer sections"
+      ]
+    },
+    {
+      "id": "STORY-260114-004",
+      "type": "story",
+      "epic": "Design System",
+      "title": "Establish Button Hierarchy System",
+      "description": "Multiple button styles throughout the site create confusion about visual hierarchy and interaction patterns. A consistent button system needs to be established.",
+      "acceptance_criteria": [
+        "Primary button style defined: Filled blue with white text",
+        "Secondary button style defined: Outline blue",
+        "Tertiary button style defined: Text-only with underline",
+        "All buttons across the site conform to one of the three styles",
+        "Consistent hover states defined and implemented for all button types",
+        "Button styles are documented in a style guide"
+      ],
+      "passes": false,
+      "locations": [
+        "Various buttons throughout the site"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-01-14"
+  }
+}
