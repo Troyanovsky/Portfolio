@@ -74,7 +74,7 @@ createApp({
         wizard: { slide: 'currentWizardSlide', array: this.wizardOfOz }
       };
       const config = carousels[type];
-      if (config) {
+      if (config && Array.isArray(config.array) && config.array.length > 0) {
         this[config.slide] = (this[config.slide] + 1) % config.array.length;
       }
     },
@@ -85,18 +85,25 @@ createApp({
         wizard: { slide: 'currentWizardSlide', array: this.wizardOfOz }
       };
       const config = carousels[type];
-      if (config) {
+      if (config && Array.isArray(config.array) && config.array.length > 0) {
         this[config.slide] = (this[config.slide] - 1 + config.array.length) % config.array.length;
       }
     },
     setSlide(index, type) {
       const carousels = {
-        studentContext: 'currentStudentContextSlide',
-        learning: 'currentLearningSlide',
-        wizard: 'currentWizardSlide'
+        studentContext: { slide: 'currentStudentContextSlide', array: this.studentContextImages },
+        learning: { slide: 'currentLearningSlide', array: this.learningExperiences },
+        wizard: { slide: 'currentWizardSlide', array: this.wizardOfOz }
       };
-      if (carousels[type]) {
-        this[carousels[type]] = index;
+      const config = carousels[type];
+      if (
+        config &&
+        Array.isArray(config.array) &&
+        Number.isInteger(index) &&
+        index >= 0 &&
+        index < config.array.length
+      ) {
+        this[config.slide] = index;
       }
     }
   },

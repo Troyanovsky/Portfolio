@@ -1,7 +1,7 @@
 /**
  * Copies font and icon assets from node_modules into public for Vite builds.
  */
-import { access, copyFile, mkdir, readdir } from 'node:fs/promises';
+import { access, copyFile, mkdir, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -43,8 +43,23 @@ async function copyDir(sourceDir, targetDir) {
   }
 }
 
+async function ensureSourceDirectory(sourceDir) {
+  try {
+    const sourceStats = await stat(sourceDir);
+    if (!sourceStats.isDirectory()) {
+      throw new Error(`${sourceDir} is not a directory.`);
+    }
+  } catch (error) {
+    throw new Error(
+      `Missing font assets at ${sourceDir}. Run "npm install" before running this script.`,
+      { cause: error }
+    );
+  }
+}
+
 async function copyAssets() {
   for (const target of copyTargets) {
+    await ensureSourceDirectory(target.from);
     await copyDir(target.from, target.to);
   }
 }

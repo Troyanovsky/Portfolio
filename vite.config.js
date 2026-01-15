@@ -48,6 +48,16 @@ function htmlPartialsPlugin() {
 export default defineConfig({
   root,
   base: process.env.VITE_BASE_PATH || '/',
+  resolve: {
+    alias: {
+      '/scripts': path.resolve(__dirname, 'src/scripts')
+    }
+  },
+  server: {
+    fs: {
+      allow: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')]
+    }
+  },
   publicDir: path.resolve(__dirname, 'public'),
   plugins: [htmlPartialsPlugin()],
   build: {

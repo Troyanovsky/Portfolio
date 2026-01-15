@@ -79,7 +79,7 @@ createApp({
         teacher: { slide: 'currentTeacherSlide', array: this.teacherFlow }
       };
       const config = mapping[slideType];
-      if (config) {
+      if (config && Array.isArray(config.array) && config.array.length > 0) {
         this[config.slide] = (this[config.slide] + 1) % config.array.length;
       }
     },
@@ -91,7 +91,7 @@ createApp({
         teacher: { slide: 'currentTeacherSlide', array: this.teacherFlow }
       };
       const config = mapping[slideType];
-      if (config) {
+      if (config && Array.isArray(config.array) && config.array.length > 0) {
         this[config.slide] =
           this[config.slide] === 0 ? config.array.length - 1 : this[config.slide] - 1;
       }
@@ -99,13 +99,19 @@ createApp({
 
     setSlide(index, slideType) {
       const mapping = {
-        preliminary: 'currentPreliminarySlide',
-        MARS: 'currentMARSSlide',
-        teacher: 'currentTeacherSlide'
+        preliminary: { slide: 'currentPreliminarySlide', array: this.preliminaryResearch },
+        MARS: { slide: 'currentMARSSlide', array: this.MARSFlow },
+        teacher: { slide: 'currentTeacherSlide', array: this.teacherFlow }
       };
-      const slideProperty = mapping[slideType];
-      if (slideProperty) {
-        this[slideProperty] = index;
+      const config = mapping[slideType];
+      if (
+        config &&
+        Array.isArray(config.array) &&
+        Number.isInteger(index) &&
+        index >= 0 &&
+        index < config.array.length
+      ) {
+        this[config.slide] = index;
       }
     }
   },
