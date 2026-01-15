@@ -19,38 +19,6 @@
       ]
     },
     {
-      "id": "BUG-260114-002",
-      "type": "bug",
-      "epic": "Navigation",
-      "title": "Inconsistent Navigation Links",
-      "description": "'Selected Projects' and 'Other Projects' navigation links are inconsistent across pages, causing potential confusion for users navigating the site.",
-      "acceptance_criteria": [
-        "All navigation links standardized across all pages. Selected Projects should navigate to Selected Projects section on index and Other Projects to OtherProjects.html",
-        "Navigation is consistent across index.html, OtherProjects.html, and individual project pages",
-        "All pages follow the same navigation pattern"
-      ],
-      "passes": true,
-      "resolution": "Consolidated navigation into shared component with consistent links across all pages"
-    },
-    {
-      "id": "CHANGE-260114-003",
-      "type": "change",
-      "epic": "Code Quality",
-      "title": "Code Duplication - Navigation Bar & Footer",
-      "description": "Navigation bar and footer sections are duplicated across all HTML files, violating DRY principles and making maintenance more difficult.",
-      "acceptance_criteria": [
-        "Navigation bar is consolidated into a single reusable component",
-        "Footer is consolidated into a single reusable component",
-        "All HTML pages reference the shared navigation and footer",
-        "Solution works with static site (GitHub Pages) without build system"
-      ],
-      "passes": true,
-      "locations": [
-        "All HTML files - navigation and footer sections"
-      ],
-      "resolution": "Created /components/ directory with navigation.html, footer.html, and shared-components.js loader"
-    },
-    {
       "id": "STORY-260114-004",
       "type": "story",
       "epic": "Design System",
