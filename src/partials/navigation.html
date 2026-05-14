@@ -29,16 +29,20 @@
 
             <!-- Mobile menu button -->
             <div class="md:hidden">
-                <button data-mobile-menu-toggle class="text-gray-700 nav-link-hover focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <i class="fas fa-bars text-lg"></i>
-                    <i class="fas fa-times text-lg hidden"></i>
+                <button type="button" data-mobile-menu-toggle class="text-gray-700 nav-link-hover focus:outline-none p-2" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-navigation">
+                    <span data-mobile-menu-open-icon>
+                        <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+                    </span>
+                    <span data-mobile-menu-close-icon class="hidden">
+                        <i class="fas fa-times text-lg" aria-hidden="true"></i>
+                    </span>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div data-mobile-menu class="md:hidden bg-white border-t border-gray-200 hidden">
+    <div id="mobile-navigation" data-mobile-menu class="md:hidden bg-white border-t border-gray-200 hidden">
         <div class="px-4 pt-2 pb-3 space-y-1">
             <a href="{{BASE_PATH}}index.html#top" class="block px-3 py-2 text-base font-medium text-gray-700 nav-link-hover hover:bg-gray-50 rounded-md">
                 Selected Projects

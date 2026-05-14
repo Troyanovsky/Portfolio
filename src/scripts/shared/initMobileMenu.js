@@ -11,19 +11,16 @@ export function initMobileMenu() {
 
   menuButton.addEventListener('click', () => {
     const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!isExpanded));
+    const nextExpanded = !isExpanded;
 
-    if (isExpanded) {
-      mobileMenu.classList.add('hidden');
-    } else {
-      mobileMenu.classList.remove('hidden');
-    }
+    menuButton.setAttribute('aria-expanded', String(nextExpanded));
+    mobileMenu.classList.toggle('hidden', !nextExpanded);
 
-    const barsIcon = menuButton.querySelector('.fa-bars');
-    const timesIcon = menuButton.querySelector('.fa-times');
-    if (barsIcon && timesIcon) {
-      barsIcon.classList.toggle('hidden');
-      timesIcon.classList.toggle('hidden');
+    const openIcon = menuButton.querySelector('[data-mobile-menu-open-icon]');
+    const closeIcon = menuButton.querySelector('[data-mobile-menu-close-icon]');
+    if (openIcon && closeIcon) {
+      openIcon.classList.toggle('hidden', nextExpanded);
+      closeIcon.classList.toggle('hidden', !nextExpanded);
     }
   });
 }
